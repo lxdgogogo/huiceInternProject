@@ -11,5 +11,8 @@
 
     <modules>
         <module>service_dyna</module>
+        <module>service_fdk</module>
     </modules>
+
+
 </project>
