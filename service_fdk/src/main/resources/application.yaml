@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:mysql://60.205.180.234:3306/fdk_goods2?serverTimezone=Asia/Shanghai
+    username: fdk
+    password: fdksu123456
