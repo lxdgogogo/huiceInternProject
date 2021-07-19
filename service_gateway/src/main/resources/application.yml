@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: service_gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      # 路由（routes：路由，它由唯一标识（ID）、目标服务地址（uri）、一组断言（predicates）和一组过滤器组成（filters）。filters 不是必需参数。）
+      routes:
+        - id: summer-user
+          uri: lb://summer-user
+          predicates:
+            - Path=/api/user/**
+          filters:
+            - StripPrefix= 2
+
+
+
+# 白名单
+ignore-url:
+  list:
+    - path: "/v2/api-docs"
+    - path: "/swagger-resources"
+    - path: "/doc.html"
+    - path: "/webjars"
+    - path: "/error"
+    - path: "/api/user/user/login"
+    - path: "/api/user/login"
+    - path: "/user/login"
+
