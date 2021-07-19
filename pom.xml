@@ -10,6 +10,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>service-test</module>
+        <module>service_dyna</module>
     </modules>
 </project>
