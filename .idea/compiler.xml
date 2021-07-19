@@ -15,7 +15,7 @@
       <module name="huice-summer" target="1.5" />
       <module name="service-test" target="1.8" />
       <module name="service_dyna" target="1.8" />
-      <module name="service_fdk" target="8" />
+      <module name="service_fdk" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
