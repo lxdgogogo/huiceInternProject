@@ -3,6 +3,8 @@ package com.huice.service_forwarder.controller;
 import com.huice.service_forwarder.common.R;
 import com.huice.service_forwarder.controller.vo.CityTree;
 import com.huice.service_forwarder.service.BusinessService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +18,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping
+@Api(tags = "需求1相关接口")
 public class BusinessController {
 
     /**
@@ -25,6 +28,7 @@ public class BusinessController {
     private BusinessService businessService;
 
     @PostMapping("seller/cityTree")
+    @ApiOperation(value = "查询城市")
     public R hasPassedCityList(){
 
         List<CityTree> cityTrees = this.businessService.queryAllBusiness();
