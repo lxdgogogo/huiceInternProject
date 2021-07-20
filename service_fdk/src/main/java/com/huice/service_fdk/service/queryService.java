@@ -2,7 +2,7 @@ package com.huice.service_fdk.service;
 
 import com.huice.service_fdk.dao.ForwarderPageInitVODao;
 import com.huice.service_fdk.dao.ForwarderSupplierGroupDao;
-import com.huice.service_fdk.dao.PageContentContainerSKUDao;
+//import com.huice.service_fdk.dao.PageContentContainerSKUDao;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -17,8 +17,8 @@ public class queryService {
     @Resource
     private final ForwarderPageInitVODao forwarderPageInitVODao = new ForwarderPageInitVODao();
 
-    @Resource
-    private final PageContentContainerSKUDao pageContentContainerSKUDao = new PageContentContainerSKUDao();
+    //@Resource
+    //private final PageContentContainerSKUDao pageContentContainerSKUDao = new PageContentContainerSKUDao();
 
     public List<ForwarderSupplierGroupVO> getForwarderSupplierGroupVO(long id) {
         return forwarderSupplierGroupDao.getForwarderSupplierGroupVO(id);
@@ -27,6 +27,7 @@ public class queryService {
         return forwarderPageInitVODao.getForwarderPageInitVO(id);
     }
     public PageContentContainerSKU getPageContentContainerSKU(long id){
-        return pageContentContainerSKUDao.getPageContentContainerSKU(id);
+       // return pageContentContainerSKUDao.getPageContentContainerSKU(id);
+        return null;
     }
 }
