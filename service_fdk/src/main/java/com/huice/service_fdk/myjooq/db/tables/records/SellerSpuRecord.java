@@ -21,7 +21,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SellerSpuRecord extends UpdatableRecordImpl<SellerSpuRecord> implements Record17<Long, Long, String, Integer, String, String, Byte, Byte, Long, Byte, LocalDateTime, LocalDateTime, String, String, Byte, Byte, String> {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -970254536;
 
     /**
      * Setter for <code>fdk_goods2.seller_spu.id</code>. id|郑保乐|2020-11-20
@@ -680,22 +680,22 @@ public class SellerSpuRecord extends UpdatableRecordImpl<SellerSpuRecord> implem
     public SellerSpuRecord(Long id, Long merchantId, String spuName, Integer platformId, String goodsId, String goodsNo, Byte source, Byte showFlag, Long pid, Byte saleStatus, LocalDateTime created, LocalDateTime modified, String mainImgUrl, String spuGoodsNo, Byte packFlag, Byte stagnantFlag, String goodsLink) {
         super(SellerSpu.SELLER_SPU);
 
-        setId(id);
-        setMerchantId(merchantId);
-        setSpuName(spuName);
-        setPlatformId(platformId);
-        setGoodsId(goodsId);
-        setGoodsNo(goodsNo);
-        setSource(source);
-        setShowFlag(showFlag);
-        setPid(pid);
-        setSaleStatus(saleStatus);
-        setCreated(created);
-        setModified(modified);
-        setMainImgUrl(mainImgUrl);
-        setSpuGoodsNo(spuGoodsNo);
-        setPackFlag(packFlag);
-        setStagnantFlag(stagnantFlag);
-        setGoodsLink(goodsLink);
+        set(0, id);
+        set(1, merchantId);
+        set(2, spuName);
+        set(3, platformId);
+        set(4, goodsId);
+        set(5, goodsNo);
+        set(6, source);
+        set(7, showFlag);
+        set(8, pid);
+        set(9, saleStatus);
+        set(10, created);
+        set(11, modified);
+        set(12, mainImgUrl);
+        set(13, spuGoodsNo);
+        set(14, packFlag);
+        set(15, stagnantFlag);
+        set(16, goodsLink);
     }
 }

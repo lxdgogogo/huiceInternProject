@@ -21,7 +21,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SellerSpuImgRecord extends UpdatableRecordImpl<SellerSpuImgRecord> implements Record7<Long, Long, Long, String, Byte, LocalDateTime, LocalDateTime> {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 953220447;
 
     /**
      * Setter for <code>fdk_goods2.seller_spu_img.id</code>. 自增ID
@@ -320,12 +320,12 @@ public class SellerSpuImgRecord extends UpdatableRecordImpl<SellerSpuImgRecord> 
     public SellerSpuImgRecord(Long id, Long merchantId, Long spuId, String imgUrl, Byte deleteFlag, LocalDateTime created, LocalDateTime modified) {
         super(SellerSpuImg.SELLER_SPU_IMG);
 
-        setId(id);
-        setMerchantId(merchantId);
-        setSpuId(spuId);
-        setImgUrl(imgUrl);
-        setDeleteFlag(deleteFlag);
-        setCreated(created);
-        setModified(modified);
+        set(0, id);
+        set(1, merchantId);
+        set(2, spuId);
+        set(3, imgUrl);
+        set(4, deleteFlag);
+        set(5, created);
+        set(6, modified);
     }
 }

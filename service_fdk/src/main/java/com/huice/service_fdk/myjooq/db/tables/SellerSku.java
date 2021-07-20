@@ -26,7 +26,6 @@ import org.jooq.TableField;
 import org.jooq.TableOptions;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
-import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
 
 
@@ -36,7 +35,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SellerSku extends TableImpl<SellerSkuRecord> {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1250239153;
 
     /**
      * The reference instance of <code>fdk_goods2.seller_sku</code>
@@ -54,224 +53,223 @@ public class SellerSku extends TableImpl<SellerSkuRecord> {
     /**
      * The column <code>fdk_goods2.seller_sku.id</code>. 自增ID
      */
-    public final TableField<SellerSkuRecord, Long> ID = createField(DSL.name("id"), SQLDataType.BIGINT.nullable(false).identity(true), this, "自增ID");
+    public final TableField<SellerSkuRecord, Long> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).identity(true), this, "自增ID");
 
     /**
      * The column <code>fdk_goods2.seller_sku.merchant_id</code>. 商户id|牛振宇|2020-11-03
      */
-    public final TableField<SellerSkuRecord, Long> MERCHANT_ID = createField(DSL.name("merchant_id"), SQLDataType.BIGINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.BIGINT)), this, "商户id|牛振宇|2020-11-03");
+    public final TableField<SellerSkuRecord, Long> MERCHANT_ID = createField(DSL.name("merchant_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BIGINT)), this, "商户id|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.seller_sku.platform_sku_rec_id</code>. 平台sku表主键|牛振宇|2020-11-20
      */
-    public final TableField<SellerSkuRecord, Long> PLATFORM_SKU_REC_ID = createField(DSL.name("platform_sku_rec_id"), SQLDataType.BIGINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.BIGINT)), this, "平台sku表主键|牛振宇|2020-11-20");
+    public final TableField<SellerSkuRecord, Long> PLATFORM_SKU_REC_ID = createField(DSL.name("platform_sku_rec_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BIGINT)), this, "平台sku表主键|牛振宇|2020-11-20");
 
     /**
      * The column <code>fdk_goods2.seller_sku.source_type</code>. 来源|@1 来自平台订单 @2来自平台下载 @3 盘TA 后生成的@4 销售商自建|郑保乐|2020-11-27
      */
-    public final TableField<SellerSkuRecord, Byte> SOURCE_TYPE = createField(DSL.name("source_type"), SQLDataType.TINYINT.nullable(false).defaultValue(DSL.inline("1", SQLDataType.TINYINT)), this, "来源|@1 来自平台订单 @2来自平台下载 @3 盘TA 后生成的@4 销售商自建|郑保乐|2020-11-27");
+    public final TableField<SellerSkuRecord, Byte> SOURCE_TYPE = createField(DSL.name("source_type"), org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("1", org.jooq.impl.SQLDataType.TINYINT)), this, "来源|@1 来自平台订单 @2来自平台下载 @3 盘TA 后生成的@4 销售商自建|郑保乐|2020-11-27");
 
     /**
      * The column <code>fdk_goods2.seller_sku.sale_status</code>. 在售状态｜ @1：在架 @2：下架 @3：店铺已删除 @4：自建默认显示 "/" | 魏柯 | 2020-12-10
      */
-    public final TableField<SellerSkuRecord, Byte> SALE_STATUS = createField(DSL.name("sale_status"), SQLDataType.TINYINT, this, "在售状态｜ @1：在架 @2：下架 @3：店铺已删除 @4：自建默认显示 \"/\" | 魏柯 | 2020-12-10");
+    public final TableField<SellerSkuRecord, Byte> SALE_STATUS = createField(DSL.name("sale_status"), org.jooq.impl.SQLDataType.TINYINT, this, "在售状态｜ @1：在架 @2：下架 @3：店铺已删除 @4：自建默认显示 \"/\" | 魏柯 | 2020-12-10");
 
     /**
      * The column <code>fdk_goods2.seller_sku.spu_id</code>. spu主键|牛振宇|2020-11-20
      */
-    public final TableField<SellerSkuRecord, Long> SPU_ID = createField(DSL.name("spu_id"), SQLDataType.BIGINT.nullable(false), this, "spu主键|牛振宇|2020-11-20");
+    public final TableField<SellerSkuRecord, Long> SPU_ID = createField(DSL.name("spu_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "spu主键|牛振宇|2020-11-20");
 
     /**
      * The column <code>fdk_goods2.seller_sku.sku_name</code>. sku名称|孟炜彬|2020-11-23
      */
-    public final TableField<SellerSkuRecord, String> SKU_NAME = createField(DSL.name("sku_name"), SQLDataType.VARCHAR(255).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "sku名称|孟炜彬|2020-11-23");
+    public final TableField<SellerSkuRecord, String> SKU_NAME = createField(DSL.name("sku_name"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "sku名称|孟炜彬|2020-11-23");
 
     /**
      * The column <code>fdk_goods2.seller_sku.sku_no</code>. 规格编码|牛振宇|2020-11-03
      */
-    public final TableField<SellerSkuRecord, String> SKU_NO = createField(DSL.name("sku_no"), SQLDataType.VARCHAR(255).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "规格编码|牛振宇|2020-11-03");
+    public final TableField<SellerSkuRecord, String> SKU_NO = createField(DSL.name("sku_no"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "规格编码|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.seller_sku.sku_code</code>. 规格码|牛振宇|2020-11-10
      */
-    public final TableField<SellerSkuRecord, String> SKU_CODE = createField(DSL.name("sku_code"), SQLDataType.VARCHAR(255).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "规格码|牛振宇|2020-11-10");
+    public final TableField<SellerSkuRecord, String> SKU_CODE = createField(DSL.name("sku_code"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "规格码|牛振宇|2020-11-10");
 
     /**
      * The column <code>fdk_goods2.seller_sku.barcode</code>. 主条码，多个条码用逗号分隔|牛振宇|2020-11-10
      */
-    public final TableField<SellerSkuRecord, String> BARCODE = createField(DSL.name("barcode"), SQLDataType.VARCHAR(255).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "主条码，多个条码用逗号分隔|牛振宇|2020-11-10");
+    public final TableField<SellerSkuRecord, String> BARCODE = createField(DSL.name("barcode"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "主条码，多个条码用逗号分隔|牛振宇|2020-11-10");
 
     /**
      * The column <code>fdk_goods2.seller_sku.barcode_num</code>. 条码个数|牛振宇|2020-11-12
      */
-    public final TableField<SellerSkuRecord, Short> BARCODE_NUM = createField(DSL.name("barcode_num"), SQLDataType.SMALLINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.SMALLINT)), this, "条码个数|牛振宇|2020-11-12");
+    public final TableField<SellerSkuRecord, Short> BARCODE_NUM = createField(DSL.name("barcode_num"), org.jooq.impl.SQLDataType.SMALLINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.SMALLINT)), this, "条码个数|牛振宇|2020-11-12");
 
     /**
      * The column <code>fdk_goods2.seller_sku.real_num</code>. 实际库存|牛振宇|2020-11-20
      */
-    public final TableField<SellerSkuRecord, BigDecimal> REAL_NUM = createField(DSL.name("real_num"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "实际库存|牛振宇|2020-11-20");
+    public final TableField<SellerSkuRecord, BigDecimal> REAL_NUM = createField(DSL.name("real_num"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "实际库存|牛振宇|2020-11-20");
 
     /**
      * The column <code>fdk_goods2.seller_sku.occupied_num</code>. 已占用库存|牛振宇|2020-11-20
      */
-    public final TableField<SellerSkuRecord, BigDecimal> OCCUPIED_NUM = createField(DSL.name("occupied_num"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "已占用库存|牛振宇|2020-11-20");
+    public final TableField<SellerSkuRecord, BigDecimal> OCCUPIED_NUM = createField(DSL.name("occupied_num"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "已占用库存|牛振宇|2020-11-20");
 
     /**
      * The column <code>fdk_goods2.seller_sku.to_out_num</code>. 待出库库存|刘宇晴|2020-12-09
      */
-    public final TableField<SellerSkuRecord, BigDecimal> TO_OUT_NUM = createField(DSL.name("to_out_num"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "待出库库存|刘宇晴|2020-12-09");
+    public final TableField<SellerSkuRecord, BigDecimal> TO_OUT_NUM = createField(DSL.name("to_out_num"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "待出库库存|刘宇晴|2020-12-09");
 
     /**
      * The column <code>fdk_goods2.seller_sku.available_num</code>. 可发库存|牛振宇|2020-11-20
      */
-    public final TableField<SellerSkuRecord, BigDecimal> AVAILABLE_NUM = createField(DSL.name("available_num"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "可发库存|牛振宇|2020-11-20");
+    public final TableField<SellerSkuRecord, BigDecimal> AVAILABLE_NUM = createField(DSL.name("available_num"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "可发库存|牛振宇|2020-11-20");
 
     /**
      * The column <code>fdk_goods2.seller_sku.img_url</code>. 图片url|牛振宇|2020-11-03
      */
-    public final TableField<SellerSkuRecord, String> IMG_URL = createField(DSL.name("img_url"), SQLDataType.VARCHAR(1024).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "图片url|牛振宇|2020-11-03");
+    public final TableField<SellerSkuRecord, String> IMG_URL = createField(DSL.name("img_url"), org.jooq.impl.SQLDataType.VARCHAR(1024).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "图片url|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.seller_sku.weight</code>. 重量|牛振宇|2020-11-03
      */
-    public final TableField<SellerSkuRecord, BigDecimal> WEIGHT = createField(DSL.name("weight"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "重量|牛振宇|2020-11-03");
+    public final TableField<SellerSkuRecord, BigDecimal> WEIGHT = createField(DSL.name("weight"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "重量|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.seller_sku.volume</code>. 体积|牛振宇|2020-11-07
      */
-    public final TableField<SellerSkuRecord, BigDecimal> VOLUME = createField(DSL.name("volume"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "体积|牛振宇|2020-11-07");
+    public final TableField<SellerSkuRecord, BigDecimal> VOLUME = createField(DSL.name("volume"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "体积|牛振宇|2020-11-07");
 
     /**
      * The column <code>fdk_goods2.seller_sku.large_size_type</code>. 大件类型，用于按照大件自动拆单|@0非大件 @1普通大件 @2独立大件|牛振宇|2020-11-07
      */
-    public final TableField<SellerSkuRecord, Byte> LARGE_SIZE_TYPE = createField(DSL.name("large_size_type"), SQLDataType.TINYINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.TINYINT)), this, "大件类型，用于按照大件自动拆单|@0非大件 @1普通大件 @2独立大件|牛振宇|2020-11-07");
+    public final TableField<SellerSkuRecord, Byte> LARGE_SIZE_TYPE = createField(DSL.name("large_size_type"), org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.TINYINT)), this, "大件类型，用于按照大件自动拆单|@0非大件 @1普通大件 @2独立大件|牛振宇|2020-11-07");
 
     /**
      * The column <code>fdk_goods2.seller_sku.retail_price</code>. 平台零售价|牛振宇|2020-11-07
      */
-    public final TableField<SellerSkuRecord, BigDecimal> RETAIL_PRICE = createField(DSL.name("retail_price"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "平台零售价|牛振宇|2020-11-07");
+    public final TableField<SellerSkuRecord, BigDecimal> RETAIL_PRICE = createField(DSL.name("retail_price"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "平台零售价|牛振宇|2020-11-07");
 
     /**
      * The column <code>fdk_goods2.seller_sku.wholesale_price</code>. 批发价|牛振宇|2020-11-07
      */
-    public final TableField<SellerSkuRecord, BigDecimal> WHOLESALE_PRICE = createField(DSL.name("wholesale_price"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "批发价|牛振宇|2020-11-07");
+    public final TableField<SellerSkuRecord, BigDecimal> WHOLESALE_PRICE = createField(DSL.name("wholesale_price"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "批发价|牛振宇|2020-11-07");
 
     /**
      * The column <code>fdk_goods2.seller_sku.lowest_price</code>. 最低价|牛振宇|2020-11-12
      */
-    public final TableField<SellerSkuRecord, BigDecimal> LOWEST_PRICE = createField(DSL.name("lowest_price"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "最低价|牛振宇|2020-11-12");
+    public final TableField<SellerSkuRecord, BigDecimal> LOWEST_PRICE = createField(DSL.name("lowest_price"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "最低价|牛振宇|2020-11-12");
 
     /**
      * The column <code>fdk_goods2.seller_sku.member_price</code>. 会员价|牛振宇|2020-11-12
      */
-    public final TableField<SellerSkuRecord, BigDecimal> MEMBER_PRICE = createField(DSL.name("member_price"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "会员价|牛振宇|2020-11-12");
+    public final TableField<SellerSkuRecord, BigDecimal> MEMBER_PRICE = createField(DSL.name("member_price"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "会员价|牛振宇|2020-11-12");
 
     /**
      * The column <code>fdk_goods2.seller_sku.market_price</code>. 市场价|牛振宇|2020-11-12
      */
-    public final TableField<SellerSkuRecord, BigDecimal> MARKET_PRICE = createField(DSL.name("market_price"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "市场价|牛振宇|2020-11-12");
+    public final TableField<SellerSkuRecord, BigDecimal> MARKET_PRICE = createField(DSL.name("market_price"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "市场价|牛振宇|2020-11-12");
 
     /**
      * The column <code>fdk_goods2.seller_sku.validity_days</code>. 保质期天数|牛振宇|2020-11-12
      */
-    public final TableField<SellerSkuRecord, Short> VALIDITY_DAYS = createField(DSL.name("validity_days"), SQLDataType.SMALLINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.SMALLINT)), this, "保质期天数|牛振宇|2020-11-12");
+    public final TableField<SellerSkuRecord, Short> VALIDITY_DAYS = createField(DSL.name("validity_days"), org.jooq.impl.SQLDataType.SMALLINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.SMALLINT)), this, "保质期天数|牛振宇|2020-11-12");
 
     /**
      * The column <code>fdk_goods2.seller_sku.best_sale_days</code>. 最佳销售天数|牛振宇|2020-11-12
      */
-    public final TableField<SellerSkuRecord, Short> BEST_SALE_DAYS = createField(DSL.name("best_sale_days"), SQLDataType.SMALLINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.SMALLINT)), this, "最佳销售天数|牛振宇|2020-11-12");
+    public final TableField<SellerSkuRecord, Short> BEST_SALE_DAYS = createField(DSL.name("best_sale_days"), org.jooq.impl.SQLDataType.SMALLINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.SMALLINT)), this, "最佳销售天数|牛振宇|2020-11-12");
 
     /**
      * The column <code>fdk_goods2.seller_sku.best_receive_days</code>. 最佳收货天数|牛振宇|2020-11-12
      */
-    public final TableField<SellerSkuRecord, Short> BEST_RECEIVE_DAYS = createField(DSL.name("best_receive_days"), SQLDataType.SMALLINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.SMALLINT)), this, "最佳收货天数|牛振宇|2020-11-12");
+    public final TableField<SellerSkuRecord, Short> BEST_RECEIVE_DAYS = createField(DSL.name("best_receive_days"), org.jooq.impl.SQLDataType.SMALLINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.SMALLINT)), this, "最佳收货天数|牛振宇|2020-11-12");
 
     /**
      * The column <code>fdk_goods2.seller_sku.replace_proportion</code>. 同款备注换货--虚拟货品换货比例|牛振宇|2020-11-10
      */
-    public final TableField<SellerSkuRecord, Byte> REPLACE_PROPORTION = createField(DSL.name("replace_proportion"), SQLDataType.TINYINT.nullable(false).defaultValue(DSL.inline("1", SQLDataType.TINYINT)), this, "同款备注换货--虚拟货品换货比例|牛振宇|2020-11-10");
+    public final TableField<SellerSkuRecord, Byte> REPLACE_PROPORTION = createField(DSL.name("replace_proportion"), org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("1", org.jooq.impl.SQLDataType.TINYINT)), this, "同款备注换货--虚拟货品换货比例|牛振宇|2020-11-10");
 
     /**
      * The column <code>fdk_goods2.seller_sku.replace_no</code>. 备注换货匹配码|牛振宇|2020-11-10
      */
-    public final TableField<SellerSkuRecord, String> REPLACE_NO = createField(DSL.name("replace_no"), SQLDataType.VARCHAR(40).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "备注换货匹配码|牛振宇|2020-11-10");
+    public final TableField<SellerSkuRecord, String> REPLACE_NO = createField(DSL.name("replace_no"), org.jooq.impl.SQLDataType.VARCHAR(40).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "备注换货匹配码|牛振宇|2020-11-10");
 
     /**
      * The column <code>fdk_goods2.seller_sku.replace_mask</code>. 备注换货标识二进制位 1同款备注换货虚拟规格 2是否在备注换货界面展示|牛振宇|2020-11-12
      */
-    public final TableField<SellerSkuRecord, Integer> REPLACE_MASK = createField(DSL.name("replace_mask"), SQLDataType.INTEGER.nullable(false).defaultValue(DSL.inline("0", SQLDataType.INTEGER)), this, "备注换货标识二进制位 1同款备注换货虚拟规格 2是否在备注换货界面展示|牛振宇|2020-11-12");
+    public final TableField<SellerSkuRecord, Integer> REPLACE_MASK = createField(DSL.name("replace_mask"), org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.INTEGER)), this, "备注换货标识二进制位 1同款备注换货虚拟规格 2是否在备注换货界面展示|牛振宇|2020-11-12");
 
     /**
      * The column <code>fdk_goods2.seller_sku.delete_flag</code>. 软删除，盘TA后置为1|@0：未删除；@1：已删除|牛振宇|2020-11-03
      */
-    public final TableField<SellerSkuRecord, Byte> DELETE_FLAG = createField(DSL.name("delete_flag"), SQLDataType.TINYINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.TINYINT)), this, "软删除，盘TA后置为1|@0：未删除；@1：已删除|牛振宇|2020-11-03");
+    public final TableField<SellerSkuRecord, Byte> DELETE_FLAG = createField(DSL.name("delete_flag"), org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.TINYINT)), this, "软删除，盘TA后置为1|@0：未删除；@1：已删除|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.seller_sku.delete_time</code>. 软删除时间，盘TA后设置该时间|牛振宇|2020-11-03
      */
-    public final TableField<SellerSkuRecord, LocalDateTime> DELETE_TIME = createField(DSL.name("delete_time"), SQLDataType.LOCALDATETIME(0), this, "软删除时间，盘TA后设置该时间|牛振宇|2020-11-03");
+    public final TableField<SellerSkuRecord, LocalDateTime> DELETE_TIME = createField(DSL.name("delete_time"), org.jooq.impl.SQLDataType.LOCALDATETIME, this, "软删除时间，盘TA后设置该时间|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.seller_sku.pid</code>. 盘TA后被指定的父级skuId|牛振宇|2020-11-07
      */
-    public final TableField<SellerSkuRecord, Long> PID = createField(DSL.name("pid"), SQLDataType.BIGINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.BIGINT)), this, "盘TA后被指定的父级skuId|牛振宇|2020-11-07");
+    public final TableField<SellerSkuRecord, Long> PID = createField(DSL.name("pid"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BIGINT)), this, "盘TA后被指定的父级skuId|牛振宇|2020-11-07");
 
     /**
      * The column <code>fdk_goods2.seller_sku.show_flag</code>. 是否展示在货品列表|@0不展示@1展示|郑保乐|2020-12-17
      */
-    public final TableField<SellerSkuRecord, Byte> SHOW_FLAG = createField(DSL.name("show_flag"), SQLDataType.TINYINT.nullable(false).defaultValue(DSL.inline("1", SQLDataType.TINYINT)), this, "是否展示在货品列表|@0不展示@1展示|郑保乐|2020-12-17");
+    public final TableField<SellerSkuRecord, Byte> SHOW_FLAG = createField(DSL.name("show_flag"), org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("1", org.jooq.impl.SQLDataType.TINYINT)), this, "是否展示在货品列表|@0不展示@1展示|郑保乐|2020-12-17");
 
     /**
      * The column <code>fdk_goods2.seller_sku.basic_unit</code>. 基本单位|牛振宇|2020-11-07
      */
-    public final TableField<SellerSkuRecord, String> BASIC_UNIT = createField(DSL.name("basic_unit"), SQLDataType.VARCHAR(20).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "基本单位|牛振宇|2020-11-07");
+    public final TableField<SellerSkuRecord, String> BASIC_UNIT = createField(DSL.name("basic_unit"), org.jooq.impl.SQLDataType.VARCHAR(20).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "基本单位|牛振宇|2020-11-07");
 
     /**
      * The column <code>fdk_goods2.seller_sku.aux_unit</code>. 辅助单位|牛振宇|2020-11-07
      */
-    public final TableField<SellerSkuRecord, String> AUX_UNIT = createField(DSL.name("aux_unit"), SQLDataType.VARCHAR(20).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "辅助单位|牛振宇|2020-11-07");
+    public final TableField<SellerSkuRecord, String> AUX_UNIT = createField(DSL.name("aux_unit"), org.jooq.impl.SQLDataType.VARCHAR(20).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "辅助单位|牛振宇|2020-11-07");
 
     /**
      * The column <code>fdk_goods2.seller_sku.tax_code_id</code>. 关联税务表税务编码|牛振宇|2020-11-12
      */
-    public final TableField<SellerSkuRecord, Integer> TAX_CODE_ID = createField(DSL.name("tax_code_id"), SQLDataType.INTEGER.nullable(false).defaultValue(DSL.inline("0", SQLDataType.INTEGER)), this, "关联税务表税务编码|牛振宇|2020-11-12");
+    public final TableField<SellerSkuRecord, Integer> TAX_CODE_ID = createField(DSL.name("tax_code_id"), org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.INTEGER)), this, "关联税务表税务编码|牛振宇|2020-11-12");
 
     /**
      * The column <code>fdk_goods2.seller_sku.tax_rate</code>. 税率|牛振宇|2020-11-12
      */
-    public final TableField<SellerSkuRecord, BigDecimal> TAX_RATE = createField(DSL.name("tax_rate"), SQLDataType.DECIMAL(8, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "税率|牛振宇|2020-11-12");
+    public final TableField<SellerSkuRecord, BigDecimal> TAX_RATE = createField(DSL.name("tax_rate"), org.jooq.impl.SQLDataType.DECIMAL(8, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "税率|牛振宇|2020-11-12");
 
     /**
      * The column <code>fdk_goods2.seller_sku.created</code>.
      */
-    public final TableField<SellerSkuRecord, LocalDateTime> CREATED = createField(DSL.name("created"), SQLDataType.LOCALDATETIME(0).nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", SQLDataType.LOCALDATETIME)), this, "");
+    public final TableField<SellerSkuRecord, LocalDateTime> CREATED = createField(DSL.name("created"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(org.jooq.impl.DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "");
 
     /**
      * The column <code>fdk_goods2.seller_sku.modified</code>.
      */
-    public final TableField<SellerSkuRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), SQLDataType.LOCALDATETIME(0).nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", SQLDataType.LOCALDATETIME)), this, "");
+    public final TableField<SellerSkuRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(org.jooq.impl.DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "");
 
     /**
      * The column <code>fdk_goods2.seller_sku.pack_flag</code>. 组合装标识 @0:单品 @1:组合装|郑保乐|2021-04-20
      */
-    public final TableField<SellerSkuRecord, Byte> PACK_FLAG = createField(DSL.name("pack_flag"), SQLDataType.TINYINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.TINYINT)), this, "组合装标识 @0:单品 @1:组合装|郑保乐|2021-04-20");
+    public final TableField<SellerSkuRecord, Byte> PACK_FLAG = createField(DSL.name("pack_flag"), org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.TINYINT)), this, "组合装标识 @0:单品 @1:组合装|郑保乐|2021-04-20");
 
     /**
      * The column <code>fdk_goods2.seller_sku.prior_occupied_num</code>. 优先占用|刘宇晴|2021-04-27
      */
-    public final TableField<SellerSkuRecord, BigDecimal> PRIOR_OCCUPIED_NUM = createField(DSL.name("prior_occupied_num"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "优先占用|刘宇晴|2021-04-27");
+    public final TableField<SellerSkuRecord, BigDecimal> PRIOR_OCCUPIED_NUM = createField(DSL.name("prior_occupied_num"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "优先占用|刘宇晴|2021-04-27");
 
     /**
      * The column <code>fdk_goods2.seller_sku.take_goods_type</code>. 子单中的货品拿货类型 @0 自拿；@1 代拿|刘宇晴|2021-06-08
      */
-    public final TableField<SellerSkuRecord, Byte> TAKE_GOODS_TYPE = createField(DSL.name("take_goods_type"), SQLDataType.TINYINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.TINYINT)), this, "子单中的货品拿货类型 @0 自拿；@1 代拿|刘宇晴|2021-06-08");
+    public final TableField<SellerSkuRecord, Byte> TAKE_GOODS_TYPE = createField(DSL.name("take_goods_type"), org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.TINYINT)), this, "子单中的货品拿货类型 @0 自拿；@1 代拿|刘宇晴|2021-06-08");
 
-    private SellerSku(Name alias, Table<SellerSkuRecord> aliased) {
-        this(alias, aliased, null);
-    }
-
-    private SellerSku(Name alias, Table<SellerSkuRecord> aliased, Field<?>[] parameters) {
-        super(alias, null, aliased, parameters, DSL.comment("销售商货品SKU表"), TableOptions.table());
+    /**
+     * Create a <code>fdk_goods2.seller_sku</code> table reference
+     */
+    public SellerSku() {
+        this(DSL.name("seller_sku"), null);
     }
 
     /**
@@ -288,11 +286,12 @@ public class SellerSku extends TableImpl<SellerSkuRecord> {
         this(alias, SELLER_SKU);
     }
 
-    /**
-     * Create a <code>fdk_goods2.seller_sku</code> table reference
-     */
-    public SellerSku() {
-        this(DSL.name("seller_sku"), null);
+    private SellerSku(Name alias, Table<SellerSkuRecord> aliased) {
+        this(alias, aliased, null);
+    }
+
+    private SellerSku(Name alias, Table<SellerSkuRecord> aliased, Field<?>[] parameters) {
+        super(alias, null, aliased, parameters, DSL.comment("销售商货品SKU表"), TableOptions.table());
     }
 
     public <O extends Record> SellerSku(Table<O> child, ForeignKey<O, SellerSkuRecord> key) {
@@ -311,7 +310,7 @@ public class SellerSku extends TableImpl<SellerSkuRecord> {
 
     @Override
     public Identity<SellerSkuRecord, Long> getIdentity() {
-        return (Identity<SellerSkuRecord, Long>) super.getIdentity();
+        return Keys.IDENTITY_SELLER_SKU;
     }
 
     @Override

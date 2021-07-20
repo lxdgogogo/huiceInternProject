@@ -26,7 +26,6 @@ import org.jooq.TableField;
 import org.jooq.TableOptions;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
-import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
 
 
@@ -36,7 +35,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SellerSpuImg extends TableImpl<SellerSpuImgRecord> {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -1799672961;
 
     /**
      * The reference instance of <code>fdk_goods2.seller_spu_img</code>
@@ -54,44 +53,43 @@ public class SellerSpuImg extends TableImpl<SellerSpuImgRecord> {
     /**
      * The column <code>fdk_goods2.seller_spu_img.id</code>. 自增ID
      */
-    public final TableField<SellerSpuImgRecord, Long> ID = createField(DSL.name("id"), SQLDataType.BIGINT.nullable(false).identity(true), this, "自增ID");
+    public final TableField<SellerSpuImgRecord, Long> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).identity(true), this, "自增ID");
 
     /**
      * The column <code>fdk_goods2.seller_spu_img.merchant_id</code>. 销售商/供货商商户id|牛振宇|2020-11-20
      */
-    public final TableField<SellerSpuImgRecord, Long> MERCHANT_ID = createField(DSL.name("merchant_id"), SQLDataType.BIGINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.BIGINT)), this, "销售商/供货商商户id|牛振宇|2020-11-20");
+    public final TableField<SellerSpuImgRecord, Long> MERCHANT_ID = createField(DSL.name("merchant_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BIGINT)), this, "销售商/供货商商户id|牛振宇|2020-11-20");
 
     /**
      * The column <code>fdk_goods2.seller_spu_img.spu_id</code>. 销售商/供货商spuId|牛振宇|2020-11-20
      */
-    public final TableField<SellerSpuImgRecord, Long> SPU_ID = createField(DSL.name("spu_id"), SQLDataType.BIGINT.nullable(false), this, "销售商/供货商spuId|牛振宇|2020-11-20");
+    public final TableField<SellerSpuImgRecord, Long> SPU_ID = createField(DSL.name("spu_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "销售商/供货商spuId|牛振宇|2020-11-20");
 
     /**
      * The column <code>fdk_goods2.seller_spu_img.img_url</code>. 图片url|牛振宇|2020-11-20
      */
-    public final TableField<SellerSpuImgRecord, String> IMG_URL = createField(DSL.name("img_url"), SQLDataType.VARCHAR(1024).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "图片url|牛振宇|2020-11-20");
+    public final TableField<SellerSpuImgRecord, String> IMG_URL = createField(DSL.name("img_url"), org.jooq.impl.SQLDataType.VARCHAR(1024).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "图片url|牛振宇|2020-11-20");
 
     /**
      * The column <code>fdk_goods2.seller_spu_img.delete_flag</code>. 软删除|@0：未删除；@1：已删除|牛振宇|2020-11-20
      */
-    public final TableField<SellerSpuImgRecord, Byte> DELETE_FLAG = createField(DSL.name("delete_flag"), SQLDataType.TINYINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.TINYINT)), this, "软删除|@0：未删除；@1：已删除|牛振宇|2020-11-20");
+    public final TableField<SellerSpuImgRecord, Byte> DELETE_FLAG = createField(DSL.name("delete_flag"), org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.TINYINT)), this, "软删除|@0：未删除；@1：已删除|牛振宇|2020-11-20");
 
     /**
      * The column <code>fdk_goods2.seller_spu_img.created</code>. 创建时间|牛振宇|2020-11-20
      */
-    public final TableField<SellerSpuImgRecord, LocalDateTime> CREATED = createField(DSL.name("created"), SQLDataType.LOCALDATETIME(0).nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", SQLDataType.LOCALDATETIME)), this, "创建时间|牛振宇|2020-11-20");
+    public final TableField<SellerSpuImgRecord, LocalDateTime> CREATED = createField(DSL.name("created"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(org.jooq.impl.DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "创建时间|牛振宇|2020-11-20");
 
     /**
      * The column <code>fdk_goods2.seller_spu_img.modified</code>. 修改时间|牛振宇|2020-11-20
      */
-    public final TableField<SellerSpuImgRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), SQLDataType.LOCALDATETIME(0).nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", SQLDataType.LOCALDATETIME)), this, "修改时间|牛振宇|2020-11-20");
+    public final TableField<SellerSpuImgRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(org.jooq.impl.DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "修改时间|牛振宇|2020-11-20");
 
-    private SellerSpuImg(Name alias, Table<SellerSpuImgRecord> aliased) {
-        this(alias, aliased, null);
-    }
-
-    private SellerSpuImg(Name alias, Table<SellerSpuImgRecord> aliased, Field<?>[] parameters) {
-        super(alias, null, aliased, parameters, DSL.comment("spu图片列表"), TableOptions.table());
+    /**
+     * Create a <code>fdk_goods2.seller_spu_img</code> table reference
+     */
+    public SellerSpuImg() {
+        this(DSL.name("seller_spu_img"), null);
     }
 
     /**
@@ -108,11 +106,12 @@ public class SellerSpuImg extends TableImpl<SellerSpuImgRecord> {
         this(alias, SELLER_SPU_IMG);
     }
 
-    /**
-     * Create a <code>fdk_goods2.seller_spu_img</code> table reference
-     */
-    public SellerSpuImg() {
-        this(DSL.name("seller_spu_img"), null);
+    private SellerSpuImg(Name alias, Table<SellerSpuImgRecord> aliased) {
+        this(alias, aliased, null);
+    }
+
+    private SellerSpuImg(Name alias, Table<SellerSpuImgRecord> aliased, Field<?>[] parameters) {
+        super(alias, null, aliased, parameters, DSL.comment("spu图片列表"), TableOptions.table());
     }
 
     public <O extends Record> SellerSpuImg(Table<O> child, ForeignKey<O, SellerSpuImgRecord> key) {
@@ -131,7 +130,7 @@ public class SellerSpuImg extends TableImpl<SellerSpuImgRecord> {
 
     @Override
     public Identity<SellerSpuImgRecord, Long> getIdentity() {
-        return (Identity<SellerSpuImgRecord, Long>) super.getIdentity();
+        return Keys.IDENTITY_SELLER_SPU_IMG;
     }
 
     @Override

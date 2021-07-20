@@ -18,7 +18,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SysShopRecord extends UpdatableRecordImpl<SysShopRecord> {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -1369725665;
 
     /**
      * Setter for <code>fdk_goods2.sys_shop.id</code>.
@@ -550,41 +550,41 @@ public class SysShopRecord extends UpdatableRecordImpl<SysShopRecord> {
     public SysShopRecord(Long id, Long merchantId, Integer platformId, Byte subPlatformId, String shopNo, String shopName, String imgUrl, String payAccountId, Byte authStatus, Byte pushRdsId, Byte payAuthStatus, String accountId, String accountNick, String appKey, String refreshToken, String shSecret, LocalDateTime authTime, LocalDateTime expireTime, LocalDateTime reExpireTime, Integer unfreezeAuthTime, LocalDateTime serviceExpireTime, Byte serviceType, Byte sendOrderQuantityFlag, Byte inviterSendOrderFlag, String remark, Byte deleteFlag, Long taobaoShopId, String elecInvoicePayeeId, String elecInvoiceProviderId, String paperInvoiceProviderId, Byte logisticsSyncDelay, Integer deliverOrderNum, Integer spuNum, LocalDateTime modified, LocalDateTime created, Byte istjbseller) {
         super(SysShop.SYS_SHOP);
 
-        setId(id);
-        setMerchantId(merchantId);
-        setPlatformId(platformId);
-        setSubPlatformId(subPlatformId);
-        setShopNo(shopNo);
-        setShopName(shopName);
-        setImgUrl(imgUrl);
-        setPayAccountId(payAccountId);
-        setAuthStatus(authStatus);
-        setPushRdsId(pushRdsId);
-        setPayAuthStatus(payAuthStatus);
-        setAccountId(accountId);
-        setAccountNick(accountNick);
-        setAppKey(appKey);
-        setRefreshToken(refreshToken);
-        setShSecret(shSecret);
-        setAuthTime(authTime);
-        setExpireTime(expireTime);
-        setReExpireTime(reExpireTime);
-        setUnfreezeAuthTime(unfreezeAuthTime);
-        setServiceExpireTime(serviceExpireTime);
-        setServiceType(serviceType);
-        setSendOrderQuantityFlag(sendOrderQuantityFlag);
-        setInviterSendOrderFlag(inviterSendOrderFlag);
-        setRemark(remark);
-        setDeleteFlag(deleteFlag);
-        setTaobaoShopId(taobaoShopId);
-        setElecInvoicePayeeId(elecInvoicePayeeId);
-        setElecInvoiceProviderId(elecInvoiceProviderId);
-        setPaperInvoiceProviderId(paperInvoiceProviderId);
-        setLogisticsSyncDelay(logisticsSyncDelay);
-        setDeliverOrderNum(deliverOrderNum);
-        setSpuNum(spuNum);
-        setModified(modified);
-        setCreated(created);
-        setIstjbseller(istjbseller);
+        set(0, id);
+        set(1, merchantId);
+        set(2, platformId);
+        set(3, subPlatformId);
+        set(4, shopNo);
+        set(5, shopName);
+        set(6, imgUrl);
+        set(7, payAccountId);
+        set(8, authStatus);
+        set(9, pushRdsId);
+        set(10, payAuthStatus);
+        set(11, accountId);
+        set(12, accountNick);
+        set(13, appKey);
+        set(14, refreshToken);
+        set(15, shSecret);
+        set(16, authTime);
+        set(17, expireTime);
+        set(18, reExpireTime);
+        set(19, unfreezeAuthTime);
+        set(20, serviceExpireTime);
+        set(21, serviceType);
+        set(22, sendOrderQuantityFlag);
+        set(23, inviterSendOrderFlag);
+        set(24, remark);
+        set(25, deleteFlag);
+        set(26, taobaoShopId);
+        set(27, elecInvoicePayeeId);
+        set(28, elecInvoiceProviderId);
+        set(29, paperInvoiceProviderId);
+        set(30, logisticsSyncDelay);
+        set(31, deliverOrderNum);
+        set(32, spuNum);
+        set(33, modified);
+        set(34, created);
+        set(35, istjbseller);
     }
 }

@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: fdk-user
+    name: fdk-service
   datasource:
     url: jdbc:mysql://60.205.180.234:3306/fdk_goods2?serverTimezone=Asia/Shanghai
     username: fdk_summer2
