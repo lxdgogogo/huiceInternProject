@@ -39,6 +39,10 @@ public class Result<T> {
         return new Result(SUCCESS, data, msg);
     }
 
+    public static <T> Result<T> ok(int code,String data, String msg) {
+        return new Result(SUCCESS, data, msg);
+    }
+
     public static <T> Result<T> error(int code, String errorMsg) {
         return new Result(code, null, errorMsg);
     }
