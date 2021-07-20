@@ -1,7 +1,13 @@
 package com.huice.service_fdk.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ForwarderPageInitVO {
-    private ArrayList<city> cityTree;
+    private final List<City> cityTree = new ArrayList<>();
+
+
+    public List<City> getCityTree() {
+        return cityTree;
+    }
 }

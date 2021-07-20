@@ -6,15 +6,15 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-import static com.huice.service_fdk.myjooq.db.Tables.SYS_SHOP;
 import static com.huice.service_fdk.myjooq.db.tables.ForwarderSupplier.FORWARDER_SUPPLIER;
 
 @Repository
 public class ForwarderSupplierGroupDao extends BaseDao{
     public List<ForwarderSupplierGroupVO> getForwarderSupplierGroupVO(long id){
         //FORWARDER_SUPPLIER.GROUP_NAME,
-        List<String> groups = db.select(FORWARDER_SUPPLIER.GROUP_NAME)
+        List<String> groups = db.selectDistinct(FORWARDER_SUPPLIER.GROUP_NAME)
                 .from(FORWARDER_SUPPLIER)
                 .where(FORWARDER_SUPPLIER.MERCHANT_ID.equal(id))
                 .fetchInto(String.class);
@@ -37,11 +37,11 @@ public class ForwarderSupplierGroupDao extends BaseDao{
         for(String group:groups){
             ForwarderSupplierGroupVO forwarderSupplierGroupVO = new ForwarderSupplierGroupVO(group);
             forwarderSupplierGroupVOList.add(forwarderSupplierGroupVO);
-            for(ForwarderSupplierVO forwarderSupplierVO:forwarderSupplierVOList){
-                if(forwarderSupplierVO.getGroupName().equals(group)){
-                    forwarderSupplierGroupVO.getSuppliers().add(forwarderSupplierVO);
-                }
-            }
+            forwarderSupplierGroupVO.getSuppliers().addAll(
+                            forwarderSupplierVOList.stream()
+                            .filter(forwarderSupplierVO -> forwarderSupplierVO.getGroupName().equals(group))
+                            .collect(Collectors.toList())
+                    );
         }
         return forwarderSupplierGroupVOList;
 
