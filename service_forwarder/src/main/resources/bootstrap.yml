@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: service_forwarder
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://121.4.191.125:8848
+
+      config:
+        server-addr: http://121.4.191.125:8848
+        encode: UTF-8
+        file-extension: yaml

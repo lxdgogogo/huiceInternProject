@@ -1,0 +1,8 @@
+server:
+  port: 8091
+spring:
+  datasource:
+    url: jdbc:mysql://121.4.191.125:33306/fdk_forwarder2?serverTimezone=GMT%2B8
+    username: root
+    password: root
+
