@@ -1,5 +1,7 @@
 package com.huice.service_forwarder.entity;
 
+import lombok.Data;
+
 import java.util.Date;
 import java.io.Serializable;
 
@@ -9,6 +11,8 @@ import java.io.Serializable;
  * @author makejava
  * @since 2021-07-20 10:42:39
  */
+
+@Data
 public class Business implements Serializable {
     private static final long serialVersionUID = 361007910402719146L;
     /**
@@ -71,134 +75,5 @@ public class Business implements Serializable {
     private Date created;
 
     private Date modified;
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getCityCode() {
-        return cityCode;
-    }
-
-    public void setCityCode(Long cityCode) {
-        this.cityCode = cityCode;
-    }
-
-    public String getCityName() {
-        return cityName;
-    }
-
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
-    }
-
-    public Long getMarketCode() {
-        return marketCode;
-    }
-
-    public void setMarketCode(Long marketCode) {
-        this.marketCode = marketCode;
-    }
-
-    public String getMarketName() {
-        return marketName;
-    }
-
-    public void setMarketName(String marketName) {
-        this.marketName = marketName;
-    }
-
-    public Long getFloorCode() {
-        return floorCode;
-    }
-
-    public void setFloorCode(Long floorCode) {
-        this.floorCode = floorCode;
-    }
-
-    public String getFloorName() {
-        return floorName;
-    }
-
-    public void setFloorName(String floorName) {
-        this.floorName = floorName;
-    }
-
-    public Long getBusinessCode() {
-        return businessCode;
-    }
-
-    public void setBusinessCode(Long businessCode) {
-        this.businessCode = businessCode;
-    }
-
-    public String getBusinessName() {
-        return businessName;
-    }
-
-    public void setBusinessName(String businessName) {
-        this.businessName = businessName;
-    }
-
-    public String getBusinessTotalName() {
-        return businessTotalName;
-    }
-
-    public void setBusinessTotalName(String businessTotalName) {
-        this.businessTotalName = businessTotalName;
-    }
-
-    public Object getDeleteFlag() {
-        return deleteFlag;
-    }
-
-    public void setDeleteFlag(Object deleteFlag) {
-        this.deleteFlag = deleteFlag;
-    }
-
-    public String getXCoordinate() {
-        return xCoordinate;
-    }
-
-    public void setXCoordinate(String xCoordinate) {
-        this.xCoordinate = xCoordinate;
-    }
-
-    public String getYCoordinate() {
-        return yCoordinate;
-    }
-
-    public void setYCoordinate(String yCoordinate) {
-        this.yCoordinate = yCoordinate;
-    }
-
-    public Object getType() {
-        return type;
-    }
-
-    public void setType(Object type) {
-        this.type = type;
-    }
-
-    public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    public Date getModified() {
-        return modified;
-    }
-
-    public void setModified(Date modified) {
-        this.modified = modified;
-    }
 
 }
