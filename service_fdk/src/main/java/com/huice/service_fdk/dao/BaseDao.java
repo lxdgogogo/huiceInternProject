@@ -14,11 +14,9 @@ import javax.annotation.Resource;
 public class BaseDao {
 
     @Resource(name = "dslContext")
-//    @Autowired
-    protected DSLContext db;
+    DSLContext db;
 
     @Resource(name = "dslContextCheckMerchant")
-//    @Autowired
     DSLContext dbCheckMerchant;
 
 }

@@ -8,11 +8,16 @@ import lombok.Data;
 @Data
 public class SummarySumVO {
     /**
-     * sku种类
+     * 已推送
      */
     private Number pushedNum;
     /**
-     * sku总数量
+     * 待推送
      */
     private Number waitPushNum;
+
+    public SummarySumVO(Integer waitPushNum, Integer pushedNum) {
+        this.pushedNum = pushedNum;
+        this.waitPushNum = waitPushNum;
+    }
 }

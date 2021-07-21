@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <option name="BUILD_PROCESS_ADDITIONAL_VM_OPTIONS" value="-Djps.track.ap.dependencies=false" />
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
@@ -8,7 +9,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="service_gateway" />
-        <module name="service_forwarder" />
         <module name="service_dyna" />
         <module name="service_fdk" />
       </profile>
@@ -18,7 +18,6 @@
       <module name="service-test" target="1.8" />
       <module name="service_dyna" target="1.8" />
       <module name="service_fdk" target="1.8" />
-      <module name="service_forwarder" target="1.8" />
       <module name="service_gateway" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -27,7 +26,6 @@
       <module name="service-test" options="-parameters" />
       <module name="service_dyna" options="-parameters" />
       <module name="service_fdk" options="-parameters" />
-      <module name="service_forwarder" options="-parameters" />
       <module name="service_gateway" options="-parameters" />
     </option>
   </component>

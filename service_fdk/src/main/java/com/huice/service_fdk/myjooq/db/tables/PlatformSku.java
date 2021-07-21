@@ -24,7 +24,6 @@ import org.jooq.TableField;
 import org.jooq.TableOptions;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
-import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
 import org.jooq.types.ULong;
 
@@ -35,7 +34,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class PlatformSku extends TableImpl<PlatformSkuRecord> {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -1276782799;
 
     /**
      * The reference instance of <code>fdk_goods2.platform_sku</code>
@@ -53,139 +52,138 @@ public class PlatformSku extends TableImpl<PlatformSkuRecord> {
     /**
      * The column <code>fdk_goods2.platform_sku.id</code>. 自增ID|牛振宇|2020-11-24
      */
-    public final TableField<PlatformSkuRecord, ULong> ID = createField(DSL.name("id"), SQLDataType.BIGINTUNSIGNED.nullable(false).identity(true), this, "自增ID|牛振宇|2020-11-24");
+    public final TableField<PlatformSkuRecord, ULong> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.BIGINTUNSIGNED.nullable(false).identity(true), this, "自增ID|牛振宇|2020-11-24");
 
     /**
      * The column <code>fdk_goods2.platform_sku.merchant_id</code>. 商户id|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, Long> MERCHANT_ID = createField(DSL.name("merchant_id"), SQLDataType.BIGINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.BIGINT)), this, "商户id|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, Long> MERCHANT_ID = createField(DSL.name("merchant_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BIGINT)), this, "商户id|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.sale_status</code>. 在售状态｜ @1：在架 @2：下架 @3：店铺已删除 @4：自建默认显示 "/" | 魏柯 | 2020-12-10
      */
-    public final TableField<PlatformSkuRecord, Byte> SALE_STATUS = createField(DSL.name("sale_status"), SQLDataType.TINYINT, this, "在售状态｜ @1：在架 @2：下架 @3：店铺已删除 @4：自建默认显示 \"/\" | 魏柯 | 2020-12-10");
+    public final TableField<PlatformSkuRecord, Byte> SALE_STATUS = createField(DSL.name("sale_status"), org.jooq.impl.SQLDataType.TINYINT, this, "在售状态｜ @1：在架 @2：下架 @3：店铺已删除 @4：自建默认显示 \"/\" | 魏柯 | 2020-12-10");
 
     /**
      * The column <code>fdk_goods2.platform_sku.platform_id</code>. 平台id|牛振宇|2020-12-10
      */
-    public final TableField<PlatformSkuRecord, Integer> PLATFORM_ID = createField(DSL.name("platform_id"), SQLDataType.INTEGER.nullable(false).defaultValue(DSL.inline("0", SQLDataType.INTEGER)), this, "平台id|牛振宇|2020-12-10");
+    public final TableField<PlatformSkuRecord, Integer> PLATFORM_ID = createField(DSL.name("platform_id"), org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.INTEGER)), this, "平台id|牛振宇|2020-12-10");
 
     /**
      * The column <code>fdk_goods2.platform_sku.platform_name</code>. 平台名称|牛振宇|2020-11-10
      */
-    public final TableField<PlatformSkuRecord, String> PLATFORM_NAME = createField(DSL.name("platform_name"), SQLDataType.VARCHAR(40).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "平台名称|牛振宇|2020-11-10");
+    public final TableField<PlatformSkuRecord, String> PLATFORM_NAME = createField(DSL.name("platform_name"), org.jooq.impl.SQLDataType.VARCHAR(40).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "平台名称|牛振宇|2020-11-10");
 
     /**
      * The column <code>fdk_goods2.platform_sku.shop_id</code>. 店铺id|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, Long> SHOP_ID = createField(DSL.name("shop_id"), SQLDataType.BIGINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.BIGINT)), this, "店铺id|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, Long> SHOP_ID = createField(DSL.name("shop_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BIGINT)), this, "店铺id|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.goods_id</code>. 平台货品id|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, String> GOODS_ID = createField(DSL.name("goods_id"), SQLDataType.VARCHAR(40).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "平台货品id|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, String> GOODS_ID = createField(DSL.name("goods_id"), org.jooq.impl.SQLDataType.VARCHAR(40).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "平台货品id|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.goods_name</code>. 平台货品名称|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, String> GOODS_NAME = createField(DSL.name("goods_name"), SQLDataType.VARCHAR(250).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "平台货品名称|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, String> GOODS_NAME = createField(DSL.name("goods_name"), org.jooq.impl.SQLDataType.VARCHAR(250).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "平台货品名称|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.sku_id</code>. 平台skuid|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, String> SKU_ID = createField(DSL.name("sku_id"), SQLDataType.VARCHAR(40).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "平台skuid|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, String> SKU_ID = createField(DSL.name("sku_id"), org.jooq.impl.SQLDataType.VARCHAR(40).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "平台skuid|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.sku_code</code>. 平台规格码|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, String> SKU_CODE = createField(DSL.name("sku_code"), SQLDataType.VARCHAR(40).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "平台规格码|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, String> SKU_CODE = createField(DSL.name("sku_code"), org.jooq.impl.SQLDataType.VARCHAR(40).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "平台规格码|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.sku_name</code>. 平台规格名|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, String> SKU_NAME = createField(DSL.name("sku_name"), SQLDataType.VARCHAR(100).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "平台规格名|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, String> SKU_NAME = createField(DSL.name("sku_name"), org.jooq.impl.SQLDataType.VARCHAR(100).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "平台规格名|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.sku_properties</code>. 平台sku属性串,如 1627207:3232483;1630696:3284570|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, String> SKU_PROPERTIES = createField(DSL.name("sku_properties"), SQLDataType.VARCHAR(1024).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "平台sku属性串,如 1627207:3232483;1630696:3284570|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, String> SKU_PROPERTIES = createField(DSL.name("sku_properties"), org.jooq.impl.SQLDataType.VARCHAR(1024).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "平台sku属性串,如 1627207:3232483;1630696:3284570|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.outer_id</code>. 商家编码(spu维度)|牛振宇|2020-11-10
      */
-    public final TableField<PlatformSkuRecord, String> OUTER_ID = createField(DSL.name("outer_id"), SQLDataType.VARCHAR(255).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "商家编码(spu维度)|牛振宇|2020-11-10");
+    public final TableField<PlatformSkuRecord, String> OUTER_ID = createField(DSL.name("outer_id"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "商家编码(spu维度)|牛振宇|2020-11-10");
 
     /**
      * The column <code>fdk_goods2.platform_sku.sku_outer_id</code>. 规格商家编码(sku维度)|牛振宇|2020-11-10
      */
-    public final TableField<PlatformSkuRecord, String> SKU_OUTER_ID = createField(DSL.name("sku_outer_id"), SQLDataType.VARCHAR(255).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "规格商家编码(sku维度)|牛振宇|2020-11-10");
+    public final TableField<PlatformSkuRecord, String> SKU_OUTER_ID = createField(DSL.name("sku_outer_id"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "规格商家编码(sku维度)|牛振宇|2020-11-10");
 
     /**
      * The column <code>fdk_goods2.platform_sku.cid</code>. 平台类目|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, String> CID = createField(DSL.name("cid"), SQLDataType.VARCHAR(40).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "平台类目|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, String> CID = createField(DSL.name("cid"), org.jooq.impl.SQLDataType.VARCHAR(40).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "平台类目|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.price</code>. 平台售价，开启库存同步才准确|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, BigDecimal> PRICE = createField(DSL.name("price"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "平台售价，开启库存同步才准确|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, BigDecimal> PRICE = createField(DSL.name("price"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "平台售价，开启库存同步才准确|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.stock_num</code>. 平台库存量，只有开启库存同步的货品才准确|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, BigDecimal> STOCK_NUM = createField(DSL.name("stock_num"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "平台库存量，只有开启库存同步的货品才准确|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, BigDecimal> STOCK_NUM = createField(DSL.name("stock_num"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "平台库存量，只有开启库存同步的货品才准确|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.img_url</code>. 图片url|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, String> IMG_URL = createField(DSL.name("img_url"), SQLDataType.VARCHAR(1024).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "图片url|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, String> IMG_URL = createField(DSL.name("img_url"), org.jooq.impl.SQLDataType.VARCHAR(1024).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "图片url|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.barcode</code>. 平台上的条码,多个条码用逗号分隔|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, String> BARCODE = createField(DSL.name("barcode"), SQLDataType.VARCHAR(255).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "平台上的条码,多个条码用逗号分隔|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, String> BARCODE = createField(DSL.name("barcode"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "平台上的条码,多个条码用逗号分隔|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.hold_stock_type</code>. 扣减库存方式：1拍下减库存 2付款减库存|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, Byte> HOLD_STOCK_TYPE = createField(DSL.name("hold_stock_type"), SQLDataType.TINYINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.TINYINT)), this, "扣减库存方式：1拍下减库存 2付款减库存|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, Byte> HOLD_STOCK_TYPE = createField(DSL.name("hold_stock_type"), org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.TINYINT)), this, "扣减库存方式：1拍下减库存 2付款减库存|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.hold_stock</code>. 占用库存量|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, BigDecimal> HOLD_STOCK = createField(DSL.name("hold_stock"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "占用库存量|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, BigDecimal> HOLD_STOCK = createField(DSL.name("hold_stock"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "占用库存量|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.modify_mask</code>. 修改标记，平台货品信息发生变化置为1|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, Integer> MODIFY_MASK = createField(DSL.name("modify_mask"), SQLDataType.INTEGER.nullable(false).defaultValue(DSL.inline("1", SQLDataType.INTEGER)), this, "修改标记，平台货品信息发生变化置为1|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, Integer> MODIFY_MASK = createField(DSL.name("modify_mask"), org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaultValue(org.jooq.impl.DSL.inline("1", org.jooq.impl.SQLDataType.INTEGER)), this, "修改标记，平台货品信息发生变化置为1|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.delete_flag</code>. 删除标志|@0未删除；@1已删除|牛振宇|2020-11-20
      */
-    public final TableField<PlatformSkuRecord, Byte> DELETE_FLAG = createField(DSL.name("delete_flag"), SQLDataType.TINYINT.nullable(false), this, "删除标志|@0未删除；@1已删除|牛振宇|2020-11-20");
+    public final TableField<PlatformSkuRecord, Byte> DELETE_FLAG = createField(DSL.name("delete_flag"), org.jooq.impl.SQLDataType.TINYINT.nullable(false), this, "删除标志|@0未删除；@1已删除|牛振宇|2020-11-20");
 
     /**
      * The column <code>fdk_goods2.platform_sku.created</code>. 创建时间|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, LocalDateTime> CREATED = createField(DSL.name("created"), SQLDataType.LOCALDATETIME(0).nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", SQLDataType.LOCALDATETIME)), this, "创建时间|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, LocalDateTime> CREATED = createField(DSL.name("created"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(org.jooq.impl.DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "创建时间|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.modified</code>. 更新时间|牛振宇|2020-11-03
      */
-    public final TableField<PlatformSkuRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), SQLDataType.LOCALDATETIME(0).nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", SQLDataType.LOCALDATETIME)), this, "更新时间|牛振宇|2020-11-03");
+    public final TableField<PlatformSkuRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(org.jooq.impl.DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "更新时间|牛振宇|2020-11-03");
 
     /**
      * The column <code>fdk_goods2.platform_sku.main_img_url</code>. 主图url|牛振宇|2021-06-29
      */
-    public final TableField<PlatformSkuRecord, String> MAIN_IMG_URL = createField(DSL.name("main_img_url"), SQLDataType.VARCHAR(1024).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "主图url|牛振宇|2021-06-29");
+    public final TableField<PlatformSkuRecord, String> MAIN_IMG_URL = createField(DSL.name("main_img_url"), org.jooq.impl.SQLDataType.VARCHAR(1024).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "主图url|牛振宇|2021-06-29");
 
-    private PlatformSku(Name alias, Table<PlatformSkuRecord> aliased) {
-        this(alias, aliased, null);
-    }
-
-    private PlatformSku(Name alias, Table<PlatformSkuRecord> aliased, Field<?>[] parameters) {
-        super(alias, null, aliased, parameters, DSL.comment("平台货品SKU表|牛振宇|2020-11-03"), TableOptions.table());
+    /**
+     * Create a <code>fdk_goods2.platform_sku</code> table reference
+     */
+    public PlatformSku() {
+        this(DSL.name("platform_sku"), null);
     }
 
     /**
@@ -202,11 +200,12 @@ public class PlatformSku extends TableImpl<PlatformSkuRecord> {
         this(alias, PLATFORM_SKU);
     }
 
-    /**
-     * Create a <code>fdk_goods2.platform_sku</code> table reference
-     */
-    public PlatformSku() {
-        this(DSL.name("platform_sku"), null);
+    private PlatformSku(Name alias, Table<PlatformSkuRecord> aliased) {
+        this(alias, aliased, null);
+    }
+
+    private PlatformSku(Name alias, Table<PlatformSkuRecord> aliased, Field<?>[] parameters) {
+        super(alias, null, aliased, parameters, DSL.comment("平台货品SKU表|牛振宇|2020-11-03"), TableOptions.table());
     }
 
     public <O extends Record> PlatformSku(Table<O> child, ForeignKey<O, PlatformSkuRecord> key) {
@@ -220,7 +219,7 @@ public class PlatformSku extends TableImpl<PlatformSkuRecord> {
 
     @Override
     public Identity<PlatformSkuRecord, ULong> getIdentity() {
-        return (Identity<PlatformSkuRecord, ULong>) super.getIdentity();
+        return Keys.IDENTITY_PLATFORM_SKU;
     }
 
     @Override
