@@ -5,8 +5,9 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.2</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.3.3.RELEASE</version>
+        <relativePath/>
+        <!-- lookup parent from repository -->
     </parent>
     <groupId>com.huice</groupId>
     <artifactId>service_fdk</artifactId>
@@ -60,7 +61,7 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>2.2.2</version>
+            <version>2.9.2</version>
         </dependency>
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
@@ -70,7 +71,7 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.2.2</version>
+            <version>2.9.2</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
@@ -84,6 +85,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.3.3.RELEASE</version>
                 <configuration>
                     <excludes>
                         <exclude>

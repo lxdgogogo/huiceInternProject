@@ -1,18 +1,22 @@
 package com.huice.service_fdk.dao;
 
-import com.huice.service_fdk.myjooq.db.tables.SellerToPrepareSkuList;
-import com.huice.service_fdk.service.*;
+import com.huice.service_fdk.myjooq.db.tables.ForwarderSupplier;
+import com.huice.service_fdk.myjooq.db.tables.records.ForwarderSupplierRecord;
+import com.huice.service_fdk.service.vo.ForwarderGoodsVO;
+import com.huice.service_fdk.service.vo.ForwarderSummaryVO;
+import com.huice.service_fdk.service.vo.SummarySumVO;
 import org.jooq.impl.DSL;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.huice.service_fdk.myjooq.db.tables.SellerToPrepareSkuList.SELLER_TO_PREPARE_SKU_LIST;
-import static com.huice.service_fdk.myjooq.db.tables.SellerOnPrepareSkuList.SELLER_ON_PREPARE_SKU_LIST;
-import static com.huice.service_fdk.myjooq.db.tables.MapSellerSkuSupplier.MAP_SELLER_SKU_SUPPLIER;
 import static com.huice.service_fdk.myjooq.db.tables.ForwarderSupplier.FORWARDER_SUPPLIER;
+import static com.huice.service_fdk.myjooq.db.tables.MapSellerSkuSupplier.MAP_SELLER_SKU_SUPPLIER;
+import static com.huice.service_fdk.myjooq.db.tables.SellerOnPrepareSkuList.SELLER_ON_PREPARE_SKU_LIST;
 import static com.huice.service_fdk.myjooq.db.tables.SellerSpu.SELLER_SPU;
+import static com.huice.service_fdk.myjooq.db.tables.SellerToPrepareSkuList.SELLER_TO_PREPARE_SKU_LIST;
+
 @Repository
 public class ForwarderDao extends BaseDao {
 
@@ -73,5 +77,11 @@ public class ForwarderDao extends BaseDao {
             if(view != null ) ans.add(view);
         }
         return ans;
+    }
+
+    public List<ForwarderSupplierRecord> getCityModelTree(){
+        return db.select()
+                .from(ForwarderSupplier.FORWARDER_SUPPLIER)
+                .fetchInto(ForwarderSupplierRecord.class);
     }
 }

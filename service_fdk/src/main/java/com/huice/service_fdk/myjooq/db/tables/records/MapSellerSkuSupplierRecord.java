@@ -5,21 +5,20 @@ package com.huice.service_fdk.myjooq.db.tables.records;
 
 
 import com.huice.service_fdk.myjooq.db.tables.MapSellerSkuSupplier;
-
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-
 import org.jooq.Field;
 import org.jooq.Record1;
 import org.jooq.Record18;
 import org.jooq.Row18;
 import org.jooq.impl.UpdatableRecordImpl;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 
 /**
  * 销售商SKU与供货商关联关系|刘宇晴|2020-11-20
  */
-@SuppressWarnings({ "all", "unchecked", "rawtypes" })
+@SuppressWarnings({"all", "unchecked", "rawtypes"})
 public class MapSellerSkuSupplierRecord extends UpdatableRecordImpl<MapSellerSkuSupplierRecord> implements Record18<Long, Long, Long, Long, Long, Long, Byte, String, String, BigDecimal, LocalDateTime, LocalDateTime, String, String, String, String, String, Byte> {
 
     private static final long serialVersionUID = 2122753401;
