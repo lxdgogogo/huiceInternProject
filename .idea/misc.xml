@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/service_fdk/pom.xml" />
         <option value="$PROJECT_DIR$/service_gateway/pom.xml" />
         <option value="$PROJECT_DIR$/service_forwarder/pom.xml" />
+        <option value="$PROJECT_DIR$/service_login/pom.xml" />
       </list>
     </option>
   </component>

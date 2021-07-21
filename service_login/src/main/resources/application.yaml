@@ -1,0 +1,56 @@
+spring:
+  redis:
+    host: 60.205.180.234
+    port: 6379
+  datasource:
+    username: fdk_summer2
+    password: lahmyyc123
+#    url: jdbc:mysql://127.0.0.1:3306/fdk_user?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://60.205.180.234:3306/fdk_user?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  druid:
+    initial-size: 5
+    max-active: 50
+    min-idle: 10
+    max-wait: 60000
+    pool-prepared-statements: true
+    max-pool-prepared-statement-per-connection-size: 20
+    timeBetweenEvictionRunsMillis: 60000
+    min-evictable-idle-time-millis: 300000
+    validation-query: SELECT 1 FROM DUAL
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    filter:
+      stat:
+        log-slow-sql: true
+        slow-sql-millis: 1000
+        merge-sql: false
+        enabled: true
+      wall:
+        config:
+          multi-statement-allow: true
+        enabled: true
+    stat-view-servlet:
+      enabled: true
+      url-pattern: /druid/*
+      login-username: admin
+      login-password: 123456
+    wall:
+      condition-and-alway-false-allow: true
+
+knife4j:
+  production: false
+  basic:
+    username: fdk
+    password: 123456
+    enable: false
+
+ignore-url:
+  list:
+    - path: "/v2/api-docs"
+    - path: "/swagger-resources"
+    - path: "/doc.html"
+    - path: "/webjars"
+    - path: "/error"
+    - path: "/user/login"

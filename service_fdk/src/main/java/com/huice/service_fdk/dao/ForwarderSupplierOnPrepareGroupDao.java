@@ -46,6 +46,7 @@ public class ForwarderSupplierOnPrepareGroupDao extends BaseDao{
             ForwarderSupplierGroupVO groupVO = new ForwarderSupplierGroupVO(entry.getKey(), entry.getValue());
             forwarderSupplierGroupVOList.add(groupVO);
         }
+
         return forwarderSupplierGroupVOList;
 
     }
