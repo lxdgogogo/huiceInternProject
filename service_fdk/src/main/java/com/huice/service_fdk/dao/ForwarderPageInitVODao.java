@@ -1,7 +1,6 @@
 package com.huice.service_fdk.dao;
 
-import com.huice.service_fdk.service.*;
-
+import com.huice.service_fdk.service.vo.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;

@@ -3,8 +3,7 @@ package com.huice.service_fdk.dao;
 import com.huice.service_fdk.common.page.PageContent;
 import com.huice.service_fdk.common.page.PageContentContainer;
 import com.huice.service_fdk.common.page.PageParam;
-import com.huice.service_fdk.myjooq.db.tables.SellerOnPrepareSkuList;
-import com.huice.service_fdk.service.ForwarderSupplierVO;
+import com.huice.service_fdk.service.vo.ForwarderSupplierVO;
 
 import static com.huice.service_fdk.myjooq.db.tables.ForwarderSupplier.FORWARDER_SUPPLIER;
 import static com.huice.service_fdk.myjooq.db.tables.SellerToPrepareSkuList.SELLER_TO_PREPARE_SKU_LIST;

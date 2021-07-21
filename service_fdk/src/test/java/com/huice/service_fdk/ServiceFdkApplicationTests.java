@@ -4,7 +4,7 @@ import com.huice.service_fdk.common.Result;
 import com.huice.service_fdk.common.page.PageContentContainer;
 import com.huice.service_fdk.common.page.PageParam;
 import com.huice.service_fdk.service.ForwarderService;
-import com.huice.service_fdk.service.ForwarderSupplierVO;
+import com.huice.service_fdk.service.vo.ForwarderSupplierVO;
 import com.huice.service_fdk.service.QueryService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

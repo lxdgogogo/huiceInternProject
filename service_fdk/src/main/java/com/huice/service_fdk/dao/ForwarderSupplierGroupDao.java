@@ -1,7 +1,7 @@
 package com.huice.service_fdk.dao;
 
-import com.huice.service_fdk.service.ForwarderSupplierGroupVO;
-import com.huice.service_fdk.service.ForwarderSupplierVO;
+import com.huice.service_fdk.service.vo.ForwarderSupplierGroupVO;
+import com.huice.service_fdk.service.vo.ForwarderSupplierVO;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

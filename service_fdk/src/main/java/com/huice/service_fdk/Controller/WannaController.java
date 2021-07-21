@@ -12,17 +12,15 @@ public class WannaController {
     //10.推送给代拿 - 点击推送至代拿,支持跨页全选
     @PostMapping("/submit/forwarder")
     public Result WannaSubmitForwarder(@RequestBody GoPrepareParam param, @RequestParam String token) {
-        if(token.equals("rainforest")) {
-            //String msg = "调用提供者成功，请求参数为：" + hashCode();
-
+        if (param.isSelectedAll()) {
             try {
-                Thread.sleep(300);
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            return Result.ok(200,"ok","hah");
-            //return Result.ok(LocalDateTime.now());
+            return Result.ok(200, "推送成功！！！");
+
         }
-        return Result.error(404,"出错啦^*^");
+        return null;
     }
 }

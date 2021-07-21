@@ -1,12 +1,9 @@
 package com.huice.service_fdk.Controller;
 
-import com.huice.service_fdk.Controller.vo.SellerSpuVO;
+import com.huice.service_fdk.service.vo.SellerSpuVO;
 import com.huice.service_fdk.common.Result;
 import com.huice.service_fdk.common.page.PageContentContainer;
-import com.huice.service_fdk.common.page.PageParam;
 import com.huice.service_fdk.entity.QueryPageSellerSpuParam;
-import com.huice.service_fdk.service.ForwarderService;
-import com.huice.service_fdk.service.ForwarderSupplierVO;
 import com.huice.service_fdk.service.SellerService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.RequestAttributes;
