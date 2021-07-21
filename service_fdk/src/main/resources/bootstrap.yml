@@ -1,6 +1,6 @@
 spring:
   application:
-    name: fdk-user
+    name: fdk-service
   cloud:
     nacos:
       discovery:

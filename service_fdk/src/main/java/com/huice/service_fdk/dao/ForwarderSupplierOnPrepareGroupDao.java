@@ -1,5 +1,9 @@
 package com.huice.service_fdk.dao;
 
+import static com.huice.service_fdk.myjooq.db.tables.SellerOnPrepareSkuList.SELLER_ON_PREPARE_SKU_LIST;
+import static com.huice.service_fdk.myjooq.db.tables.ForwarderSupplier.FORWARDER_SUPPLIER;
+
+import com.huice.service_fdk.myjooq.db.tables.SellerOnPrepareSkuList;
 import com.huice.service_fdk.service.ForwarderSupplierGroupVO;
 import com.huice.service_fdk.service.ForwarderSupplierVO;
 import org.springframework.stereotype.Repository;
@@ -9,10 +13,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.huice.service_fdk.myjooq.db.tables.ForwarderSupplier.FORWARDER_SUPPLIER;
 
 @Repository
-public class ForwarderSupplierGroupDao extends BaseDao{
+public class ForwarderSupplierOnPrepareGroupDao extends BaseDao{
     public List<ForwarderSupplierGroupVO> getForwarderSupplierGroupVO(long id){
         List<ForwarderSupplierVO> forwarderSupplierVOList =db.select(
                 FORWARDER_SUPPLIER.BUSINESS,
@@ -26,8 +29,11 @@ public class ForwarderSupplierGroupDao extends BaseDao{
                 FORWARDER_SUPPLIER.MARKET_CODE,
                 FORWARDER_SUPPLIER.SUPPLIER_NAME
         )
+
                 .from(FORWARDER_SUPPLIER)
-                .where(FORWARDER_SUPPLIER.MERCHANT_ID.equal(id))
+                .innerJoin(SELLER_ON_PREPARE_SKU_LIST)
+                .on(SELLER_ON_PREPARE_SKU_LIST.SUPPLIER_ID.eq(FORWARDER_SUPPLIER.FORWARDER_SUPPLIER_ID))
+                .where(SELLER_ON_PREPARE_SKU_LIST.MERCHANT_ID.equal(id))
                 .fetchInto(ForwarderSupplierVO.class);
 
         List<ForwarderSupplierGroupVO> forwarderSupplierGroupVOList = new ArrayList<>();

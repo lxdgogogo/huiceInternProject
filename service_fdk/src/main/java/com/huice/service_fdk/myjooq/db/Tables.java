@@ -18,7 +18,7 @@ import com.huice.service_fdk.myjooq.db.tables.SysShop;
 
 
 /**
- * Convenience access to all tables in fdk_goods2.
+ * Convenience access to all tables in fdk_goods2
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {

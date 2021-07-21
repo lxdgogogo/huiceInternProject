@@ -27,7 +27,6 @@ import org.jooq.TableField;
 import org.jooq.TableOptions;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
-import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
 
 
@@ -37,7 +36,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SellerOnPrepareSkuList extends TableImpl<SellerOnPrepareSkuListRecord> {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -1295132163;
 
     /**
      * The reference instance of <code>fdk_goods2.seller_on_prepare_sku_list</code>
@@ -55,59 +54,58 @@ public class SellerOnPrepareSkuList extends TableImpl<SellerOnPrepareSkuListReco
     /**
      * The column <code>fdk_goods2.seller_on_prepare_sku_list.id</code>. 自增ID
      */
-    public final TableField<SellerOnPrepareSkuListRecord, Long> ID = createField(DSL.name("id"), SQLDataType.BIGINT.nullable(false).identity(true), this, "自增ID");
+    public final TableField<SellerOnPrepareSkuListRecord, Long> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).identity(true), this, "自增ID");
 
     /**
      * The column <code>fdk_goods2.seller_on_prepare_sku_list.merchant_id</code>. 销售商商户id|孟炜彬|2020-11-20
      */
-    public final TableField<SellerOnPrepareSkuListRecord, Long> MERCHANT_ID = createField(DSL.name("merchant_id"), SQLDataType.BIGINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.BIGINT)), this, "销售商商户id|孟炜彬|2020-11-20");
+    public final TableField<SellerOnPrepareSkuListRecord, Long> MERCHANT_ID = createField(DSL.name("merchant_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BIGINT)), this, "销售商商户id|孟炜彬|2020-11-20");
 
     /**
      * The column <code>fdk_goods2.seller_on_prepare_sku_list.supplier_id</code>. 供货商 user_id (supplier_user）的 id |孟炜彬|2020-11-13
      */
-    public final TableField<SellerOnPrepareSkuListRecord, Long> SUPPLIER_ID = createField(DSL.name("supplier_id"), SQLDataType.BIGINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.BIGINT)), this, "供货商 user_id (supplier_user）的 id |孟炜彬|2020-11-13");
+    public final TableField<SellerOnPrepareSkuListRecord, Long> SUPPLIER_ID = createField(DSL.name("supplier_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BIGINT)), this, "供货商 user_id (supplier_user）的 id |孟炜彬|2020-11-13");
 
     /**
      * The column <code>fdk_goods2.seller_on_prepare_sku_list.seller_sku_id</code>. 销售商系统SKU ID|孟炜彬|2020-11-20
      */
-    public final TableField<SellerOnPrepareSkuListRecord, Long> SELLER_SKU_ID = createField(DSL.name("seller_sku_id"), SQLDataType.BIGINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.BIGINT)), this, "销售商系统SKU ID|孟炜彬|2020-11-20");
+    public final TableField<SellerOnPrepareSkuListRecord, Long> SELLER_SKU_ID = createField(DSL.name("seller_sku_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BIGINT)), this, "销售商系统SKU ID|孟炜彬|2020-11-20");
 
     /**
      * The column <code>fdk_goods2.seller_on_prepare_sku_list.prepare_num</code>. 需要备货数量（拿货）
      */
-    public final TableField<SellerOnPrepareSkuListRecord, BigDecimal> PREPARE_NUM = createField(DSL.name("prepare_num"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "需要备货数量（拿货）");
+    public final TableField<SellerOnPrepareSkuListRecord, BigDecimal> PREPARE_NUM = createField(DSL.name("prepare_num"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "需要备货数量（拿货）");
 
     /**
      * The column <code>fdk_goods2.seller_on_prepare_sku_list.created</code>. 创建时间|孟炜彬|2020-11-20
      */
-    public final TableField<SellerOnPrepareSkuListRecord, LocalDateTime> CREATED = createField(DSL.name("created"), SQLDataType.LOCALDATETIME(0).nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", SQLDataType.LOCALDATETIME)), this, "创建时间|孟炜彬|2020-11-20");
+    public final TableField<SellerOnPrepareSkuListRecord, LocalDateTime> CREATED = createField(DSL.name("created"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(org.jooq.impl.DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "创建时间|孟炜彬|2020-11-20");
 
     /**
      * The column <code>fdk_goods2.seller_on_prepare_sku_list.modified</code>. 修改时间|孟炜彬|2020-11-20
      */
-    public final TableField<SellerOnPrepareSkuListRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), SQLDataType.LOCALDATETIME(0).nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", SQLDataType.LOCALDATETIME)), this, "修改时间|孟炜彬|2020-11-20");
+    public final TableField<SellerOnPrepareSkuListRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(org.jooq.impl.DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "修改时间|孟炜彬|2020-11-20");
 
     /**
      * The column <code>fdk_goods2.seller_on_prepare_sku_list.wish_more_prepare_num</code>. 备货中 希望多拿货数量|孟炜彬|2021-03-04
      */
-    public final TableField<SellerOnPrepareSkuListRecord, BigDecimal> WISH_MORE_PREPARE_NUM = createField(DSL.name("wish_more_prepare_num"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "备货中 希望多拿货数量|孟炜彬|2021-03-04");
+    public final TableField<SellerOnPrepareSkuListRecord, BigDecimal> WISH_MORE_PREPARE_NUM = createField(DSL.name("wish_more_prepare_num"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "备货中 希望多拿货数量|孟炜彬|2021-03-04");
 
     /**
      * The column <code>fdk_goods2.seller_on_prepare_sku_list.prior_prepare_num</code>. 优先拿货| 孟炜彬 | 2021-04-27
      */
-    public final TableField<SellerOnPrepareSkuListRecord, BigDecimal> PRIOR_PREPARE_NUM = createField(DSL.name("prior_prepare_num"), SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(DSL.inline("0.0000", SQLDataType.DECIMAL)), this, "优先拿货| 孟炜彬 | 2021-04-27");
+    public final TableField<SellerOnPrepareSkuListRecord, BigDecimal> PRIOR_PREPARE_NUM = createField(DSL.name("prior_prepare_num"), org.jooq.impl.SQLDataType.DECIMAL(19, 4).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.0000", org.jooq.impl.SQLDataType.DECIMAL)), this, "优先拿货| 孟炜彬 | 2021-04-27");
 
     /**
      * The column <code>fdk_goods2.seller_on_prepare_sku_list.take_goods_type</code>. 子单中的货品拿货类型 @0 自拿；@1 代拿|孟炜彬|2021-06-22
      */
-    public final TableField<SellerOnPrepareSkuListRecord, Byte> TAKE_GOODS_TYPE = createField(DSL.name("take_goods_type"), SQLDataType.TINYINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.TINYINT)), this, "子单中的货品拿货类型 @0 自拿；@1 代拿|孟炜彬|2021-06-22");
+    public final TableField<SellerOnPrepareSkuListRecord, Byte> TAKE_GOODS_TYPE = createField(DSL.name("take_goods_type"), org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.TINYINT)), this, "子单中的货品拿货类型 @0 自拿；@1 代拿|孟炜彬|2021-06-22");
 
-    private SellerOnPrepareSkuList(Name alias, Table<SellerOnPrepareSkuListRecord> aliased) {
-        this(alias, aliased, null);
-    }
-
-    private SellerOnPrepareSkuList(Name alias, Table<SellerOnPrepareSkuListRecord> aliased, Field<?>[] parameters) {
-        super(alias, null, aliased, parameters, DSL.comment("销售商备货中列表|孟炜彬|2020-11-20"), TableOptions.table());
+    /**
+     * Create a <code>fdk_goods2.seller_on_prepare_sku_list</code> table reference
+     */
+    public SellerOnPrepareSkuList() {
+        this(DSL.name("seller_on_prepare_sku_list"), null);
     }
 
     /**
@@ -124,11 +122,12 @@ public class SellerOnPrepareSkuList extends TableImpl<SellerOnPrepareSkuListReco
         this(alias, SELLER_ON_PREPARE_SKU_LIST);
     }
 
-    /**
-     * Create a <code>fdk_goods2.seller_on_prepare_sku_list</code> table reference
-     */
-    public SellerOnPrepareSkuList() {
-        this(DSL.name("seller_on_prepare_sku_list"), null);
+    private SellerOnPrepareSkuList(Name alias, Table<SellerOnPrepareSkuListRecord> aliased) {
+        this(alias, aliased, null);
+    }
+
+    private SellerOnPrepareSkuList(Name alias, Table<SellerOnPrepareSkuListRecord> aliased, Field<?>[] parameters) {
+        super(alias, null, aliased, parameters, DSL.comment("销售商备货中列表|孟炜彬|2020-11-20"), TableOptions.table());
     }
 
     public <O extends Record> SellerOnPrepareSkuList(Table<O> child, ForeignKey<O, SellerOnPrepareSkuListRecord> key) {
@@ -147,7 +146,7 @@ public class SellerOnPrepareSkuList extends TableImpl<SellerOnPrepareSkuListReco
 
     @Override
     public Identity<SellerOnPrepareSkuListRecord, Long> getIdentity() {
-        return (Identity<SellerOnPrepareSkuListRecord, Long>) super.getIdentity();
+        return Keys.IDENTITY_SELLER_ON_PREPARE_SKU_LIST;
     }
 
     @Override

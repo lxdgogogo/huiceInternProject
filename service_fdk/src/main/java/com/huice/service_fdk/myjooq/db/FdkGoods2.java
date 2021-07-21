@@ -30,7 +30,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class FdkGoods2 extends SchemaImpl {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -454102755;
 
     /**
      * The reference instance of <code>fdk_goods2</code>
