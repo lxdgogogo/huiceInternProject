@@ -6,7 +6,7 @@ import com.huice.service_fdk.common.page.PageParam;
 import com.huice.service_fdk.service.*;
 import com.huice.service_fdk.service.vo.ForwarderPageInitVO;
 import com.huice.service_fdk.service.vo.ForwarderSupplierGroupVO;
-import com.huice.service_fdk.service.vo.ForwarderSupplierVO;
+import com.huice.service_fdk.service.vo.SupplierGoodsList;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -28,7 +28,7 @@ public class QueryController {
 
     //3.待推送列表分页查询
     @GetMapping("/wait/push/page")
-    public Result<PageContentContainer<ForwarderSupplierVO>> select(@RequestBody PageParam pageParam) {
+    public Result<PageContentContainer<SupplierGoodsList>> select(@RequestBody PageParam pageParam) {
         return Result.ok(queryService.getPage(pageParam));
     }
 

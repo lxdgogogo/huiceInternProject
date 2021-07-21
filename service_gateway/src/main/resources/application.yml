@@ -30,8 +30,12 @@ spring:
             - Path=/api/user/**
           filters:
             - StripPrefix= 2
-
-
+        - id: summer-user
+          uri: lb://summer-user
+          predicates:
+            - Path=/fdk/api/user/**
+          filters:
+            - StripPrefix=2
 
 # 白名单
 ignore-url:

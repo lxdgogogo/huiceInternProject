@@ -17,6 +17,7 @@ import java.util.Objects;
 @RestController
 @RequestMapping("/seller")
 public class SellerController {
+
     @Resource
     private SellerService sellerService;
 
