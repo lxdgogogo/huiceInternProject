@@ -9,6 +9,7 @@ import lombok.Data;
  接口地址:  /seller/goods/queryPage
  请求方式： POST
  */
+
 @Data
 public class spuSupplierInfoList {
     private boolean fromSingle;
