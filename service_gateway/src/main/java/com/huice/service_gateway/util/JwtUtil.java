@@ -17,7 +17,7 @@ public class JwtUtil {
      *
      * @param token
      *
-     * @return
+     * @return 返回一个Jwts
      */
     private static Jws<Claims> getJws(String token) {
         return Jwts.parser()

@@ -4,10 +4,7 @@ import com.huice.service_fdk.service.vo.ForwarderSupplierGroupVO;
 import com.huice.service_fdk.service.vo.ForwarderSupplierVO;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static com.huice.service_fdk.myjooq.db.tables.ForwarderSupplier.FORWARDER_SUPPLIER;
 
@@ -42,6 +39,5 @@ public class ForwarderSupplierGroupDao extends BaseDao{
             forwarderSupplierGroupVOList.add(groupVO);
         }
         return forwarderSupplierGroupVOList;
-
     }
 }
