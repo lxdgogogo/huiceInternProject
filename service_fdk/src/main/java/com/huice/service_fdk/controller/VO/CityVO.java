@@ -11,10 +11,12 @@ import java.util.List;
 public class CityVO {
     private Long cityCode;//城市编码
     private String cityName;//城市名称
-    private List<MarketModel> marketList;
+    private Long cityId;
+    private List<Market> marketList;
 
-    public CityVO(Long cityCode, String cityName, List<MarketModel> marketList){
+    public CityVO(Long cityCode, Long cityId, String cityName, List<Market> marketList){
         this.cityCode = cityCode;
+        this.cityId = cityId;
         this.cityName = cityName;
         this.marketList = marketList;
     }

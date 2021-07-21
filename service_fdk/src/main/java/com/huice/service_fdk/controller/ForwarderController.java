@@ -74,5 +74,11 @@ public class ForwarderController {
         Long merchant_id= Long.valueOf(Objects.requireNonNull(getRequestParameter("merchant_id")));
         return Result.ok(forwarderService.getForwarderSupplierGroupVO(merchant_id),msg);
     }
+
+    //11.已推送备货汇总数据
+//    @GetMapping("/pushed/summary")
+//    public Result<ForwarderSummaryVO> getPushedSummary(){
+//
+//    }
 }
 

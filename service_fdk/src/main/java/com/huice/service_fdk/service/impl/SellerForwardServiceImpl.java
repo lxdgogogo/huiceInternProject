@@ -1,5 +1,6 @@
 package com.huice.service_fdk.service.impl;
 
+import com.google.common.collect.Lists;
 import com.huice.service_fdk.dao.ForwarderDao;
 import com.huice.service_fdk.myjooq.db.tables.ForwarderSupplier;
 import com.huice.service_fdk.myjooq.db.tables.records.ForwarderSupplierRecord;
@@ -7,11 +8,16 @@ import com.huice.service_fdk.service.ISellerForwarderService;
 import com.huice.service_fdk.service.model.CityModel;
 import com.huice.service_fdk.service.model.FloorModel;
 import com.huice.service_fdk.service.model.MarketModel;
+import com.huice.service_fdk.service.vo.Floor;
+import com.huice.service_fdk.service.vo.ForwarderSupplierGroupVO;
+import com.huice.service_fdk.service.vo.ForwarderSupplierVO;
+import com.huice.service_fdk.service.vo.Market;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class SellerForwardServiceImpl implements ISellerForwarderService {
@@ -21,49 +27,43 @@ public class SellerForwardServiceImpl implements ISellerForwarderService {
 
     @Override
     public List<CityModel> selectCityInfo() {
-        List<ForwarderSupplierRecord> forwarderSupplierRecords =  forwarderDao.getCityModelTree();
-        List<Long> cityCodeList = new ArrayList<>();
-        List<Long> MarketCodeList = new ArrayList<>(); // 不同城市的MarketCode是否会产生相同
-        List<CityModel> cityModels = new ArrayList<>();
-        for (ForwarderSupplierRecord forwarderSupplierRecord : forwarderSupplierRecords){
-            if (!cityCodeList.contains(forwarderSupplierRecord.getCityCode())){
-                // 树顶City
-                CityModel cityModel = new CityModel();
-                cityModel.setCityCode(forwarderSupplierRecord.getCityCode());
-                // cityID是什么，在哪一张表
-                cityModel.setCityId(forwarderSupplierRecord.getId());
-                cityModel.setCityName(forwarderSupplierRecord.getCity());
-//                cityModel.setMarketList(new ArrayList<>());
+        List<ForwarderSupplierVO> forwarderSupplierVOs = forwarderDao.getCityModelTree();
+        HashMap<Long, List<ForwarderSupplierVO>> mapCity = new HashMap<>();
 
-                // 树中层Markrt
-                MarketModel marketModel = new MarketModel();
-                marketModel.setCityCode(forwarderSupplierRecord.getCityCode());
-                // MarketId是否是供货商ID
-                marketModel.setMarketId(forwarderSupplierRecord.getForwarderSupplierId());
-                marketModel.setMarketName(forwarderSupplierRecord.getMarket());
-                marketModel.setMarkerCode(forwarderSupplierRecord.getMarketCode());
-//                marketModel.setFloorList(new ArrayList<FloorModel>());
-
-                // 树底层Floor
-                FloorModel floorModel = new FloorModel();
-                floorModel.setFloorCode(forwarderSupplierRecord.getFloorCode());
-                floorModel.setFloorName(forwarderSupplierRecord.getFloor());
-                floorModel.setMarketCode(forwarderSupplierRecord.getMarketCode());
-
-                List<FloorModel> floorModels = new ArrayList<>();
-                floorModels.add(floorModel);
-                marketModel.setFloorList(floorModels);
-
-                List<MarketModel> marketModels = new ArrayList<>();
-                marketModels.add(marketModel);
-                cityModel.setMarketList(marketModels);
-                cityModels.add(cityModel);
-
-                cityCodeList.add(forwarderSupplierRecord.getCityCode());
-
-            }
-
+        for (ForwarderSupplierVO vo : forwarderSupplierVOs){
+            List<ForwarderSupplierVO> list = mapCity.getOrDefault(vo.getCityCode(), new ArrayList<>());
+            list.add(vo);
+            mapCity.put(vo.getCityCode(), list);
         }
+        List<CityModel> cityModels = new ArrayList<>();
+        for (Map.Entry<Long, List<ForwarderSupplierVO>> entry : mapCity.entrySet()){
+            HashMap<Long, List<ForwarderSupplierVO>> mapMarket = new HashMap<>();
+            List<ForwarderSupplierVO> subForwarderSupplierVOs =  entry.getValue();
+            for (ForwarderSupplierVO vo : subForwarderSupplierVOs){
+                List<ForwarderSupplierVO> list = mapCity.getOrDefault(vo.getMarketCode(), new ArrayList<>());
+                list.add(vo);
+                mapMarket.put(vo.getMarketCode(), list);
+            }
+            List<Market> marketList = new ArrayList<>();
+            for (Map.Entry<Long, List<ForwarderSupplierVO>> entry1 : mapMarket.entrySet()){
+                List<Floor> floors = new ArrayList<>();
+                for (ForwarderSupplierVO forwarderSupplierVO : entry1.getValue()){
+                    Floor floor = new Floor();
+                    floor.setMarketCode(forwarderSupplierVO.getMarketCode());
+                    floor.setFloorName(forwarderSupplierVO.getFloor());
+                    floor.setFloorCode(forwarderSupplierVO.getFloorCode());
+                    floors.add(floor);
+                }
+                ForwarderSupplierVO temp = entry1.getValue().get(0);
+                Market market = new Market(temp.getMarketCode(), temp.getMarketCode(), temp.getMarket());
+                market.setFloorList(floors);
+                marketList.add(market);
+            }
+            ForwarderSupplierVO temp = entry.getValue().get(0);
+            CityModel cityModel = new CityModel(temp.getCityCode(), temp.getCityCode(), temp.getCity(), marketList);
+            cityModels.add(cityModel);
+        }
+
         return cityModels;
     }
 }

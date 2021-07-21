@@ -1,26 +1,29 @@
 package com.huice.service_fdk.service.vo;
 
-import java.util.ArrayList;
+import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+@Data
 public class Market {
-    private  long cityCode;//城市编码
-    private ArrayList<Floor> floorList;//楼层列表
-    private final long marketCode;//市场编码
+    private Long cityCode;//城市编码
+    private List<Floor> floorList;//楼层列表
+    private Long marketCode;//市场编码
     private String marketName;//市场名称
 
     public Market(long marketCode) {
         this.marketCode = marketCode;
     }
 
-    public ArrayList<Floor> getFloorList() {
+    public List<Floor> getFloorList() {
         return floorList;
     }
 
-    public long getCityCode() {
+    public Long getCityCode() {
         return cityCode;
     }
 
-    public long getMarketCode() {
+    public Long getMarketCode() {
         return marketCode;
     }
 
@@ -36,7 +39,9 @@ public class Market {
         this.cityCode = cityCode;
     }
 
-    public Market(long cityCode, long marketCode, String marketName) {
+    public Market(){}
+
+    public Market(Long cityCode, Long marketCode, String marketName) {
         this.cityCode = cityCode;
         this.marketCode = marketCode;
         this.marketName = marketName;
