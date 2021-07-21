@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/huice-summer.iml" filepath="$PROJECT_DIR$/.idea/huice-summer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/service_dyna/service_dyna.iml" filepath="$PROJECT_DIR$/service_dyna/service_dyna.iml" />
       <module fileurl="file://$PROJECT_DIR$/service_fdk/service_fdk.iml" filepath="$PROJECT_DIR$/service_fdk/service_fdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/service_forwarder/service_forwarder.iml" filepath="$PROJECT_DIR$/service_forwarder/service_forwarder.iml" />
       <module fileurl="file://$PROJECT_DIR$/service_gateway/service_gateway.iml" filepath="$PROJECT_DIR$/service_gateway/service_gateway.iml" />

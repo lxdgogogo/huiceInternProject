@@ -4,7 +4,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/service_dyna/pom.xml" />
         <option value="$PROJECT_DIR$/service_fdk/pom.xml" />
         <option value="$PROJECT_DIR$/service_gateway/pom.xml" />
         <option value="$PROJECT_DIR$/service_forwarder/pom.xml" />

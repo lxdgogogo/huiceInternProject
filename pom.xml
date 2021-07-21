@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>service_dyna</module>
         <module>service_fdk</module>
         <module>service_gateway</module>
         <module>service_forwarder</module>
