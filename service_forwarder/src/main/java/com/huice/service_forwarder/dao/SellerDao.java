@@ -13,12 +13,14 @@ import static com.huice.service_forwarder.db.tables.Seller.SELLER;
 @Repository
 public class SellerDao extends BaseDao{
     public SellerName querySellerNameBySellId(Long sellerId){
-        List<SellerName> sellerNames = this.db.select(SELLER.NAME, SELLER.SHORT_NAME)
+        List<SellerName> sellerNames = this.db.select(SELLER.NAME.as("sellerName"), SELLER.SHORT_NAME.as("sellerShortName"))
                 .from(SELLER)
                 .where(SELLER.ID.eq(ULong.valueOf(sellerId)))
                 .fetchInto(SellerName.class);
 
+        ULong uLong = ULong.valueOf(sellerId);
         if (!sellerNames.isEmpty()) {
+            SellerName sellerName = sellerNames.get(0);
             return sellerNames.get(0);
         } else {
             SellerName sellerName = new SellerName();

@@ -2,10 +2,12 @@ package com.huice.service_forwarder;
 
 import com.huice.service_forwarder.controller.query.SupplierListQuery;
 import com.huice.service_forwarder.controller.vo.CityTree;
+import com.huice.service_forwarder.controller.vo.DemandForTwo;
 import com.huice.service_forwarder.dao.BusinessDao;
 import com.huice.service_forwarder.dao.FetchOrderDao;
 import com.huice.service_forwarder.entity.FetchOrder;
 import com.huice.service_forwarder.service.BusinessService;
+import com.huice.service_forwarder.service.FetchOrderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,6 +24,9 @@ class ServiceForwarderApplicationTests {
     @Autowired
     private FetchOrderDao fetchOrderDao;
 
+    @Autowired
+    private FetchOrderService fetchOrderService;
+
     @Test
     void contextLoads() {
         List<CityTree> cityTrees = this.businessService.queryAllBusiness();
@@ -37,6 +42,16 @@ class ServiceForwarderApplicationTests {
         for (FetchOrder fetchOrder : fetchOrders){
             System.out.println(fetchOrder.getId());
             System.out.println(fetchOrder.getCityName());
+        }
+    }
+
+    @Test
+    void test21() {
+        SupplierListQuery supplierListQuery = new SupplierListQuery();
+        supplierListQuery.setSpuGoodsNo("7211");
+        List<DemandForTwo> demandForTwos = this.fetchOrderService.querySupplierInformation(supplierListQuery);
+        for (DemandForTwo demandForTwo : demandForTwos){
+            System.out.println(demandForTwo.toString());
         }
     }
 
