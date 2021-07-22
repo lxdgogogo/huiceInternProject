@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/service_forwarder/service_forwarder.iml" filepath="$PROJECT_DIR$/service_forwarder/service_forwarder.iml" />
       <module fileurl="file://$PROJECT_DIR$/service_gateway/service_gateway.iml" filepath="$PROJECT_DIR$/service_gateway/service_gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/service_login/service_login.iml" filepath="$PROJECT_DIR$/service_login/service_login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service_login/summer_login.iml" filepath="$PROJECT_DIR$/service_login/summer_login.iml" />
     </modules>
   </component>
 </project>
