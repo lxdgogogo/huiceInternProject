@@ -2,13 +2,15 @@ package com.huice.service_fdk.dao;
 
 import com.huice.service_fdk.myjooq.db.tables.ForwarderSupplier;
 import com.huice.service_fdk.myjooq.db.tables.records.ForwarderSupplierRecord;
-import com.huice.service_fdk.service.vo.ForwarderGoodsVO;
-import com.huice.service_fdk.service.vo.ForwarderSummaryVO;
-import com.huice.service_fdk.service.vo.ForwarderSupplierVO;
-import com.huice.service_fdk.service.vo.SummarySumVO;
+import com.huice.service_fdk.service.vo.*;
 import org.jooq.impl.DSL;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.time.Clock;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,5 +106,29 @@ public class ForwarderDao extends BaseDao {
                 .from(SELLER_TO_PREPARE_SKU_LIST)
                 .where(SELLER_TO_PREPARE_SKU_LIST.MERCHANT_ID.eq(merchant_id))
                 .fetchAnyInto(ForwarderSummaryVO.class);
+    }
+
+    public String getSupplierAssign(long merchantId, List<forwarderSkuMapDTO> forwarderSkuMapDTOs) {
+        Integer size = forwarderSkuMapDTOs.size();
+        for(forwarderSkuMapDTO forwarderSkuMapDTO:forwarderSkuMapDTOs) {
+            BigDecimal calculation = new BigDecimal(Float.toString(forwarderSkuMapDTO.getPurchasePrice()));
+            db.insertInto(MAP_SELLER_SKU_SUPPLIER)
+                    .set(MAP_SELLER_SKU_SUPPLIER.MERCHANT_ID, merchantId)
+                    .set(MAP_SELLER_SKU_SUPPLIER.SELLER_SKU_ID, forwarderSkuMapDTO.getSellerSkuId())
+                    .set(MAP_SELLER_SKU_SUPPLIER.SELLER_SPU_ID, forwarderSkuMapDTO.getSellerSpuId())
+                    .set(MAP_SELLER_SKU_SUPPLIER.SUPPLIER_ID, forwarderSkuMapDTO.getForwarderSupplierId())
+                    .set(MAP_SELLER_SKU_SUPPLIER.REMARK, forwarderSkuMapDTO.getRemark())
+                    .set(MAP_SELLER_SKU_SUPPLIER.ITEM_NO, forwarderSkuMapDTO.getItemNo())
+                    .set(MAP_SELLER_SKU_SUPPLIER.PURCHASE_PRICE, calculation)
+                    .set(MAP_SELLER_SKU_SUPPLIER.CREATED, LocalDateTime.now(Clock.system(ZoneId.of("Asia/Shanghai"))))
+                    .set(MAP_SELLER_SKU_SUPPLIER.MODIFIED,LocalDateTime.now(Clock.system(ZoneId.of("Asia/Shanghai"))))
+                    .set(MAP_SELLER_SKU_SUPPLIER.CITY,forwarderSkuMapDTO.getCityName())
+        .set(MAP_SELLER_SKU_SUPPLIER.MARKET,forwarderSkuMapDTO.getMarketName())
+        .set(MAP_SELLER_SKU_SUPPLIER.FLOOR,forwarderSkuMapDTO.getFloorName())
+                    .set(MAP_SELLER_SKU_SUPPLIER.BUSINESS,forwarderSkuMapDTO.getBusinessName())
+                            .set(MAP_SELLER_SKU_SUPPLIER.SUPPLIER_NAME,forwarderSkuMapDTO.getSupplierName())
+                    .returning(MAP_SELLER_SKU_SUPPLIER.ID).fetchOne();
+        }
+        return "批量插入"+size+"条供货商接口成功";
     }
 }

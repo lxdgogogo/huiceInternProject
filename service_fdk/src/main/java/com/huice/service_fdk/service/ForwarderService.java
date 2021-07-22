@@ -2,10 +2,7 @@ package com.huice.service_fdk.service;
 
 import com.huice.service_fdk.dao.ForwarderDao;
 import com.huice.service_fdk.dao.ForwarderSupplierGroupDao;
-import com.huice.service_fdk.service.vo.ForwarderGoodsVO;
-import com.huice.service_fdk.service.vo.ForwarderSummaryVO;
-import com.huice.service_fdk.service.vo.ForwarderSupplierGroupVO;
-import com.huice.service_fdk.service.vo.SummarySumVO;
+import com.huice.service_fdk.service.vo.*;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -39,4 +36,7 @@ public class ForwarderService {
 
     }
 
+    public String getSupplierAssign(long merchantId, List<forwarderSkuMapDTO> forwarderSkuMapDTO) {
+        return forwarderDao.getSupplierAssign(merchantId,forwarderSkuMapDTO);
+    }
 }

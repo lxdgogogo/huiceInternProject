@@ -12,6 +12,7 @@ import com.huice.service_fdk.service.model.CityModel;
 import com.huice.service_fdk.service.vo.ForwarderSummaryVO;
 import com.huice.service_fdk.service.QueryService;
 import com.huice.service_fdk.service.vo.SupplierGoodsList;
+import com.huice.service_fdk.service.vo.forwarderSkuMapDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -77,5 +78,28 @@ class ServiceFdkApplicationTests {
         ForwarderSummaryVO forwarderSummaryVO = forwarderService.getForwarderPushedSummaryVO(0);
         System.out.println(forwarderSummaryVO);
     }
-
+    @Test
+    void getSupplierassign() {
+        List<forwarderSkuMapDTO> test = new ArrayList<>();
+        forwarderSkuMapDTO forwarderSkuMapDTO1 = new forwarderSkuMapDTO();
+        forwarderSkuMapDTO1.setCityCode((long)565);
+        forwarderSkuMapDTO1.setCityName("aaa");
+        forwarderSkuMapDTO1.setMarketCode((long)1234);
+        forwarderSkuMapDTO1.setMarketName("aaaa");
+        forwarderSkuMapDTO1.setItemNo("dsjfnsi");
+        forwarderSkuMapDTO1.setSellerSkuId((long)1);
+        forwarderSkuMapDTO1.setRemark("aaaa");
+        forwarderSkuMapDTO1.setSellerSkuId((long)1);
+        forwarderSkuMapDTO1.setSellerSpuId((long)1);
+        forwarderSkuMapDTO1.setFloorName("bbb");
+        forwarderSkuMapDTO1.setFloorCode((long)222);
+        forwarderSkuMapDTO1.setPurchasePrice((float)2.3);
+        forwarderSkuMapDTO1.setForwarderSupplierId((long)1);
+        forwarderSkuMapDTO1.setSupplierName("ggggg");
+        forwarderSkuMapDTO1.setBusinessName("222");
+        forwarderSkuMapDTO1.setGoodsNo("12344");
+        test.add(forwarderSkuMapDTO1);
+        String msg = "调用9.指定供货商接口";
+        System.out.println(Result.ok(forwarderService.getSupplierAssign(9637,test),msg));
+    }
 }

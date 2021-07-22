@@ -1,12 +1,9 @@
-package com.huice.service_fdk.Controller;
+package com.huice.service_fdk.controller;
 
 import com.huice.service_fdk.common.AuthContext;
 import com.huice.service_fdk.common.Result;
 import com.huice.service_fdk.service.*;
-import com.huice.service_fdk.service.vo.ForwarderGoodsVO;
-import com.huice.service_fdk.service.vo.ForwarderSummaryVO;
-import com.huice.service_fdk.service.vo.ForwarderSupplierGroupVO;
-import com.huice.service_fdk.service.vo.SummarySumVO;
+import com.huice.service_fdk.service.vo.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -58,6 +55,13 @@ public class ForwarderController {
         return Result.ok(forwarderService.getForwarderSupplierGroupVO(merchantId),msg);
     }
 
+    //9.指定供货商接口
+    @PostMapping ("/supplier/assign")
+    public Result<String> SupplierAssign(HttpServletRequest request,List<forwarderSkuMapDTO> forwarderSkuMapDTO1) {
+        long merchantId = Long.parseLong(request.getParameter("merchantId"));
+        String msg = "调用9.指定供货商接口";
+        return Result.ok(forwarderService.getSupplierAssign(merchantId,forwarderSkuMapDTO1),msg);
+    }
     //11.已推送备货汇总数据
     @GetMapping("/pushed/summary")
     public Result<ForwarderSummaryVO> getPushedSummary(HttpServletRequest request){

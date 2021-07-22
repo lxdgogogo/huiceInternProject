@@ -1,4 +1,4 @@
-package com.huice.service_fdk.Controller;
+package com.huice.service_fdk.controller;
 
 import com.huice.service_fdk.common.AuthContext;
 import com.huice.service_fdk.common.Result;
