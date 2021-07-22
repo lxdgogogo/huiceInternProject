@@ -30,7 +30,7 @@ public class QueryController {
     }
 
     //3.待推送列表分页查询
-    @GetMapping("/wait/push/page")
+    @PostMapping("/wait/push/page")
     public Result<PageContentContainer<SupplierGoodsList>> select(@RequestBody PageParam pageParam) {
 
         return Result.ok(queryService.getPage(pageParam));
@@ -51,7 +51,7 @@ public class QueryController {
 
     //12.已推送供货商列表
     @GetMapping("" +
-            "/pushed/biz/summary/list/")
+            "/pushed/biz/summary/list")
     public Result<List<ForwarderSupplierGroupVO>> getForwarderSupplierOnPrepareGroupDao(HttpServletRequest request) {
         long id = Long.parseLong(request.getParameter("merchantId"));
         return Result.ok(queryService.getForwarderSupplierOnPrepareGroupDao(id));
