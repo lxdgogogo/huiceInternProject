@@ -36,8 +36,9 @@ public class SellerController {
     }
 
     @PostMapping("/goods/queryPage")
-    public Result<PageContentContainer<SellerSpuVO>> SellerGoodsQueryPage(@RequestBody QueryPageSellerSpuParam pageParam){
-        Long merchant_id= Long.valueOf(Objects.requireNonNull(getRequestParameter("merchant_id")));
+    public Result<PageContentContainer<SellerSpuVO>> SellerGoodsQueryPage(@RequestBody QueryPageSellerSpuParam pageParam,
+                                                                          HttpServletRequest request){
+        Long merchant_id= Long.parseLong(request.getParameter("merchantId"));
         return Result.ok(sellerService.getSellerGoodsQueryPage(pageParam,merchant_id));
     }
 }
