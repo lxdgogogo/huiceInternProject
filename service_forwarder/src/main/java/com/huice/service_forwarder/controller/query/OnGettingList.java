@@ -31,5 +31,5 @@ public class OnGettingList {
 
     private String spuGoodsNo;
 
-    private Integer status;
+    private Byte status;
 }

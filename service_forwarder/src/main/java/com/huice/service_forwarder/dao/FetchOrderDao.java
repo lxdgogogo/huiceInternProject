@@ -1,13 +1,15 @@
 package com.huice.service_forwarder.dao;
 
+import com.huice.service_forwarder.controller.query.OnGettingList;
 import com.huice.service_forwarder.controller.query.SupplierListQuery;
 import com.huice.service_forwarder.entity.FetchOrder;
+import com.huice.service_forwarder.entity.SpuNameAndUrl;
 import org.jooq.Condition;
-import org.jooq.impl.DSL;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import static com.huice.service_forwarder.db.tables.SellerFetchOrder.SELLER_FETCH_ORDER;
+import static com.huice.service_forwarder.db.tables.PlatformSpu.PLATFORM_SPU;
 import static org.jooq.impl.DSL.concat;
 import static org.jooq.impl.DSL.noCondition;
 /**
@@ -43,5 +45,55 @@ public class FetchOrderDao extends BaseDao{
                 .from(SELLER_FETCH_ORDER)
                 .where(condition)
                 .fetchInto(FetchOrder.class);
+    }
+
+    public List<FetchOrder> onTakingGoodList(OnGettingList onGettingList){
+        Condition condition = noCondition();
+        if (onGettingList.getBizFullName() != null){
+            condition.and(SELLER_FETCH_ORDER.BIZ_NAME.eq(onGettingList.getBizFullName()));
+        }
+        if (onGettingList.getCityId() != null){
+            condition.and(SELLER_FETCH_ORDER.CITY_ID.eq(onGettingList.getCityId()));
+        }
+
+        if (onGettingList.getMarketId() != null){
+            condition.and(SELLER_FETCH_ORDER.MARKET_ID.eq(onGettingList.getMarketId()));
+        }
+
+        if (onGettingList.getMerchantId() != null){
+            condition.and(SELLER_FETCH_ORDER.MERCHANT_ID.eq(onGettingList.getMerchantId()));
+        }
+
+        if (onGettingList.getStatus() != null){
+            condition.and(SELLER_FETCH_ORDER.STATUS.eq(onGettingList.getStatus()));
+        }
+
+        if (onGettingList.getPageIndex() != null && onGettingList.getPageSize() != null){
+            return db.select()
+                    .from(SELLER_FETCH_ORDER)
+                    .where(condition)
+                    .limit(onGettingList.getPageSize())
+                    .offset((onGettingList.getPageIndex() - 1) * onGettingList.getPageSize())
+                    .fetchInto(FetchOrder.class);
+        }else {
+            return db.select()
+                    .from(SELLER_FETCH_ORDER)
+                    .where(condition)
+                    .fetchInto(FetchOrder.class);
+        }
+    }
+    public SpuNameAndUrl querySpuUrl(Long spuId){
+        List<SpuNameAndUrl> spuNameAndUrls = db.select(PLATFORM_SPU.SPU_NAME.as("spuName"), PLATFORM_SPU.MAIN_IMG_URL.as("spuUrl"))
+                .from(PLATFORM_SPU)
+                .where(PLATFORM_SPU.ID.eq(spuId))
+                .fetchInto(SpuNameAndUrl.class);
+        if (!spuNameAndUrls.isEmpty()){
+            return spuNameAndUrls.get(0);
+        }else {
+            SpuNameAndUrl spuNameAndUrl = new SpuNameAndUrl();
+            spuNameAndUrl.setSpuUrl("dnmd");
+            spuNameAndUrl.setSpuName("dnmd");
+            return spuNameAndUrl;
+        }
     }
 }

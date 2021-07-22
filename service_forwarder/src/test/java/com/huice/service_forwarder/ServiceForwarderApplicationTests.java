@@ -1,8 +1,10 @@
 package com.huice.service_forwarder;
 
+import com.huice.service_forwarder.controller.query.OnGettingList;
 import com.huice.service_forwarder.controller.query.SupplierListQuery;
 import com.huice.service_forwarder.controller.vo.CityTree;
 import com.huice.service_forwarder.controller.vo.DemandForTwo;
+import com.huice.service_forwarder.controller.vo.demand3.PageContentContainer;
 import com.huice.service_forwarder.dao.BusinessDao;
 import com.huice.service_forwarder.dao.FetchOrderDao;
 import com.huice.service_forwarder.entity.FetchOrder;
@@ -55,5 +57,12 @@ class ServiceForwarderApplicationTests {
         }
     }
 
+    @Test
+    void test22() {
+        OnGettingList onGettingList = new OnGettingList();
+        onGettingList.setStatus((byte) 2);
+        List<PageContentContainer> goodList = this.fetchOrderService.getGoodList(onGettingList);
+        System.out.println(Arrays.toString(goodList.toArray()));
+    }
 
 }
