@@ -3,15 +3,11 @@ package com.huice.service_fdk;
 import com.huice.service_fdk.common.Result;
 import com.huice.service_fdk.common.page.PageContentContainer;
 import com.huice.service_fdk.common.page.PageParam;
-import com.huice.service_fdk.controller.ForwarderController;
-import com.huice.service_fdk.controller.SellerForwarderController;
 import com.huice.service_fdk.dao.ForwarderDao;
 import com.huice.service_fdk.service.ForwarderService;
-import com.huice.service_fdk.service.ISellerForwarderService;
 import com.huice.service_fdk.service.impl.SellerForwardServiceImpl;
 import com.huice.service_fdk.service.model.CityModel;
 import com.huice.service_fdk.service.vo.ForwarderSummaryVO;
-import com.huice.service_fdk.service.vo.ForwarderSupplierVO;
 import com.huice.service_fdk.service.QueryService;
 import com.huice.service_fdk.service.vo.SupplierGoodsList;
 import org.junit.jupiter.api.Test;
@@ -40,7 +36,6 @@ class ServiceFdkApplicationTests {
 
     @Test
     void getForwarderGoodsVOlistTest() {
-        String msg ;
         List<Integer> arrayList = new ArrayList<>();
         arrayList.add(1);
         arrayList.add(2);
@@ -55,14 +50,12 @@ class ServiceFdkApplicationTests {
 
     @Test
     void getForwarderCity() {
-//        List<ForwarderSupplierVO> cityModels =  forwarderDao.getCityModelTree();
         List<CityModel> cityModels = sellerForwardService.selectCityInfo();
         System.out.println(cityModels);
     }
 
     @Test
     void getForwarderPushed() {
-//        List<ForwarderSupplierVO> cityModels =  forwarderDao.getCityModelTree();
         ForwarderSummaryVO forwarderSummaryVO = forwarderService.getForwarderPushedSummaryVO(0);
         System.out.println(forwarderSummaryVO);
     }

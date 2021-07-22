@@ -1,7 +1,7 @@
-package com.huice.service_fdk.controller;
+package com.huice.service_fdk.Controller;
 
 import com.huice.service_fdk.common.Result;
-import com.huice.service_fdk.controller.VO.CityVO;
+import com.huice.service_fdk.Controller.VO.CityVO;
 import com.huice.service_fdk.service.ISellerForwarderService;
 import com.huice.service_fdk.service.model.CityModel;
 import org.jooq.Param;

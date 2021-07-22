@@ -1,4 +1,4 @@
-package com.huice.service_fdk.controller.VO;
+package com.huice.service_fdk.Controller.VO;
 
 import com.huice.service_fdk.service.model.MarketModel;
 import com.huice.service_fdk.service.vo.Market;

@@ -23,3 +23,4 @@ public class SummerApplication implements WebMvcConfigurer {
     }
 
 }
+

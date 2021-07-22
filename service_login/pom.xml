@@ -9,9 +9,9 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.hc</groupId>
-  <artifactId>service_login</artifactId>
+  <artifactId>summer_login</artifactId>
   <version>1.0</version>
-  <name>service_login</name>
+  <name>summer_login</name>
   <description>summer project for Spring Boot</description>
 
   <properties>
@@ -73,16 +73,16 @@
       <version>${mysql-connector-java.version}</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-jdbc</artifactId>
-      </dependency>
+    <!--<dependency>-->
+    <!--<groupId>org.springframework.boot</groupId>-->
+    <!--<artifactId>spring-boot-starter-jdbc</artifactId>-->
+    <!--</dependency>-->
 
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>druid-spring-boot-starter</artifactId>
-      <version>1.1.22</version>
-    </dependency>
+    <!--<dependency>-->
+    <!--<groupId>com.alibaba</groupId>-->
+    <!--<artifactId>druid-spring-boot-starter</artifactId>-->
+    <!--<version>1.1.22</version>-->
+    <!--</dependency>-->
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -164,6 +164,10 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jooq</groupId>
+      <artifactId>jooq</artifactId>
     </dependency>
   </dependencies>
   <dependencyManagement>

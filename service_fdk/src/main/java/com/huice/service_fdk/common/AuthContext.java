@@ -1,16 +1,11 @@
-package com.hc.summer.common;
+package com.huice.service_fdk.common;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import org.yaml.snakeyaml.Yaml;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
-import java.util.Map;
 
 /**
  * 登录上下文

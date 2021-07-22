@@ -50,7 +50,6 @@ public class AuthInterceptor implements HandlerInterceptor {
         }
         try {
             Claims claimsBody = JwtUtil.getClaimsBody(token);
-
             AuthContext.setUserId(Long.valueOf(claimsBody.get("userId").toString()));
             AuthContext.setUserName(claimsBody.get("userName").toString());
             AuthContext.setRoleType(Byte.valueOf(claimsBody.get("roleType").toString()));
