@@ -2,11 +2,15 @@ package com.huice.service_forwarder.dao;
 
 import com.huice.service_forwarder.controller.query.OnGettingList;
 import com.huice.service_forwarder.controller.query.SupplierListQuery;
+import com.huice.service_forwarder.db.tables.records.SellerFetchOrderRecord;
 import com.huice.service_forwarder.entity.FetchOrder;
 import com.huice.service_forwarder.entity.SpuNameAndUrl;
 import org.jooq.Condition;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 import static com.huice.service_forwarder.db.tables.SellerFetchOrder.SELLER_FETCH_ORDER;
 import static com.huice.service_forwarder.db.tables.PlatformSpu.PLATFORM_SPU;
@@ -95,5 +99,67 @@ public class FetchOrderDao extends BaseDao{
             spuNameAndUrl.setSpuName("dnmd");
             return spuNameAndUrl;
         }
+    }
+
+
+    public Long insert(FetchOrder fetchOrder){
+        SellerFetchOrderRecord sellerFetchOrderRecord = db.newRecord(SELLER_FETCH_ORDER);
+
+        sellerFetchOrderRecord.setId(fetchOrder.getId());
+
+        sellerFetchOrderRecord.setMerchantId(fetchOrder.getMerchantId());
+
+        sellerFetchOrderRecord.setCityId(fetchOrder.getCityId());
+
+        sellerFetchOrderRecord.setMarketId(fetchOrder.getMarketId());
+
+        sellerFetchOrderRecord.setFloorCode(fetchOrder.getFloorCode());
+
+        sellerFetchOrderRecord.setBizId(fetchOrder.getBizId());
+
+        sellerFetchOrderRecord.setSellerOrderId(fetchOrder.getSellerOrderId());
+
+        sellerFetchOrderRecord.setPlatformSpuId(fetchOrder.getPlatformSpuId());
+
+        sellerFetchOrderRecord.setPlatformSkuId(fetchOrder.getPlatformSkuId());
+
+        sellerFetchOrderRecord.setBillId(fetchOrder.getBillId());
+
+        sellerFetchOrderRecord.setPlatformSkuName(fetchOrder.getPlatformSkuName());
+
+        sellerFetchOrderRecord.setSellerQrCode(fetchOrder.getSellerQrCode());
+
+        sellerFetchOrderRecord.setSellerName(fetchOrder.getSellerName());
+
+        sellerFetchOrderRecord.setSellerShortName(fetchOrder.getSellerShortName());
+
+        sellerFetchOrderRecord.setPlatformBarcode(fetchOrder.getPlatformBarcode());
+
+        sellerFetchOrderRecord.setCityName(fetchOrder.getCityName());
+
+        sellerFetchOrderRecord.setMarketName(fetchOrder.getMarketName());
+
+        sellerFetchOrderRecord.setBizName(fetchOrder.getBizName());
+
+        sellerFetchOrderRecord.setSpuGoodsNo(fetchOrder.getSpuGoodsNo());
+
+        sellerFetchOrderRecord.setSkuName(fetchOrder.getSkuName());
+
+        sellerFetchOrderRecord.setRefFetchPrice(BigDecimal.valueOf(fetchOrder.getRefFetchPrice()));
+
+        sellerFetchOrderRecord.setRealFetchPrice(BigDecimal.valueOf(fetchOrder.getRealFetchPrice()));
+
+        sellerFetchOrderRecord.setStatus((byte) 2);
+
+        sellerFetchOrderRecord.setTagPrintFlag(fetchOrder.getTagPrintFlag());
+
+        sellerFetchOrderRecord.setCreated(new Timestamp(new Date().getTime()));
+
+        sellerFetchOrderRecord.setModified(new Timestamp(new Date().getTime()));
+
+        sellerFetchOrderRecord.insert();
+
+        return sellerFetchOrderRecord.getId();
+
     }
 }
