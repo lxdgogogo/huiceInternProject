@@ -1,0 +1,20 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: summer-user
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 121.4.191.125:8848
+        namespace: f97a8269-e181-4c34-8be0-dbffed18ded0
+        username: nacos
+        password: nacos
+      config:
+        server-addr: 121.4.191.125:8848
+        file-extension: yaml #指定yaml格式的配置
+        encode: UTF-8
+        namespace: f97a8269-e181-4c34-8be0-dbffed18ded0
+        username: nacos
+        password: nacos

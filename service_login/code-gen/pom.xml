@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.3.3.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+  <groupId>com.hc</groupId>
+  <artifactId>fdk-jooq-gen</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>fdk-jooq-gen</name>
+  <description>Demo project for Spring Boot</description>
+
+  <properties>
+    <includes>.*</includes>
+    <jooqVersion>3.12.4</jooqVersion>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.15</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jooq</groupId>
+      <artifactId>jooq</artifactId>
+      <version>${jooqVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jooq</groupId>
+      <artifactId>jooq-meta</artifactId>
+      <version>${jooqVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jooq</groupId>
+      <artifactId>jooq-codegen</artifactId>
+      <version>${jooqVersion}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <!-- Specify the maven code generator plugin -->
+        <!-- Use org.jooq            for the Open Source Edition
+                 org.jooq.pro        for commercial editions,
+                 org.jooq.pro-java-6 for commercial editions with Java 6 support,
+                 org.jooq.trial      for the free trial edition
+
+             Note: Only the Open Source Edition is hosted on Maven Central.
+                   Import the others manually from your distribution -->
+        <groupId>org.jooq</groupId>
+        <artifactId>jooq-codegen-maven</artifactId>
+        <version>${jooqVersion}</version>
+        <executions>
+          <execution>
+            <id>jooq-codegen</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <jdbc>
+            <user>fdk</user>
+            <password>fdksu123456</password>
+            <url>jdbc:mysql://60.205.180.234:3306/fdk_user?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true
+            </url>
+            <driver>com.mysql.cj.jdbc.Driver</driver>
+          </jdbc>
+          <generator>
+            <!-- The default code generator. You can override this one, to generate your own code style.
+                 Supported generators:
+                 - org.jooq.codegen.JavaGenerator
+                 - org.jooq.codegen.ScalaGenerator
+                 Defaults to org.jooq.codegen.JavaGenerator -->
+            <name>org.jooq.codegen.JavaGenerator</name>
+
+            <database>
+              <!-- The database type. The format here is:
+                   org.jooq.meta.[database].[database]Database -->
+              <name>org.jooq.meta.mysql.MySQLDatabase</name>
+
+              <!-- The database schema (or in the absence of schema support, in your RDBMS this
+                   can be the owner, user, database name) to be generated -->
+              <!-- change me -->
+              <inputSchema>fdk_user</inputSchema>
+
+              <!-- All elements that are generated from your schema
+                   (A Java regular expression. Use the pipe to separate several expressions)
+                   Watch out for case-sensitivity. Depending on your database, this might be important! -->
+              <includes>${includes}</includes>
+
+              <!-- All elements that are excluded from your schema
+                   (A Java regular expression. Use the pipe to separate several expressions).
+                   Excludes match before includes, i.e. excludes have a higher priority -->
+              <!--<excludes></excludes>-->
+              <unsignedTypes>false</unsignedTypes>
+
+              <!-- The first matching forcedType will be applied to the data type definition. -->
+              <forcedTypes>
+                <!--                <forcedType>-->
+
+                <!--                  &lt;!&ndash; Specify any data type that is supported in your database, or if unsupported,-->
+                <!--               a type from org.jooq.impl.SQLDataType &ndash;&gt;-->
+                <!--                  <name>BOOLEAN</name>-->
+
+                <!--                  &lt;!&ndash; Specify the Java type of your custom type. This corresponds to the Converter's <U> type. &ndash;&gt;-->
+                <!--                  <userType>java.lang.Boolean</userType>-->
+
+                <!--                  &lt;!&ndash; Associate that custom type with your converter. &ndash;&gt;-->
+                <!--                  <converter>cn.wangdian.pos.db.converter.ByteToBooleanConverter</converter>-->
+
+                <!--                  &lt;!&ndash; These are the same as for type rewriting &ndash;&gt;-->
+                <!--                  <expressions>.*\.disabled|.*\.enabled|.*\.is_((?!(on_sale)).)*|show_cover_pic|subscribe</expressions>-->
+                <!--                  &lt;!&ndash; Force a type on ALL or specific object types, including-->
+                <!--               ATTRIBUTE, COLUMN, ELEMENT, PARAMETER, SEQUENCE &ndash;&gt;-->
+                <!--                  <objectType>ALL</objectType>-->
+                <!--                </forcedType>-->
+                <forcedType>
+                  <name>DECIMAL</name>
+                  <userType>java.math.BigDecimal</userType>
+                  <includeTypes>FLOAT|DOUBLE</includeTypes>
+                  <includeExpression>.*</includeExpression>
+                  <objectType>ALL</objectType>
+                </forcedType>
+
+                <forcedType>
+                  <name>DATETIME</name>
+                  <userType>java.time.LocalDateTime</userType>
+                  <includeTypes>DATETIME</includeTypes>
+                  <includeExpression>.*</includeExpression>
+                  <objectType>ALL</objectType>
+                </forcedType>
+
+                <forcedType>
+                  <name>DATE</name>
+                  <userType>java.time.LocalDate</userType>
+                  <includeTypes>DATE</includeTypes>
+                  <includeExpression>.*</includeExpression>
+                  <objectType>ALL</objectType>
+                </forcedType>
+              </forcedTypes>
+            </database>
+
+            <target>
+              <!-- The destination package of your generated classes (within the destination directory) -->
+              <packageName>com.hc.summer.db</packageName>
+
+              <!-- The destination directory of your generated classes. Using Maven directory layout here -->
+              <directory>src/main/java/</directory>
+            </target>
+
+            <generate>
+              <daos>false</daos>
+              <pojos>false</pojos>
+              <javaTimeTypes>true</javaTimeTypes>
+              <interfaces>false</interfaces>
+              <springAnnotations>true</springAnnotations>
+            </generate>
+          </generator>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

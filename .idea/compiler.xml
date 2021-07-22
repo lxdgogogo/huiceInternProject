@@ -10,6 +10,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="service_gateway" />
         <module name="service_forwarder" />
+        <module name="service_login" />
         <module name="service_fdk" />
       </profile>
     </annotationProcessing>
@@ -20,6 +21,7 @@
       <module name="service_fdk" target="1.8" />
       <module name="service_forwarder" target="1.8" />
       <module name="service_gateway" target="1.8" />
+      <module name="service_login" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -29,6 +31,7 @@
       <module name="service_fdk" options="-parameters" />
       <module name="service_forwarder" options="-parameters" />
       <module name="service_gateway" options="-parameters" />
+      <module name="service_login" options="-parameters" />
     </option>
   </component>
 </project>

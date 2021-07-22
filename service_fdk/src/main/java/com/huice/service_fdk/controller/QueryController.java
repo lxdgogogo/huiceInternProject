@@ -1,4 +1,4 @@
-package com.huice.service_fdk.controller;
+package com.huice.service_fdk.Controller;
 
 import com.huice.service_fdk.common.Result;
 import com.huice.service_fdk.common.page.PageContentContainer;
@@ -22,7 +22,7 @@ public class QueryController {
     // 1.获取代拿供货商分组
 
     @GetMapping("/wait/push/biz/summary/list/{id}")
-    public Result<List<ForwarderSupplierGroupVO>> getForwarderSupplierGroupVO(@PathVariable String id) {
+    public Result<List<ForwarderSupplierGroupVO>> getForwarderSupplierGroupVO(@RequestParam String id) {
         return Result.ok(queryService.getForwarderSupplierGroupVO(Long.parseLong(id)));
     }
 
@@ -35,14 +35,14 @@ public class QueryController {
     //5.获取级联档口地址初始化接口
 
     @GetMapping("/wait/push/page/init")
-    public Result<ForwarderPageInitVO> getForwarderPageInitVODao(long id) {
+    public Result<ForwarderPageInitVO> getForwarderPageInitVODao(@RequestParam long id) {
         return Result.ok(queryService.getForwarderPageInitVODao(id));
     }
 
     //12.已推送供货商列表
     @GetMapping("" +
             "/pushed/biz/summary/list/{id}")
-    public Result<List<ForwarderSupplierGroupVO>> getForwarderSupplierOnPrepareGroupDao(@PathVariable String id) {
+    public Result<List<ForwarderSupplierGroupVO>> getForwarderSupplierOnPrepareGroupDao(@RequestParam String id) {
         return Result.ok(queryService.getForwarderSupplierOnPrepareGroupDao(Long.parseLong(id)));
     }
 

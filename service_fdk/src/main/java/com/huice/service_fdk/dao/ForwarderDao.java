@@ -4,6 +4,7 @@ import com.huice.service_fdk.myjooq.db.tables.ForwarderSupplier;
 import com.huice.service_fdk.myjooq.db.tables.records.ForwarderSupplierRecord;
 import com.huice.service_fdk.service.vo.ForwarderGoodsVO;
 import com.huice.service_fdk.service.vo.ForwarderSummaryVO;
+import com.huice.service_fdk.service.vo.ForwarderSupplierVO;
 import com.huice.service_fdk.service.vo.SummarySumVO;
 import org.jooq.impl.DSL;
 import org.springframework.stereotype.Repository;
@@ -79,9 +80,19 @@ public class ForwarderDao extends BaseDao {
         return ans;
     }
 
-    public List<ForwarderSupplierRecord> getCityModelTree(){
-        return db.select()
+    public List<ForwarderSupplierVO> getCityModelTree(){  // 先不写id
+        return db.select(
+                FORWARDER_SUPPLIER.BUSINESS,
+                FORWARDER_SUPPLIER.CITY,
+                FORWARDER_SUPPLIER.CITY_CODE,
+                FORWARDER_SUPPLIER.FLOOR,
+                FORWARDER_SUPPLIER.FLOOR_CODE,
+                FORWARDER_SUPPLIER.FORWARDER_SUPPLIER_ID,
+                FORWARDER_SUPPLIER.GROUP_NAME,
+                FORWARDER_SUPPLIER.MARKET,
+                FORWARDER_SUPPLIER.MARKET_CODE,
+                FORWARDER_SUPPLIER.SUPPLIER_NAME)
                 .from(ForwarderSupplier.FORWARDER_SUPPLIER)
-                .fetchInto(ForwarderSupplierRecord.class);
+                .fetchInto(ForwarderSupplierVO.class);
     }
 }

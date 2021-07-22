@@ -3,9 +3,15 @@ package com.huice.service_fdk;
 import com.huice.service_fdk.common.Result;
 import com.huice.service_fdk.common.page.PageContentContainer;
 import com.huice.service_fdk.common.page.PageParam;
+import com.huice.service_fdk.controller.ForwarderController;
+import com.huice.service_fdk.controller.SellerForwarderController;
+import com.huice.service_fdk.dao.ForwarderDao;
 import com.huice.service_fdk.service.ForwarderService;
+import com.huice.service_fdk.service.ISellerForwarderService;
+import com.huice.service_fdk.service.impl.SellerForwardServiceImpl;
+import com.huice.service_fdk.service.model.CityModel;
+import com.huice.service_fdk.service.vo.ForwarderSupplierVO;
 import com.huice.service_fdk.service.QueryService;
-import com.huice.service_fdk.service.vo.SupplierGoodsList;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -18,26 +24,38 @@ class ServiceFdkApplicationTests {
 
     @Resource
     private ForwarderService forwarderService;
-
     @Resource
     private QueryService queryService;
+    @Resource
+    private SellerForwardServiceImpl sellerForwardService;
+    @Resource
+    private ForwarderDao forwarderDao;
 
     @Test
     void getSummarySumVOTest() {
-        System.out.print(Result.ok(forwarderService.getSummarySumVO(1)));
+        System.out.print(Result.ok(forwarderService.getSummarySumVO((long)1)));
     }
 
     @Test
-    void getForwarderGoodsVOListTest() {
+    void getForwarderGoodsVOlistTest() {
+        String msg ;
         List<Integer> arrayList = new ArrayList<>();
         arrayList.add(1);
         arrayList.add(2);
-        System.out.print(Result.ok(forwarderService.getForwarderGoodsVOlist(9636,arrayList)));
+        System.out.print(Result.ok(forwarderService.getForwarderGoodsVOlist((long)9636,arrayList)));
     }
     @Test
     void getPageForwarderSupplierDao() {
         PageParam pageParam = new PageParam();
-        PageContentContainer<SupplierGoodsList> pageContentContainer =  queryService.getPage(pageParam);
+        PageContentContainer<ForwarderSupplierVO> pageContentContainer =  queryService.getPage(pageParam);
         System.out.println(pageContentContainer);
     }
+
+    @Test
+    void getForwarderCity() {
+//        List<ForwarderSupplierVO> cityModels =  forwarderDao.getCityModelTree();
+        List<CityModel> cityModels = sellerForwardService.selectCityInfo();
+        System.out.println(cityModels);
+    }
+
 }
