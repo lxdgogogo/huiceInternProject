@@ -4,7 +4,9 @@ import com.huice.service_fdk.common.Result;
 import com.huice.service_fdk.common.page.PageContentContainer;
 import com.huice.service_fdk.common.page.PageParam;
 import com.huice.service_fdk.dao.ForwarderDao;
+import com.huice.service_fdk.entity.ManuallydownloadProductParam;
 import com.huice.service_fdk.service.ForwarderService;
+import com.huice.service_fdk.service.Platform_skuService;
 import com.huice.service_fdk.service.impl.SellerForwardServiceImpl;
 import com.huice.service_fdk.service.model.CityModel;
 import com.huice.service_fdk.service.vo.ForwarderSummaryVO;
@@ -15,7 +17,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
 class ServiceFdkApplicationTests {
@@ -28,6 +32,8 @@ class ServiceFdkApplicationTests {
     private SellerForwardServiceImpl sellerForwardService;
     @Resource
     private ForwarderDao forwarderDao;
+    @Resource
+    private Platform_skuService platform_skuService;
 
     @Test
     void getSummarySumVOTest() {
@@ -53,7 +59,19 @@ class ServiceFdkApplicationTests {
         List<CityModel> cityModels = sellerForwardService.selectCityInfo();
         System.out.println(cityModels);
     }
-
+    @Test
+    void getDownload() {
+        ManuallydownloadProductParam Param = new ManuallydownloadProductParam();
+        Param.setEndTime("2020-11-30");
+        Param.setStartTime("2020-11-20");
+        Param.setGoodsStatus((byte)0);
+        Map<Integer,String> test = new HashMap<>();
+        test.put(1,"店铺1");
+        test.put(2,"店铺2");
+        Param.setShopIds(test);
+        String msg = "调用16测试";
+        System.out.println(Result.ok(platform_skuService.getnewDownload(Param,1),msg));
+    }
     @Test
     void getForwarderPushed() {
         ForwarderSummaryVO forwarderSummaryVO = forwarderService.getForwarderPushedSummaryVO(0);
