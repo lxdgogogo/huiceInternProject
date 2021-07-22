@@ -5,23 +5,24 @@ package com.huice.service_fdk.myjooq.db.tables.records;
 
 
 import com.huice.service_fdk.myjooq.db.tables.MapSellerSkuSupplier;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 import org.jooq.Field;
 import org.jooq.Record1;
 import org.jooq.Record18;
 import org.jooq.Row18;
 import org.jooq.impl.UpdatableRecordImpl;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-
 
 /**
  * 销售商SKU与供货商关联关系|刘宇晴|2020-11-20
  */
-@SuppressWarnings({"all", "unchecked", "rawtypes"})
+@SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class MapSellerSkuSupplierRecord extends UpdatableRecordImpl<MapSellerSkuSupplierRecord> implements Record18<Long, Long, Long, Long, Long, Long, Byte, String, String, BigDecimal, LocalDateTime, LocalDateTime, String, String, String, String, String, Byte> {
 
-    private static final long serialVersionUID = 2122753401;
+    private static final long serialVersionUID = 1L;
 
     /**
      * Setter for <code>fdk_goods2.map_seller_sku_supplier.id</code>.
@@ -716,23 +717,23 @@ public class MapSellerSkuSupplierRecord extends UpdatableRecordImpl<MapSellerSku
     public MapSellerSkuSupplierRecord(Long id, Long merchantId, Long sellerSkuId, Long sellerSpuId, Long supplierId, Long supplierMerchantId, Byte mainFlag, String remark, String itemNo, BigDecimal purchasePrice, LocalDateTime created, LocalDateTime modified, String city, String market, String floor, String business, String supplierName, Byte takeGoodsType) {
         super(MapSellerSkuSupplier.MAP_SELLER_SKU_SUPPLIER);
 
-        set(0, id);
-        set(1, merchantId);
-        set(2, sellerSkuId);
-        set(3, sellerSpuId);
-        set(4, supplierId);
-        set(5, supplierMerchantId);
-        set(6, mainFlag);
-        set(7, remark);
-        set(8, itemNo);
-        set(9, purchasePrice);
-        set(10, created);
-        set(11, modified);
-        set(12, city);
-        set(13, market);
-        set(14, floor);
-        set(15, business);
-        set(16, supplierName);
-        set(17, takeGoodsType);
+        setId(id);
+        setMerchantId(merchantId);
+        setSellerSkuId(sellerSkuId);
+        setSellerSpuId(sellerSpuId);
+        setSupplierId(supplierId);
+        setSupplierMerchantId(supplierMerchantId);
+        setMainFlag(mainFlag);
+        setRemark(remark);
+        setItemNo(itemNo);
+        setPurchasePrice(purchasePrice);
+        setCreated(created);
+        setModified(modified);
+        setCity(city);
+        setMarket(market);
+        setFloor(floor);
+        setBusiness(business);
+        setSupplierName(supplierName);
+        setTakeGoodsType(takeGoodsType);
     }
 }

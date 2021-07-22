@@ -39,7 +39,7 @@ public class ForwarderPageInitVODao extends BaseDao{
                 if(forwarderPageInit.getCityCode()==cityCode){
                     city.setCityName(forwarderPageInit.getCityName());
                     if(marketCodeSet.get(cityCode).stream()
-                            .noneMatch(f->f.getMarketCode()==forwarderPageInit.getMarketCode())){
+                            .noneMatch(f-> f.getMarketCode().equals(forwarderPageInit.getMarketCode()))){
                         //如果城市中没有这个market，则创建一个market
                         market = new Market(forwarderPageInit.getCityCode(),
                                 forwarderPageInit.getMarketCode(),
@@ -50,7 +50,7 @@ public class ForwarderPageInitVODao extends BaseDao{
                     else{
                         //如果城市中有这个market，则找到这个market，并将该market加入城市
                         Optional<Market> optionalMarket = marketCodeSet.get(cityCode).stream()
-                                .filter(f->f.getMarketCode() ==forwarderPageInit.getMarketCode())
+                                .filter(f-> f.getMarketCode().equals(forwarderPageInit.getMarketCode()))
                                 .findAny();
                         assert optionalMarket.isPresent();
                         market = optionalMarket.get();

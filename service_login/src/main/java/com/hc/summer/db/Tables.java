@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 
 /**
- * Convenience access to all tables in fdk_user
+ * Convenience access to all tables in fdk_user2
  */
 @Generated(
     value = {
@@ -34,17 +34,17 @@ public class Tables {
     public static final PlatformSku PLATFORM_SKU = PlatformSku.PLATFORM_SKU;
 
     /**
-     * The table <code>fdk_user.sys_function</code>.
+     * The table <code>fdk_user2.sys_function</code>.
      */
     public static final SysFunction SYS_FUNCTION = SysFunction.SYS_FUNCTION;
 
     /**
-     * The table <code>fdk_user.sys_role</code>.
+     * The table <code>fdk_user2.sys_role</code>.
      */
     public static final SysRole SYS_ROLE = SysRole.SYS_ROLE;
 
     /**
-     * The table <code>fdk_user.sys_role_function</code>.
+     * The table <code>fdk_user2.sys_role_function</code>.
      */
     public static final SysRoleFunction SYS_ROLE_FUNCTION = SysRoleFunction.SYS_ROLE_FUNCTION;
 
@@ -54,12 +54,12 @@ public class Tables {
     public static final SysShop SYS_SHOP = SysShop.SYS_SHOP;
 
     /**
-     * The table <code>fdk_user.sys_user</code>.
+     * The table <code>fdk_user2.sys_user</code>.
      */
     public static final SysUser SYS_USER = SysUser.SYS_USER;
 
     /**
-     * The table <code>fdk_user.sys_user_role</code>.
+     * The table <code>fdk_user2.sys_user_role</code>.
      */
     public static final SysUserRole SYS_USER_ROLE = SysUserRole.SYS_USER_ROLE;
 }

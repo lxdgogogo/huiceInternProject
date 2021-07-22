@@ -20,7 +20,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class PlatformSkuRecord extends UpdatableRecordImpl<PlatformSkuRecord> {
 
-    private static final long serialVersionUID = -224464902;
+    private static final long serialVersionUID = 1L;
 
     /**
      * Setter for <code>fdk_goods2.platform_sku.id</code>. 自增ID|牛振宇|2020-11-24
@@ -412,31 +412,31 @@ public class PlatformSkuRecord extends UpdatableRecordImpl<PlatformSkuRecord> {
     public PlatformSkuRecord(ULong id, Long merchantId, Byte saleStatus, Integer platformId, String platformName, Long shopId, String goodsId, String goodsName, String skuId, String skuCode, String skuName, String skuProperties, String outerId, String skuOuterId, String cid, BigDecimal price, BigDecimal stockNum, String imgUrl, String barcode, Byte holdStockType, BigDecimal holdStock, Integer modifyMask, Byte deleteFlag, LocalDateTime created, LocalDateTime modified, String mainImgUrl) {
         super(PlatformSku.PLATFORM_SKU);
 
-        set(0, id);
-        set(1, merchantId);
-        set(2, saleStatus);
-        set(3, platformId);
-        set(4, platformName);
-        set(5, shopId);
-        set(6, goodsId);
-        set(7, goodsName);
-        set(8, skuId);
-        set(9, skuCode);
-        set(10, skuName);
-        set(11, skuProperties);
-        set(12, outerId);
-        set(13, skuOuterId);
-        set(14, cid);
-        set(15, price);
-        set(16, stockNum);
-        set(17, imgUrl);
-        set(18, barcode);
-        set(19, holdStockType);
-        set(20, holdStock);
-        set(21, modifyMask);
-        set(22, deleteFlag);
-        set(23, created);
-        set(24, modified);
-        set(25, mainImgUrl);
+        setId(id);
+        setMerchantId(merchantId);
+        setSaleStatus(saleStatus);
+        setPlatformId(platformId);
+        setPlatformName(platformName);
+        setShopId(shopId);
+        setGoodsId(goodsId);
+        setGoodsName(goodsName);
+        setSkuId(skuId);
+        setSkuCode(skuCode);
+        setSkuName(skuName);
+        setSkuProperties(skuProperties);
+        setOuterId(outerId);
+        setSkuOuterId(skuOuterId);
+        setCid(cid);
+        setPrice(price);
+        setStockNum(stockNum);
+        setImgUrl(imgUrl);
+        setBarcode(barcode);
+        setHoldStockType(holdStockType);
+        setHoldStock(holdStock);
+        setModifyMask(modifyMask);
+        setDeleteFlag(deleteFlag);
+        setCreated(created);
+        setModified(modified);
+        setMainImgUrl(mainImgUrl);
     }
 }

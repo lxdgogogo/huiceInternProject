@@ -8,9 +8,9 @@ spring:
     nacos:
       discovery:
         server-addr: http://localhost:8848
-        namespace: f97a8269-e181-4c34-8be0-dbffed18ded0
+        namespace: hc-summer-2
 
       config:
         server-addr: http://localhost:8848
         encode: UTF-8
-        namespace: f97a8269-e181-4c34-8be0-dbffed18ded0
+        namespace: hc-summer-2

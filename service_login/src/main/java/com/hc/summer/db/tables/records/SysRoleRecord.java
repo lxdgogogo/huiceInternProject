@@ -30,73 +30,73 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SysRoleRecord extends UpdatableRecordImpl<SysRoleRecord> implements Record5<Long, String, Byte, LocalDateTime, LocalDateTime> {
 
-    private static final long serialVersionUID = -345417580;
+    private static final long serialVersionUID = -809274772;
 
     /**
-     * Setter for <code>fdk_user.sys_role.id</code>.
+     * Setter for <code>fdk_user2.sys_role.id</code>.
      */
     public void setId(Long value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_role.id</code>.
+     * Getter for <code>fdk_user2.sys_role.id</code>.
      */
     public Long getId() {
         return (Long) get(0);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_role.role_name</code>. 角色名|文弟友|2021-01-27
+     * Setter for <code>fdk_user2.sys_role.role_name</code>. 角色名|文弟友|2021-01-27
      */
     public void setRoleName(String value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_role.role_name</code>. 角色名|文弟友|2021-01-27
+     * Getter for <code>fdk_user2.sys_role.role_name</code>. 角色名|文弟友|2021-01-27
      */
     public String getRoleName() {
         return (String) get(1);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_role.type</code>. 角色类型|@0：发得快账号；@1：代拿账号|文弟友|2021-01-27
+     * Setter for <code>fdk_user2.sys_role.type</code>. 角色类型|@0：发得快账号；@1：代拿账号|文弟友|2021-01-27
      */
     public void setType(Byte value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_role.type</code>. 角色类型|@0：发得快账号；@1：代拿账号|文弟友|2021-01-27
+     * Getter for <code>fdk_user2.sys_role.type</code>. 角色类型|@0：发得快账号；@1：代拿账号|文弟友|2021-01-27
      */
     public Byte getType() {
         return (Byte) get(2);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_role.created</code>. 创建时间|文弟友|2021-01-27
+     * Setter for <code>fdk_user2.sys_role.created</code>. 创建时间|文弟友|2021-01-27
      */
     public void setCreated(LocalDateTime value) {
         set(3, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_role.created</code>. 创建时间|文弟友|2021-01-27
+     * Getter for <code>fdk_user2.sys_role.created</code>. 创建时间|文弟友|2021-01-27
      */
     public LocalDateTime getCreated() {
         return (LocalDateTime) get(3);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_role.modified</code>. 修改时间|文弟友|2021-01-27
+     * Setter for <code>fdk_user2.sys_role.modified</code>. 修改时间|文弟友|2021-01-27
      */
     public void setModified(LocalDateTime value) {
         set(4, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_role.modified</code>. 修改时间|文弟友|2021-01-27
+     * Getter for <code>fdk_user2.sys_role.modified</code>. 修改时间|文弟友|2021-01-27
      */
     public LocalDateTime getModified() {
         return (LocalDateTime) get(4);

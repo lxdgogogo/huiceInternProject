@@ -21,7 +21,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class ForwarderSupplierRecord extends UpdatableRecordImpl<ForwarderSupplierRecord> implements Record14<Long, Long, Long, String, Long, String, Long, String, Long, String, String, String, LocalDateTime, LocalDateTime> {
 
-    private static final long serialVersionUID = -1809610580;
+    private static final long serialVersionUID = 1L;
 
     /**
      * Setter for <code>fdk_goods2.forwarder_supplier.id</code>.
@@ -572,19 +572,19 @@ public class ForwarderSupplierRecord extends UpdatableRecordImpl<ForwarderSuppli
     public ForwarderSupplierRecord(Long id, Long merchantId, Long forwarderSupplierId, String city, Long cityCode, String market, Long marketCode, String floor, Long floorCode, String business, String supplierName, String groupName, LocalDateTime created, LocalDateTime modified) {
         super(ForwarderSupplier.FORWARDER_SUPPLIER);
 
-        set(0, id);
-        set(1, merchantId);
-        set(2, forwarderSupplierId);
-        set(3, city);
-        set(4, cityCode);
-        set(5, market);
-        set(6, marketCode);
-        set(7, floor);
-        set(8, floorCode);
-        set(9, business);
-        set(10, supplierName);
-        set(11, groupName);
-        set(12, created);
-        set(13, modified);
+        setId(id);
+        setMerchantId(merchantId);
+        setForwarderSupplierId(forwarderSupplierId);
+        setCity(city);
+        setCityCode(cityCode);
+        setMarket(market);
+        setMarketCode(marketCode);
+        setFloor(floor);
+        setFloorCode(floorCode);
+        setBusiness(business);
+        setSupplierName(supplierName);
+        setGroupName(groupName);
+        setCreated(created);
+        setModified(modified);
     }
 }

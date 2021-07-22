@@ -30,59 +30,59 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SysRoleFunctionRecord extends UpdatableRecordImpl<SysRoleFunctionRecord> implements Record4<Long, Long, Long, LocalDateTime> {
 
-    private static final long serialVersionUID = 728365748;
+    private static final long serialVersionUID = -1073897026;
 
     /**
-     * Setter for <code>fdk_user.sys_role_function.id</code>.
+     * Setter for <code>fdk_user2.sys_role_function.id</code>.
      */
     public void setId(Long value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_role_function.id</code>.
+     * Getter for <code>fdk_user2.sys_role_function.id</code>.
      */
     public Long getId() {
         return (Long) get(0);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_role_function.role_id</code>. 角色ID|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_role_function.role_id</code>. 角色ID|文弟友|2021-01-18
      */
     public void setRoleId(Long value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_role_function.role_id</code>. 角色ID|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_role_function.role_id</code>. 角色ID|文弟友|2021-01-18
      */
     public Long getRoleId() {
         return (Long) get(1);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_role_function.function_id</code>. 菜单ID|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_role_function.function_id</code>. 菜单ID|文弟友|2021-01-18
      */
     public void setFunctionId(Long value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_role_function.function_id</code>. 菜单ID|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_role_function.function_id</code>. 菜单ID|文弟友|2021-01-18
      */
     public Long getFunctionId() {
         return (Long) get(2);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_role_function.modified</code>.
+     * Setter for <code>fdk_user2.sys_role_function.modified</code>.
      */
     public void setModified(LocalDateTime value) {
         set(3, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_role_function.modified</code>.
+     * Getter for <code>fdk_user2.sys_role_function.modified</code>.
      */
     public LocalDateTime getModified() {
         return (LocalDateTime) get(3);

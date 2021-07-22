@@ -20,7 +20,7 @@ import org.jooq.impl.Internal;
 
 
 /**
- * A class modelling indexes of tables of the <code>fdk_user</code> schema.
+ * A class modelling indexes of tables of the <code>fdk_user2</code> schema.
  */
 @Generated(
     value = {

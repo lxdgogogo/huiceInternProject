@@ -21,7 +21,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class MapSellerSpuShopRecord extends UpdatableRecordImpl<MapSellerSpuShopRecord> implements Record8<Long, Long, Long, LocalDateTime, LocalDateTime, Long, Byte, String> {
 
-    private static final long serialVersionUID = 342392587;
+    private static final long serialVersionUID = 1L;
 
     /**
      * Setter for <code>fdk_goods2.map_seller_spu_shop.id</code>. 自增Id
@@ -356,13 +356,13 @@ public class MapSellerSpuShopRecord extends UpdatableRecordImpl<MapSellerSpuShop
     public MapSellerSpuShopRecord(Long id, Long merchantId, Long sellerSpuId, LocalDateTime created, LocalDateTime modified, Long shopId, Byte deliveryTimeType, String deliveryTimeDescription) {
         super(MapSellerSpuShop.MAP_SELLER_SPU_SHOP);
 
-        set(0, id);
-        set(1, merchantId);
-        set(2, sellerSpuId);
-        set(3, created);
-        set(4, modified);
-        set(5, shopId);
-        set(6, deliveryTimeType);
-        set(7, deliveryTimeDescription);
+        setId(id);
+        setMerchantId(merchantId);
+        setSellerSpuId(sellerSpuId);
+        setCreated(created);
+        setModified(modified);
+        setShopId(shopId);
+        setDeliveryTimeType(deliveryTimeType);
+        setDeliveryTimeDescription(deliveryTimeDescription);
     }
 }

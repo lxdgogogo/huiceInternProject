@@ -26,6 +26,7 @@ import org.jooq.TableField;
 import org.jooq.TableOptions;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
+import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
 
 
@@ -35,7 +36,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class ForwarderSupplier extends TableImpl<ForwarderSupplierRecord> {
 
-    private static final long serialVersionUID = -2008478348;
+    private static final long serialVersionUID = 1L;
 
     /**
      * The reference instance of <code>fdk_goods2.forwarder_supplier</code>
@@ -53,78 +54,79 @@ public class ForwarderSupplier extends TableImpl<ForwarderSupplierRecord> {
     /**
      * The column <code>fdk_goods2.forwarder_supplier.id</code>.
      */
-    public final TableField<ForwarderSupplierRecord, Long> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).identity(true), this, "");
+    public final TableField<ForwarderSupplierRecord, Long> ID = createField(DSL.name("id"), SQLDataType.BIGINT.nullable(false).identity(true), this, "");
 
     /**
      * The column <code>fdk_goods2.forwarder_supplier.merchant_id</code>. 销售商merchant_id|刘宇晴|2021-06-08
      */
-    public final TableField<ForwarderSupplierRecord, Long> MERCHANT_ID = createField(DSL.name("merchant_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "销售商merchant_id|刘宇晴|2021-06-08");
+    public final TableField<ForwarderSupplierRecord, Long> MERCHANT_ID = createField(DSL.name("merchant_id"), SQLDataType.BIGINT.nullable(false), this, "销售商merchant_id|刘宇晴|2021-06-08");
 
     /**
      * The column <code>fdk_goods2.forwarder_supplier.forwarder_supplier_id</code>. 代拿端供货商id |刘宇晴|2021-06-08
      */
-    public final TableField<ForwarderSupplierRecord, Long> FORWARDER_SUPPLIER_ID = createField(DSL.name("forwarder_supplier_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "代拿端供货商id |刘宇晴|2021-06-08");
+    public final TableField<ForwarderSupplierRecord, Long> FORWARDER_SUPPLIER_ID = createField(DSL.name("forwarder_supplier_id"), SQLDataType.BIGINT.nullable(false), this, "代拿端供货商id |刘宇晴|2021-06-08");
 
     /**
      * The column <code>fdk_goods2.forwarder_supplier.city</code>. 城市 |刘宇晴|2021-06-08
      */
-    public final TableField<ForwarderSupplierRecord, String> CITY = createField(DSL.name("city"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false), this, "城市 |刘宇晴|2021-06-08");
+    public final TableField<ForwarderSupplierRecord, String> CITY = createField(DSL.name("city"), SQLDataType.VARCHAR(255).nullable(false), this, "城市 |刘宇晴|2021-06-08");
 
     /**
      * The column <code>fdk_goods2.forwarder_supplier.city_code</code>. 城市编码 |刘宇晴|2021-06-08
      */
-    public final TableField<ForwarderSupplierRecord, Long> CITY_CODE = createField(DSL.name("city_code"), org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "城市编码 |刘宇晴|2021-06-08");
+    public final TableField<ForwarderSupplierRecord, Long> CITY_CODE = createField(DSL.name("city_code"), SQLDataType.BIGINT.nullable(false), this, "城市编码 |刘宇晴|2021-06-08");
 
     /**
      * The column <code>fdk_goods2.forwarder_supplier.market</code>. 市场 |刘宇晴|2021-06-08
      */
-    public final TableField<ForwarderSupplierRecord, String> MARKET = createField(DSL.name("market"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false), this, "市场 |刘宇晴|2021-06-08");
+    public final TableField<ForwarderSupplierRecord, String> MARKET = createField(DSL.name("market"), SQLDataType.VARCHAR(255).nullable(false), this, "市场 |刘宇晴|2021-06-08");
 
     /**
      * The column <code>fdk_goods2.forwarder_supplier.market_code</code>. 市场编码 |刘宇晴|2021-06-08
      */
-    public final TableField<ForwarderSupplierRecord, Long> MARKET_CODE = createField(DSL.name("market_code"), org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "市场编码 |刘宇晴|2021-06-08");
+    public final TableField<ForwarderSupplierRecord, Long> MARKET_CODE = createField(DSL.name("market_code"), SQLDataType.BIGINT.nullable(false), this, "市场编码 |刘宇晴|2021-06-08");
 
     /**
      * The column <code>fdk_goods2.forwarder_supplier.floor</code>. 楼层 |刘宇晴|2021-06-08
      */
-    public final TableField<ForwarderSupplierRecord, String> FLOOR = createField(DSL.name("floor"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false), this, "楼层 |刘宇晴|2021-06-08");
+    public final TableField<ForwarderSupplierRecord, String> FLOOR = createField(DSL.name("floor"), SQLDataType.VARCHAR(255).nullable(false), this, "楼层 |刘宇晴|2021-06-08");
 
     /**
      * The column <code>fdk_goods2.forwarder_supplier.floor_code</code>. 楼层编码 |刘宇晴|2021-06-08
      */
-    public final TableField<ForwarderSupplierRecord, Long> FLOOR_CODE = createField(DSL.name("floor_code"), org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "楼层编码 |刘宇晴|2021-06-08");
+    public final TableField<ForwarderSupplierRecord, Long> FLOOR_CODE = createField(DSL.name("floor_code"), SQLDataType.BIGINT.nullable(false), this, "楼层编码 |刘宇晴|2021-06-08");
 
     /**
      * The column <code>fdk_goods2.forwarder_supplier.business</code>. 档口 |刘宇晴|2021-06-08
      */
-    public final TableField<ForwarderSupplierRecord, String> BUSINESS = createField(DSL.name("business"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false), this, "档口 |刘宇晴|2021-06-08");
+    public final TableField<ForwarderSupplierRecord, String> BUSINESS = createField(DSL.name("business"), SQLDataType.VARCHAR(255).nullable(false), this, "档口 |刘宇晴|2021-06-08");
 
     /**
      * The column <code>fdk_goods2.forwarder_supplier.supplier_name</code>. 供货商全名 |刘宇晴|2021-06-08
      */
-    public final TableField<ForwarderSupplierRecord, String> SUPPLIER_NAME = createField(DSL.name("supplier_name"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false), this, "供货商全名 |刘宇晴|2021-06-08");
+    public final TableField<ForwarderSupplierRecord, String> SUPPLIER_NAME = createField(DSL.name("supplier_name"), SQLDataType.VARCHAR(255).nullable(false), this, "供货商全名 |刘宇晴|2021-06-08");
 
     /**
      * The column <code>fdk_goods2.forwarder_supplier.group_name</code>. 分组 |刘宇晴|2021-06-08
      */
-    public final TableField<ForwarderSupplierRecord, String> GROUP_NAME = createField(DSL.name("group_name"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false), this, "分组 |刘宇晴|2021-06-08");
+    public final TableField<ForwarderSupplierRecord, String> GROUP_NAME = createField(DSL.name("group_name"), SQLDataType.VARCHAR(255).nullable(false), this, "分组 |刘宇晴|2021-06-08");
 
     /**
      * The column <code>fdk_goods2.forwarder_supplier.created</code>.
      */
-    public final TableField<ForwarderSupplierRecord, LocalDateTime> CREATED = createField(DSL.name("created"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(org.jooq.impl.DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "");
+    public final TableField<ForwarderSupplierRecord, LocalDateTime> CREATED = createField(DSL.name("created"), SQLDataType.LOCALDATETIME(0).nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", SQLDataType.LOCALDATETIME)), this, "");
 
     /**
      * The column <code>fdk_goods2.forwarder_supplier.modified</code>.
      */
-    public final TableField<ForwarderSupplierRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(org.jooq.impl.DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "");
+    public final TableField<ForwarderSupplierRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), SQLDataType.LOCALDATETIME(0).nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", SQLDataType.LOCALDATETIME)), this, "");
 
-    /**
-     * Create a <code>fdk_goods2.forwarder_supplier</code> table reference
-     */
-    public ForwarderSupplier() {
-        this(DSL.name("forwarder_supplier"), null);
+    private ForwarderSupplier(Name alias, Table<ForwarderSupplierRecord> aliased) {
+        this(alias, aliased, null);
+    }
+
+    private ForwarderSupplier(Name alias, Table<ForwarderSupplierRecord> aliased, Field<?>[] parameters) {
+        super(alias, null, aliased, parameters, DSL.comment("销售商已创建的代拿供货商|刘宇晴|2021-06-08"), TableOptions.table());
     }
 
     /**
@@ -141,12 +143,11 @@ public class ForwarderSupplier extends TableImpl<ForwarderSupplierRecord> {
         this(alias, FORWARDER_SUPPLIER);
     }
 
-    private ForwarderSupplier(Name alias, Table<ForwarderSupplierRecord> aliased) {
-        this(alias, aliased, null);
-    }
-
-    private ForwarderSupplier(Name alias, Table<ForwarderSupplierRecord> aliased, Field<?>[] parameters) {
-        super(alias, null, aliased, parameters, DSL.comment("销售商已创建的代拿供货商|刘宇晴|2021-06-08"), TableOptions.table());
+    /**
+     * Create a <code>fdk_goods2.forwarder_supplier</code> table reference
+     */
+    public ForwarderSupplier() {
+        this(DSL.name("forwarder_supplier"), null);
     }
 
     public <O extends Record> ForwarderSupplier(Table<O> child, ForeignKey<O, ForwarderSupplierRecord> key) {
@@ -165,7 +166,7 @@ public class ForwarderSupplier extends TableImpl<ForwarderSupplierRecord> {
 
     @Override
     public Identity<ForwarderSupplierRecord, Long> getIdentity() {
-        return Keys.IDENTITY_FORWARDER_SUPPLIER;
+        return (Identity<ForwarderSupplierRecord, Long>) super.getIdentity();
     }
 
     @Override

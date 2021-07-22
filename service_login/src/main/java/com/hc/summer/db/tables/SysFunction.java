@@ -4,7 +4,7 @@
 package com.hc.summer.db.tables;
 
 
-import com.hc.summer.db.FdkUser;
+import com.hc.summer.db.FdkUser2;
 import com.hc.summer.db.Indexes;
 import com.hc.summer.db.Keys;
 import com.hc.summer.db.tables.records.SysFunctionRecord;
@@ -17,7 +17,6 @@ import javax.annotation.Generated;
 
 import org.jooq.Field;
 import org.jooq.ForeignKey;
-import org.jooq.Identity;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Record;
@@ -43,10 +42,10 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SysFunction extends TableImpl<SysFunctionRecord> {
 
-    private static final long serialVersionUID = 191314894;
+    private static final long serialVersionUID = 731580521;
 
     /**
-     * The reference instance of <code>fdk_user.sys_function</code>
+     * The reference instance of <code>fdk_user2.sys_function</code>
      */
     public static final SysFunction SYS_FUNCTION = new SysFunction();
 
@@ -59,80 +58,71 @@ public class SysFunction extends TableImpl<SysFunctionRecord> {
     }
 
     /**
-     * The column <code>fdk_user.sys_function.id</code>.
+     * The column <code>fdk_user2.sys_function.id</code>.
      */
-    public final TableField<SysFunctionRecord, Long> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).identity(true), this, "");
+    public final TableField<SysFunctionRecord, Long> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "");
 
     /**
-     * The column <code>fdk_user.sys_function.parent_id</code>. 父级ID|文弟友|2021-01-18
+     * The column <code>fdk_user2.sys_function.parent_id</code>. 父级ID|文弟友|2021-01-18
      */
-    public final TableField<SysFunctionRecord, Long> PARENT_ID = createField(DSL.name("parent_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(
-            DSL.inline("0", org.jooq.impl.SQLDataType.BIGINT)), this, "父级ID|文弟友|2021-01-18");
+    public final TableField<SysFunctionRecord, Long> PARENT_ID = createField(DSL.name("parent_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "父级ID|文弟友|2021-01-18");
 
     /**
-     * The column <code>fdk_user.sys_function.function_url</code>. 功能地址|文弟友|2021-01-18
+     * The column <code>fdk_user2.sys_function.function_url</code>. 功能地址|文弟友|2021-01-18
      */
-    public final TableField<SysFunctionRecord, String> FUNCTION_URL = createField(DSL.name("function_url"), org.jooq.impl.SQLDataType.VARCHAR(50).nullable(false).defaultValue(
-            DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "功能地址|文弟友|2021-01-18");
+    public final TableField<SysFunctionRecord, String> FUNCTION_URL = createField(DSL.name("function_url"), org.jooq.impl.SQLDataType.VARCHAR(50).nullable(false).defaultValue(DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "功能地址|文弟友|2021-01-18");
 
     /**
-     * The column <code>fdk_user.sys_function.function_icon</code>. 功能图标|文弟友|2021-01-18
+     * The column <code>fdk_user2.sys_function.function_icon</code>. 功能图标|文弟友|2021-01-18
      */
-    public final TableField<SysFunctionRecord, String> FUNCTION_ICON = createField(DSL.name("function_icon"), org.jooq.impl.SQLDataType.VARCHAR(50).nullable(false).defaultValue(
-            DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "功能图标|文弟友|2021-01-18");
+    public final TableField<SysFunctionRecord, String> FUNCTION_ICON = createField(DSL.name("function_icon"), org.jooq.impl.SQLDataType.VARCHAR(50).nullable(false).defaultValue(DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "功能图标|文弟友|2021-01-18");
 
     /**
-     * The column <code>fdk_user.sys_function.function_name</code>. 功能名|文弟友|2021-01-18
+     * The column <code>fdk_user2.sys_function.function_name</code>. 功能名|文弟友|2021-01-18
      */
-    public final TableField<SysFunctionRecord, String> FUNCTION_NAME = createField(DSL.name("function_name"), org.jooq.impl.SQLDataType.VARCHAR(50).nullable(false).defaultValue(
-            DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "功能名|文弟友|2021-01-18");
+    public final TableField<SysFunctionRecord, String> FUNCTION_NAME = createField(DSL.name("function_name"), org.jooq.impl.SQLDataType.VARCHAR(50).nullable(false).defaultValue(DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "功能名|文弟友|2021-01-18");
 
     /**
-     * The column <code>fdk_user.sys_function.function_level</code>. 功能层级|文弟友|2021-01-18
+     * The column <code>fdk_user2.sys_function.function_level</code>. 功能层级|文弟友|2021-01-18
      */
-    public final TableField<SysFunctionRecord, Byte> FUNCTION_LEVEL = createField(DSL.name("function_level"), org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(
-            DSL.inline("0", org.jooq.impl.SQLDataType.TINYINT)), this, "功能层级|文弟友|2021-01-18");
+    public final TableField<SysFunctionRecord, Byte> FUNCTION_LEVEL = createField(DSL.name("function_level"), org.jooq.impl.SQLDataType.TINYINT.nullable(false), this, "功能层级|文弟友|2021-01-18");
 
     /**
-     * The column <code>fdk_user.sys_function.sort</code>. 排序字段|文弟友|2021-01-18
+     * The column <code>fdk_user2.sys_function.sort</code>. 排序字段|文弟友|2021-01-18
      */
-    public final TableField<SysFunctionRecord, Byte> SORT = createField(DSL.name("sort"), org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(
-            DSL.inline("0", org.jooq.impl.SQLDataType.TINYINT)), this, "排序字段|文弟友|2021-01-18");
+    public final TableField<SysFunctionRecord, Byte> SORT = createField(DSL.name("sort"), org.jooq.impl.SQLDataType.TINYINT.nullable(false), this, "排序字段|文弟友|2021-01-18");
 
     /**
-     * The column <code>fdk_user.sys_function.remark</code>. 备注|文弟友|2021-01-18
+     * The column <code>fdk_user2.sys_function.remark</code>. 备注|文弟友|2021-01-18
      */
-    public final TableField<SysFunctionRecord, String> REMARK = createField(DSL.name("remark"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false).defaultValue(
-            DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "备注|文弟友|2021-01-18");
+    public final TableField<SysFunctionRecord, String> REMARK = createField(DSL.name("remark"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false).defaultValue(DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "备注|文弟友|2021-01-18");
 
     /**
-     * The column <code>fdk_user.sys_function.created</code>.
+     * The column <code>fdk_user2.sys_function.created</code>.
      */
-    public final TableField<SysFunctionRecord, LocalDateTime> CREATED = createField(DSL.name("created"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(
-            DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "");
+    public final TableField<SysFunctionRecord, LocalDateTime> CREATED = createField(DSL.name("created"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "");
 
     /**
-     * The column <code>fdk_user.sys_function.modified</code>.
+     * The column <code>fdk_user2.sys_function.modified</code>.
      */
-    public final TableField<SysFunctionRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(
-            DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "");
+    public final TableField<SysFunctionRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "");
 
     /**
-     * Create a <code>fdk_user.sys_function</code> table reference
+     * Create a <code>fdk_user2.sys_function</code> table reference
      */
     public SysFunction() {
         this(DSL.name("sys_function"), null);
     }
 
     /**
-     * Create an aliased <code>fdk_user.sys_function</code> table reference
+     * Create an aliased <code>fdk_user2.sys_function</code> table reference
      */
     public SysFunction(String alias) {
         this(DSL.name(alias), SYS_FUNCTION);
     }
 
     /**
-     * Create an aliased <code>fdk_user.sys_function</code> table reference
+     * Create an aliased <code>fdk_user2.sys_function</code> table reference
      */
     public SysFunction(Name alias) {
         this(alias, SYS_FUNCTION);
@@ -152,17 +142,12 @@ public class SysFunction extends TableImpl<SysFunctionRecord> {
 
     @Override
     public Schema getSchema() {
-        return FdkUser.FDK_USER;
+        return FdkUser2.FDK_USER2;
     }
 
     @Override
     public List<Index> getIndexes() {
         return Arrays.<Index>asList(Indexes.SYS_FUNCTION_PRIMARY);
-    }
-
-    @Override
-    public Identity<SysFunctionRecord, Long> getIdentity() {
-        return Keys.IDENTITY_SYS_FUNCTION;
     }
 
     @Override

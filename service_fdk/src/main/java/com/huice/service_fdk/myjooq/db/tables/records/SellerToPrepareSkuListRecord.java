@@ -22,7 +22,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SellerToPrepareSkuListRecord extends UpdatableRecordImpl<SellerToPrepareSkuListRecord> implements Record19<Long, Long, Long, Byte, Long, Long, Long, String, Long, String, BigDecimal, Byte, LocalDateTime, LocalDateTime, LocalDateTime, Byte, Integer, Byte, Byte> {
 
-    private static final long serialVersionUID = -1331078749;
+    private static final long serialVersionUID = 1L;
 
     /**
      * Setter for <code>fdk_goods2.seller_to_prepare_sku_list.id</code>. 自增ID
@@ -753,24 +753,24 @@ public class SellerToPrepareSkuListRecord extends UpdatableRecordImpl<SellerToPr
     public SellerToPrepareSkuListRecord(Long id, Long merchantId, Long supplierId, Byte status, Long sellerSkuId, Long sellerSkuChildId, Long tradeId, String tradeNo, Long orderId, String orderNo, BigDecimal skuNum, Byte deleteFlag, LocalDateTime payTime, LocalDateTime created, LocalDateTime modified, Byte manualCompleteFlag, Integer tradeFlag, Byte priorDeliveryFlag, Byte takeGoodsType) {
         super(SellerToPrepareSkuList.SELLER_TO_PREPARE_SKU_LIST);
 
-        set(0, id);
-        set(1, merchantId);
-        set(2, supplierId);
-        set(3, status);
-        set(4, sellerSkuId);
-        set(5, sellerSkuChildId);
-        set(6, tradeId);
-        set(7, tradeNo);
-        set(8, orderId);
-        set(9, orderNo);
-        set(10, skuNum);
-        set(11, deleteFlag);
-        set(12, payTime);
-        set(13, created);
-        set(14, modified);
-        set(15, manualCompleteFlag);
-        set(16, tradeFlag);
-        set(17, priorDeliveryFlag);
-        set(18, takeGoodsType);
+        setId(id);
+        setMerchantId(merchantId);
+        setSupplierId(supplierId);
+        setStatus(status);
+        setSellerSkuId(sellerSkuId);
+        setSellerSkuChildId(sellerSkuChildId);
+        setTradeId(tradeId);
+        setTradeNo(tradeNo);
+        setOrderId(orderId);
+        setOrderNo(orderNo);
+        setSkuNum(skuNum);
+        setDeleteFlag(deleteFlag);
+        setPayTime(payTime);
+        setCreated(created);
+        setModified(modified);
+        setManualCompleteFlag(manualCompleteFlag);
+        setTradeFlag(tradeFlag);
+        setPriorDeliveryFlag(priorDeliveryFlag);
+        setTakeGoodsType(takeGoodsType);
     }
 }

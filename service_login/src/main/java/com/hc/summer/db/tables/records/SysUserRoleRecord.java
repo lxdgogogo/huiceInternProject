@@ -30,59 +30,59 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SysUserRoleRecord extends UpdatableRecordImpl<SysUserRoleRecord> implements Record4<Long, Long, Long, LocalDateTime> {
 
-    private static final long serialVersionUID = 558077922;
+    private static final long serialVersionUID = 583337724;
 
     /**
-     * Setter for <code>fdk_user.sys_user_role.id</code>.
+     * Setter for <code>fdk_user2.sys_user_role.id</code>.
      */
     public void setId(Long value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_user_role.id</code>.
+     * Getter for <code>fdk_user2.sys_user_role.id</code>.
      */
     public Long getId() {
         return (Long) get(0);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_user_role.user_id</code>. 用户ID|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_user_role.user_id</code>. 用户ID|文弟友|2021-01-18
      */
     public void setUserId(Long value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_user_role.user_id</code>. 用户ID|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_user_role.user_id</code>. 用户ID|文弟友|2021-01-18
      */
     public Long getUserId() {
         return (Long) get(1);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_user_role.role_id</code>. 角色ID|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_user_role.role_id</code>. 角色ID|文弟友|2021-01-18
      */
     public void setRoleId(Long value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_user_role.role_id</code>. 角色ID|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_user_role.role_id</code>. 角色ID|文弟友|2021-01-18
      */
     public Long getRoleId() {
         return (Long) get(2);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_user_role.modified</code>.
+     * Setter for <code>fdk_user2.sys_user_role.modified</code>.
      */
     public void setModified(LocalDateTime value) {
         set(3, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_user_role.modified</code>.
+     * Getter for <code>fdk_user2.sys_user_role.modified</code>.
      */
     public LocalDateTime getModified() {
         return (LocalDateTime) get(3);

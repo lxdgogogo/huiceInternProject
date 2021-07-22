@@ -10,6 +10,7 @@ import com.huice.service_fdk.myjooq.db.tables.MapSellerSpuShop;
 import com.huice.service_fdk.myjooq.db.tables.PlatformSku;
 import com.huice.service_fdk.myjooq.db.tables.PrepareSkuTag;
 import com.huice.service_fdk.myjooq.db.tables.SellerOnPrepareSkuList;
+import com.huice.service_fdk.myjooq.db.tables.SellerOnPrepareSkuListCopy1;
 import com.huice.service_fdk.myjooq.db.tables.SellerSku;
 import com.huice.service_fdk.myjooq.db.tables.SellerSpu;
 import com.huice.service_fdk.myjooq.db.tables.SellerSpuImg;
@@ -30,7 +31,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class FdkGoods2 extends SchemaImpl {
 
-    private static final long serialVersionUID = -454102755;
+    private static final long serialVersionUID = 1L;
 
     /**
      * The reference instance of <code>fdk_goods2</code>
@@ -66,6 +67,11 @@ public class FdkGoods2 extends SchemaImpl {
      * 销售商备货中列表|孟炜彬|2020-11-20
      */
     public final SellerOnPrepareSkuList SELLER_ON_PREPARE_SKU_LIST = SellerOnPrepareSkuList.SELLER_ON_PREPARE_SKU_LIST;
+
+    /**
+     * 销售商备货中列表|孟炜彬|2020-11-20
+     */
+    public final SellerOnPrepareSkuListCopy1 SELLER_ON_PREPARE_SKU_LIST_COPY1 = SellerOnPrepareSkuListCopy1.SELLER_ON_PREPARE_SKU_LIST_COPY1;
 
     /**
      * 销售商货品SKU表
@@ -114,6 +120,7 @@ public class FdkGoods2 extends SchemaImpl {
             PlatformSku.PLATFORM_SKU,
             PrepareSkuTag.PREPARE_SKU_TAG,
             SellerOnPrepareSkuList.SELLER_ON_PREPARE_SKU_LIST,
+            SellerOnPrepareSkuListCopy1.SELLER_ON_PREPARE_SKU_LIST_COPY1,
             SellerSku.SELLER_SKU,
             SellerSpu.SELLER_SPU,
             SellerSpuImg.SELLER_SPU_IMG,

@@ -19,7 +19,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class PrepareSkuTagRecord extends UpdatableRecordImpl<PrepareSkuTagRecord> {
 
-    private static final long serialVersionUID = 1405846287;
+    private static final long serialVersionUID = 1L;
 
     /**
      * Setter for <code>fdk_goods2.prepare_sku_tag.id</code>. ID
@@ -537,40 +537,40 @@ public class PrepareSkuTagRecord extends UpdatableRecordImpl<PrepareSkuTagRecord
     public PrepareSkuTagRecord(Long id, Long merchantId, Long tradeId, BigDecimal skuCount, LocalDateTime payTime, Long orderId, Long spuId, String goodsName, Long sellerSkuId, String skuName, Long supplierId, String supplierName, Long barcode, String pickNo, Integer printCount, LocalDateTime lastPrintTime, Byte tagStatus, Byte goodsFlag, Byte arriveStatus, Byte printStatus, String creator, LocalDateTime created, LocalDateTime modified, String spuGoodsNo, Byte refundFlag, Byte needPrintAgain, String goodsNo, Byte scanStatus, Byte priorDeliveryFlag, Integer sysExpressId, String expressName, String shopName, Byte scanFlag, Byte takeGoodsType, String goodsRemark) {
         super(PrepareSkuTag.PREPARE_SKU_TAG);
 
-        set(0, id);
-        set(1, merchantId);
-        set(2, tradeId);
-        set(3, skuCount);
-        set(4, payTime);
-        set(5, orderId);
-        set(6, spuId);
-        set(7, goodsName);
-        set(8, sellerSkuId);
-        set(9, skuName);
-        set(10, supplierId);
-        set(11, supplierName);
-        set(12, barcode);
-        set(13, pickNo);
-        set(14, printCount);
-        set(15, lastPrintTime);
-        set(16, tagStatus);
-        set(17, goodsFlag);
-        set(18, arriveStatus);
-        set(19, printStatus);
-        set(20, creator);
-        set(21, created);
-        set(22, modified);
-        set(23, spuGoodsNo);
-        set(24, refundFlag);
-        set(25, needPrintAgain);
-        set(26, goodsNo);
-        set(27, scanStatus);
-        set(28, priorDeliveryFlag);
-        set(29, sysExpressId);
-        set(30, expressName);
-        set(31, shopName);
-        set(32, scanFlag);
-        set(33, takeGoodsType);
-        set(34, goodsRemark);
+        setId(id);
+        setMerchantId(merchantId);
+        setTradeId(tradeId);
+        setSkuCount(skuCount);
+        setPayTime(payTime);
+        setOrderId(orderId);
+        setSpuId(spuId);
+        setGoodsName(goodsName);
+        setSellerSkuId(sellerSkuId);
+        setSkuName(skuName);
+        setSupplierId(supplierId);
+        setSupplierName(supplierName);
+        setBarcode(barcode);
+        setPickNo(pickNo);
+        setPrintCount(printCount);
+        setLastPrintTime(lastPrintTime);
+        setTagStatus(tagStatus);
+        setGoodsFlag(goodsFlag);
+        setArriveStatus(arriveStatus);
+        setPrintStatus(printStatus);
+        setCreator(creator);
+        setCreated(created);
+        setModified(modified);
+        setSpuGoodsNo(spuGoodsNo);
+        setRefundFlag(refundFlag);
+        setNeedPrintAgain(needPrintAgain);
+        setGoodsNo(goodsNo);
+        setScanStatus(scanStatus);
+        setPriorDeliveryFlag(priorDeliveryFlag);
+        setSysExpressId(sysExpressId);
+        setExpressName(expressName);
+        setShopName(shopName);
+        setScanFlag(scanFlag);
+        setTakeGoodsType(takeGoodsType);
+        setGoodsRemark(goodsRemark);
     }
 }

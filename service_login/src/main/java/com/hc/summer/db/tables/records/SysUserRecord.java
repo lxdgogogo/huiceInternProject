@@ -30,129 +30,129 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SysUserRecord extends UpdatableRecordImpl<SysUserRecord> implements Record9<Long, String, String, String, String, Long, Byte, LocalDateTime, LocalDateTime> {
 
-    private static final long serialVersionUID = 640715062;
+    private static final long serialVersionUID = 24786502;
 
     /**
-     * Setter for <code>fdk_user.sys_user.id</code>.
+     * Setter for <code>fdk_user2.sys_user.id</code>.
      */
     public void setId(Long value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_user.id</code>.
+     * Getter for <code>fdk_user2.sys_user.id</code>.
      */
     public Long getId() {
         return (Long) get(0);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_user.user_name</code>. 用户姓名|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_user.user_name</code>. 用户姓名|文弟友|2021-01-18
      */
     public void setUserName(String value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_user.user_name</code>. 用户姓名|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_user.user_name</code>. 用户姓名|文弟友|2021-01-18
      */
     public String getUserName() {
         return (String) get(1);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_user.user_phone</code>. 用户手机号|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_user.user_phone</code>. 用户手机号|文弟友|2021-01-18
      */
     public void setUserPhone(String value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_user.user_phone</code>. 用户手机号|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_user.user_phone</code>. 用户手机号|文弟友|2021-01-18
      */
     public String getUserPhone() {
         return (String) get(2);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_user.password</code>. 登录密码|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_user.password</code>. 登录密码|文弟友|2021-01-18
      */
     public void setPassword(String value) {
         set(3, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_user.password</code>. 登录密码|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_user.password</code>. 登录密码|文弟友|2021-01-18
      */
     public String getPassword() {
         return (String) get(3);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_user.salt</code>. 密码加盐hash值|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_user.salt</code>. 密码加盐hash值|文弟友|2021-01-18
      */
     public void setSalt(String value) {
         set(4, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_user.salt</code>. 密码加盐hash值|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_user.salt</code>. 密码加盐hash值|文弟友|2021-01-18
      */
     public String getSalt() {
         return (String) get(4);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_user.user_pid</code>. 员工上级ID|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_user.user_pid</code>. 员工上级ID|文弟友|2021-01-18
      */
     public void setUserPid(Long value) {
         set(5, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_user.user_pid</code>. 员工上级ID|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_user.user_pid</code>. 员工上级ID|文弟友|2021-01-18
      */
     public Long getUserPid() {
         return (Long) get(5);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_user.delete_flag</code>. 删除符号|@0：未删除；@1：有删除|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_user.delete_flag</code>. 删除符号|@0：未删除；@1：有删除|文弟友|2021-01-18
      */
     public void setDeleteFlag(Byte value) {
         set(6, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_user.delete_flag</code>. 删除符号|@0：未删除；@1：有删除|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_user.delete_flag</code>. 删除符号|@0：未删除；@1：有删除|文弟友|2021-01-18
      */
     public Byte getDeleteFlag() {
         return (Byte) get(6);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_user.created</code>.
+     * Setter for <code>fdk_user2.sys_user.created</code>.
      */
     public void setCreated(LocalDateTime value) {
         set(7, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_user.created</code>.
+     * Getter for <code>fdk_user2.sys_user.created</code>.
      */
     public LocalDateTime getCreated() {
         return (LocalDateTime) get(7);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_user.modified</code>.
+     * Setter for <code>fdk_user2.sys_user.modified</code>.
      */
     public void setModified(LocalDateTime value) {
         set(8, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_user.modified</code>.
+     * Getter for <code>fdk_user2.sys_user.modified</code>.
      */
     public LocalDateTime getModified() {
         return (LocalDateTime) get(8);

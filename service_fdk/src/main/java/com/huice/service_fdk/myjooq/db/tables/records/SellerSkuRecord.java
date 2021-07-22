@@ -19,7 +19,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SellerSkuRecord extends UpdatableRecordImpl<SellerSkuRecord> {
 
-    private static final long serialVersionUID = 1604480372;
+    private static final long serialVersionUID = 1L;
 
     /**
      * Setter for <code>fdk_goods2.seller_sku.id</code>. 自增ID
@@ -649,48 +649,48 @@ public class SellerSkuRecord extends UpdatableRecordImpl<SellerSkuRecord> {
     public SellerSkuRecord(Long id, Long merchantId, Long platformSkuRecId, Byte sourceType, Byte saleStatus, Long spuId, String skuName, String skuNo, String skuCode, String barcode, Short barcodeNum, BigDecimal realNum, BigDecimal occupiedNum, BigDecimal toOutNum, BigDecimal availableNum, String imgUrl, BigDecimal weight, BigDecimal volume, Byte largeSizeType, BigDecimal retailPrice, BigDecimal wholesalePrice, BigDecimal lowestPrice, BigDecimal memberPrice, BigDecimal marketPrice, Short validityDays, Short bestSaleDays, Short bestReceiveDays, Byte replaceProportion, String replaceNo, Integer replaceMask, Byte deleteFlag, LocalDateTime deleteTime, Long pid, Byte showFlag, String basicUnit, String auxUnit, Integer taxCodeId, BigDecimal taxRate, LocalDateTime created, LocalDateTime modified, Byte packFlag, BigDecimal priorOccupiedNum, Byte takeGoodsType) {
         super(SellerSku.SELLER_SKU);
 
-        set(0, id);
-        set(1, merchantId);
-        set(2, platformSkuRecId);
-        set(3, sourceType);
-        set(4, saleStatus);
-        set(5, spuId);
-        set(6, skuName);
-        set(7, skuNo);
-        set(8, skuCode);
-        set(9, barcode);
-        set(10, barcodeNum);
-        set(11, realNum);
-        set(12, occupiedNum);
-        set(13, toOutNum);
-        set(14, availableNum);
-        set(15, imgUrl);
-        set(16, weight);
-        set(17, volume);
-        set(18, largeSizeType);
-        set(19, retailPrice);
-        set(20, wholesalePrice);
-        set(21, lowestPrice);
-        set(22, memberPrice);
-        set(23, marketPrice);
-        set(24, validityDays);
-        set(25, bestSaleDays);
-        set(26, bestReceiveDays);
-        set(27, replaceProportion);
-        set(28, replaceNo);
-        set(29, replaceMask);
-        set(30, deleteFlag);
-        set(31, deleteTime);
-        set(32, pid);
-        set(33, showFlag);
-        set(34, basicUnit);
-        set(35, auxUnit);
-        set(36, taxCodeId);
-        set(37, taxRate);
-        set(38, created);
-        set(39, modified);
-        set(40, packFlag);
-        set(41, priorOccupiedNum);
-        set(42, takeGoodsType);
+        setId(id);
+        setMerchantId(merchantId);
+        setPlatformSkuRecId(platformSkuRecId);
+        setSourceType(sourceType);
+        setSaleStatus(saleStatus);
+        setSpuId(spuId);
+        setSkuName(skuName);
+        setSkuNo(skuNo);
+        setSkuCode(skuCode);
+        setBarcode(barcode);
+        setBarcodeNum(barcodeNum);
+        setRealNum(realNum);
+        setOccupiedNum(occupiedNum);
+        setToOutNum(toOutNum);
+        setAvailableNum(availableNum);
+        setImgUrl(imgUrl);
+        setWeight(weight);
+        setVolume(volume);
+        setLargeSizeType(largeSizeType);
+        setRetailPrice(retailPrice);
+        setWholesalePrice(wholesalePrice);
+        setLowestPrice(lowestPrice);
+        setMemberPrice(memberPrice);
+        setMarketPrice(marketPrice);
+        setValidityDays(validityDays);
+        setBestSaleDays(bestSaleDays);
+        setBestReceiveDays(bestReceiveDays);
+        setReplaceProportion(replaceProportion);
+        setReplaceNo(replaceNo);
+        setReplaceMask(replaceMask);
+        setDeleteFlag(deleteFlag);
+        setDeleteTime(deleteTime);
+        setPid(pid);
+        setShowFlag(showFlag);
+        setBasicUnit(basicUnit);
+        setAuxUnit(auxUnit);
+        setTaxCodeId(taxCodeId);
+        setTaxRate(taxRate);
+        setCreated(created);
+        setModified(modified);
+        setPackFlag(packFlag);
+        setPriorOccupiedNum(priorOccupiedNum);
+        setTakeGoodsType(takeGoodsType);
     }
 }

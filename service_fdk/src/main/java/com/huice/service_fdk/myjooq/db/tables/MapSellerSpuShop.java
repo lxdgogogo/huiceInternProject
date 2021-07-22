@@ -26,6 +26,7 @@ import org.jooq.TableField;
 import org.jooq.TableOptions;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
+import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
 
 
@@ -35,7 +36,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class MapSellerSpuShop extends TableImpl<MapSellerSpuShopRecord> {
 
-    private static final long serialVersionUID = 49983524;
+    private static final long serialVersionUID = 1L;
 
     /**
      * The reference instance of <code>fdk_goods2.map_seller_spu_shop</code>
@@ -53,48 +54,49 @@ public class MapSellerSpuShop extends TableImpl<MapSellerSpuShopRecord> {
     /**
      * The column <code>fdk_goods2.map_seller_spu_shop.id</code>. 自增Id
      */
-    public final TableField<MapSellerSpuShopRecord, Long> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).identity(true), this, "自增Id");
+    public final TableField<MapSellerSpuShopRecord, Long> ID = createField(DSL.name("id"), SQLDataType.BIGINT.nullable(false).identity(true), this, "自增Id");
 
     /**
      * The column <code>fdk_goods2.map_seller_spu_shop.merchant_id</code>. 商户id|魏柯|2020-11-21
      */
-    public final TableField<MapSellerSpuShopRecord, Long> MERCHANT_ID = createField(DSL.name("merchant_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BIGINT)), this, "商户id|魏柯|2020-11-21");
+    public final TableField<MapSellerSpuShopRecord, Long> MERCHANT_ID = createField(DSL.name("merchant_id"), SQLDataType.BIGINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.BIGINT)), this, "商户id|魏柯|2020-11-21");
 
     /**
      * The column <code>fdk_goods2.map_seller_spu_shop.seller_spu_id</code>. spu_id|魏柯|2020-11-21
      */
-    public final TableField<MapSellerSpuShopRecord, Long> SELLER_SPU_ID = createField(DSL.name("seller_spu_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "spu_id|魏柯|2020-11-21");
+    public final TableField<MapSellerSpuShopRecord, Long> SELLER_SPU_ID = createField(DSL.name("seller_spu_id"), SQLDataType.BIGINT.nullable(false), this, "spu_id|魏柯|2020-11-21");
 
     /**
      * The column <code>fdk_goods2.map_seller_spu_shop.created</code>.
      */
-    public final TableField<MapSellerSpuShopRecord, LocalDateTime> CREATED = createField(DSL.name("created"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(org.jooq.impl.DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "");
+    public final TableField<MapSellerSpuShopRecord, LocalDateTime> CREATED = createField(DSL.name("created"), SQLDataType.LOCALDATETIME(0).nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", SQLDataType.LOCALDATETIME)), this, "");
 
     /**
      * The column <code>fdk_goods2.map_seller_spu_shop.modified</code>. 更新时间
      */
-    public final TableField<MapSellerSpuShopRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(org.jooq.impl.DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "更新时间");
+    public final TableField<MapSellerSpuShopRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), SQLDataType.LOCALDATETIME(0).nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", SQLDataType.LOCALDATETIME)), this, "更新时间");
 
     /**
      * The column <code>fdk_goods2.map_seller_spu_shop.shop_id</code>. 店铺id|魏柯|2020-11-21
      */
-    public final TableField<MapSellerSpuShopRecord, Long> SHOP_ID = createField(DSL.name("shop_id"), org.jooq.impl.SQLDataType.BIGINT, this, "店铺id|魏柯|2020-11-21");
+    public final TableField<MapSellerSpuShopRecord, Long> SHOP_ID = createField(DSL.name("shop_id"), SQLDataType.BIGINT, this, "店铺id|魏柯|2020-11-21");
 
     /**
      * The column <code>fdk_goods2.map_seller_spu_shop.delivery_time_type</code>. 发货时限类型 @0不设置; @1 付款后xx小时；@2 指定时间xx之前；@3 应用店铺发货时限  |孟炜彬|2021-06-01
      */
-    public final TableField<MapSellerSpuShopRecord, Byte> DELIVERY_TIME_TYPE = createField(DSL.name("delivery_time_type"), org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.TINYINT)), this, "发货时限类型 @0不设置; @1 付款后xx小时；@2 指定时间xx之前；@3 应用店铺发货时限  |孟炜彬|2021-06-01");
+    public final TableField<MapSellerSpuShopRecord, Byte> DELIVERY_TIME_TYPE = createField(DSL.name("delivery_time_type"), SQLDataType.TINYINT.nullable(false).defaultValue(DSL.inline("0", SQLDataType.TINYINT)), this, "发货时限类型 @0不设置; @1 付款后xx小时；@2 指定时间xx之前；@3 应用店铺发货时限  |孟炜彬|2021-06-01");
 
     /**
      * The column <code>fdk_goods2.map_seller_spu_shop.delivery_time_description</code>. 发货时限时长描述。 整数则为 1类型 小时，时间则为2类型 指定时间之前|孟炜彬|2021-06-01
      */
-    public final TableField<MapSellerSpuShopRecord, String> DELIVERY_TIME_DESCRIPTION = createField(DSL.name("delivery_time_description"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "发货时限时长描述。 整数则为 1类型 小时，时间则为2类型 指定时间之前|孟炜彬|2021-06-01");
+    public final TableField<MapSellerSpuShopRecord, String> DELIVERY_TIME_DESCRIPTION = createField(DSL.name("delivery_time_description"), SQLDataType.VARCHAR(255).nullable(false).defaultValue(DSL.inline("", SQLDataType.VARCHAR)), this, "发货时限时长描述。 整数则为 1类型 小时，时间则为2类型 指定时间之前|孟炜彬|2021-06-01");
 
-    /**
-     * Create a <code>fdk_goods2.map_seller_spu_shop</code> table reference
-     */
-    public MapSellerSpuShop() {
-        this(DSL.name("map_seller_spu_shop"), null);
+    private MapSellerSpuShop(Name alias, Table<MapSellerSpuShopRecord> aliased) {
+        this(alias, aliased, null);
+    }
+
+    private MapSellerSpuShop(Name alias, Table<MapSellerSpuShopRecord> aliased, Field<?>[] parameters) {
+        super(alias, null, aliased, parameters, DSL.comment("销售商Spu与销售商店铺 关联关系|魏柯|2020-11-21"), TableOptions.table());
     }
 
     /**
@@ -111,12 +113,11 @@ public class MapSellerSpuShop extends TableImpl<MapSellerSpuShopRecord> {
         this(alias, MAP_SELLER_SPU_SHOP);
     }
 
-    private MapSellerSpuShop(Name alias, Table<MapSellerSpuShopRecord> aliased) {
-        this(alias, aliased, null);
-    }
-
-    private MapSellerSpuShop(Name alias, Table<MapSellerSpuShopRecord> aliased, Field<?>[] parameters) {
-        super(alias, null, aliased, parameters, DSL.comment("销售商Spu与销售商店铺 关联关系|魏柯|2020-11-21"), TableOptions.table());
+    /**
+     * Create a <code>fdk_goods2.map_seller_spu_shop</code> table reference
+     */
+    public MapSellerSpuShop() {
+        this(DSL.name("map_seller_spu_shop"), null);
     }
 
     public <O extends Record> MapSellerSpuShop(Table<O> child, ForeignKey<O, MapSellerSpuShopRecord> key) {
@@ -135,7 +136,7 @@ public class MapSellerSpuShop extends TableImpl<MapSellerSpuShopRecord> {
 
     @Override
     public Identity<MapSellerSpuShopRecord, Long> getIdentity() {
-        return Keys.IDENTITY_MAP_SELLER_SPU_SHOP;
+        return (Identity<MapSellerSpuShopRecord, Long>) super.getIdentity();
     }
 
     @Override

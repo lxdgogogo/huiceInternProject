@@ -4,7 +4,7 @@
 package com.hc.summer.db.tables;
 
 
-import com.hc.summer.db.FdkUser;
+import com.hc.summer.db.FdkUser2;
 import com.hc.summer.db.Indexes;
 import com.hc.summer.db.Keys;
 import com.hc.summer.db.tables.records.SysRoleRecord;
@@ -17,7 +17,6 @@ import javax.annotation.Generated;
 
 import org.jooq.Field;
 import org.jooq.ForeignKey;
-import org.jooq.Identity;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Record;
@@ -43,10 +42,10 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SysRole extends TableImpl<SysRoleRecord> {
 
-    private static final long serialVersionUID = 1775267252;
+    private static final long serialVersionUID = 87073243;
 
     /**
-     * The reference instance of <code>fdk_user.sys_role</code>
+     * The reference instance of <code>fdk_user2.sys_role</code>
      */
     public static final SysRole SYS_ROLE = new SysRole();
 
@@ -59,49 +58,46 @@ public class SysRole extends TableImpl<SysRoleRecord> {
     }
 
     /**
-     * The column <code>fdk_user.sys_role.id</code>.
+     * The column <code>fdk_user2.sys_role.id</code>.
      */
-    public final TableField<SysRoleRecord, Long> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).identity(true), this, "");
+    public final TableField<SysRoleRecord, Long> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "");
 
     /**
-     * The column <code>fdk_user.sys_role.role_name</code>. 角色名|文弟友|2021-01-27
+     * The column <code>fdk_user2.sys_role.role_name</code>. 角色名|文弟友|2021-01-27
      */
     public final TableField<SysRoleRecord, String> ROLE_NAME = createField(DSL.name("role_name"), org.jooq.impl.SQLDataType.VARCHAR(20).nullable(false), this, "角色名|文弟友|2021-01-27");
 
     /**
-     * The column <code>fdk_user.sys_role.type</code>. 角色类型|@0：发得快账号；@1：代拿账号|文弟友|2021-01-27
+     * The column <code>fdk_user2.sys_role.type</code>. 角色类型|@0：发得快账号；@1：代拿账号|文弟友|2021-01-27
      */
-    public final TableField<SysRoleRecord, Byte> TYPE = createField(DSL.name("type"), org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(
-            DSL.inline("0", org.jooq.impl.SQLDataType.TINYINT)), this, "角色类型|@0：发得快账号；@1：代拿账号|文弟友|2021-01-27");
+    public final TableField<SysRoleRecord, Byte> TYPE = createField(DSL.name("type"), org.jooq.impl.SQLDataType.TINYINT.nullable(false), this, "角色类型|@0：发得快账号；@1：代拿账号|文弟友|2021-01-27");
 
     /**
-     * The column <code>fdk_user.sys_role.created</code>. 创建时间|文弟友|2021-01-27
+     * The column <code>fdk_user2.sys_role.created</code>. 创建时间|文弟友|2021-01-27
      */
-    public final TableField<SysRoleRecord, LocalDateTime> CREATED = createField(DSL.name("created"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(
-            DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "创建时间|文弟友|2021-01-27");
+    public final TableField<SysRoleRecord, LocalDateTime> CREATED = createField(DSL.name("created"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "创建时间|文弟友|2021-01-27");
 
     /**
-     * The column <code>fdk_user.sys_role.modified</code>. 修改时间|文弟友|2021-01-27
+     * The column <code>fdk_user2.sys_role.modified</code>. 修改时间|文弟友|2021-01-27
      */
-    public final TableField<SysRoleRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(
-            DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "修改时间|文弟友|2021-01-27");
+    public final TableField<SysRoleRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "修改时间|文弟友|2021-01-27");
 
     /**
-     * Create a <code>fdk_user.sys_role</code> table reference
+     * Create a <code>fdk_user2.sys_role</code> table reference
      */
     public SysRole() {
         this(DSL.name("sys_role"), null);
     }
 
     /**
-     * Create an aliased <code>fdk_user.sys_role</code> table reference
+     * Create an aliased <code>fdk_user2.sys_role</code> table reference
      */
     public SysRole(String alias) {
         this(DSL.name(alias), SYS_ROLE);
     }
 
     /**
-     * Create an aliased <code>fdk_user.sys_role</code> table reference
+     * Create an aliased <code>fdk_user2.sys_role</code> table reference
      */
     public SysRole(Name alias) {
         this(alias, SYS_ROLE);
@@ -121,17 +117,12 @@ public class SysRole extends TableImpl<SysRoleRecord> {
 
     @Override
     public Schema getSchema() {
-        return FdkUser.FDK_USER;
+        return FdkUser2.FDK_USER2;
     }
 
     @Override
     public List<Index> getIndexes() {
         return Arrays.<Index>asList(Indexes.SYS_ROLE_PRIMARY, Indexes.SYS_ROLE_ROLE_NAME);
-    }
-
-    @Override
-    public Identity<SysRoleRecord, Long> getIdentity() {
-        return Keys.IDENTITY_SYS_ROLE;
     }
 
     @Override

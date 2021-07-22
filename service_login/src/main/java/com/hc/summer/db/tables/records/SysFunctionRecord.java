@@ -30,143 +30,143 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SysFunctionRecord extends UpdatableRecordImpl<SysFunctionRecord> implements Record10<Long, Long, String, String, String, Byte, Byte, String, LocalDateTime, LocalDateTime> {
 
-    private static final long serialVersionUID = -462150468;
+    private static final long serialVersionUID = -2071525802;
 
     /**
-     * Setter for <code>fdk_user.sys_function.id</code>.
+     * Setter for <code>fdk_user2.sys_function.id</code>.
      */
     public void setId(Long value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_function.id</code>.
+     * Getter for <code>fdk_user2.sys_function.id</code>.
      */
     public Long getId() {
         return (Long) get(0);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_function.parent_id</code>. 父级ID|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_function.parent_id</code>. 父级ID|文弟友|2021-01-18
      */
     public void setParentId(Long value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_function.parent_id</code>. 父级ID|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_function.parent_id</code>. 父级ID|文弟友|2021-01-18
      */
     public Long getParentId() {
         return (Long) get(1);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_function.function_url</code>. 功能地址|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_function.function_url</code>. 功能地址|文弟友|2021-01-18
      */
     public void setFunctionUrl(String value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_function.function_url</code>. 功能地址|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_function.function_url</code>. 功能地址|文弟友|2021-01-18
      */
     public String getFunctionUrl() {
         return (String) get(2);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_function.function_icon</code>. 功能图标|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_function.function_icon</code>. 功能图标|文弟友|2021-01-18
      */
     public void setFunctionIcon(String value) {
         set(3, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_function.function_icon</code>. 功能图标|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_function.function_icon</code>. 功能图标|文弟友|2021-01-18
      */
     public String getFunctionIcon() {
         return (String) get(3);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_function.function_name</code>. 功能名|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_function.function_name</code>. 功能名|文弟友|2021-01-18
      */
     public void setFunctionName(String value) {
         set(4, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_function.function_name</code>. 功能名|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_function.function_name</code>. 功能名|文弟友|2021-01-18
      */
     public String getFunctionName() {
         return (String) get(4);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_function.function_level</code>. 功能层级|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_function.function_level</code>. 功能层级|文弟友|2021-01-18
      */
     public void setFunctionLevel(Byte value) {
         set(5, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_function.function_level</code>. 功能层级|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_function.function_level</code>. 功能层级|文弟友|2021-01-18
      */
     public Byte getFunctionLevel() {
         return (Byte) get(5);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_function.sort</code>. 排序字段|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_function.sort</code>. 排序字段|文弟友|2021-01-18
      */
     public void setSort(Byte value) {
         set(6, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_function.sort</code>. 排序字段|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_function.sort</code>. 排序字段|文弟友|2021-01-18
      */
     public Byte getSort() {
         return (Byte) get(6);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_function.remark</code>. 备注|文弟友|2021-01-18
+     * Setter for <code>fdk_user2.sys_function.remark</code>. 备注|文弟友|2021-01-18
      */
     public void setRemark(String value) {
         set(7, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_function.remark</code>. 备注|文弟友|2021-01-18
+     * Getter for <code>fdk_user2.sys_function.remark</code>. 备注|文弟友|2021-01-18
      */
     public String getRemark() {
         return (String) get(7);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_function.created</code>.
+     * Setter for <code>fdk_user2.sys_function.created</code>.
      */
     public void setCreated(LocalDateTime value) {
         set(8, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_function.created</code>.
+     * Getter for <code>fdk_user2.sys_function.created</code>.
      */
     public LocalDateTime getCreated() {
         return (LocalDateTime) get(8);
     }
 
     /**
-     * Setter for <code>fdk_user.sys_function.modified</code>.
+     * Setter for <code>fdk_user2.sys_function.modified</code>.
      */
     public void setModified(LocalDateTime value) {
         set(9, value);
     }
 
     /**
-     * Getter for <code>fdk_user.sys_function.modified</code>.
+     * Getter for <code>fdk_user2.sys_function.modified</code>.
      */
     public LocalDateTime getModified() {
         return (LocalDateTime) get(9);

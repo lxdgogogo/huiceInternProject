@@ -16,7 +16,6 @@ import static com.hc.summer.db.tables.SysRoleFunction.SYS_ROLE_FUNCTION;
 import static com.hc.summer.db.tables.SysUser.SYS_USER;
 import static com.hc.summer.db.tables.SysUserRole.SYS_USER_ROLE;
 import static java.util.Arrays.asList;
-import static javafx.scene.input.KeyCode.F;
 
 /**
  * 用户数据库层

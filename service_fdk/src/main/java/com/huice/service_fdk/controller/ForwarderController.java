@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-import java.util.Objects;
 
 @RestController
 @RequestMapping("/forwarder")
@@ -39,7 +38,7 @@ public class ForwarderController {
         long merchantId = Long.parseLong(request.getParameter("merchantId"));
         //if(merchant_id == null){String msg ="未授权，请先登录";return Result.error(401,msg);}
         String msg = "调用4.代拿汇总 -  右侧表头的待推送数据和已推送数据";
-        return Result.ok(forwarderService.getSummarySumVO(AuthContext.getUserId()),msg);
+        return Result.ok(forwarderService.getSummarySumVO(merchantId),msg);
     }
 
     //7.指定货品时的供货商信息

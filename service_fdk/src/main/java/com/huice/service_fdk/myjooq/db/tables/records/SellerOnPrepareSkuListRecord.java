@@ -22,7 +22,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SellerOnPrepareSkuListRecord extends UpdatableRecordImpl<SellerOnPrepareSkuListRecord> implements Record10<Long, Long, Long, Long, BigDecimal, LocalDateTime, LocalDateTime, BigDecimal, BigDecimal, Byte> {
 
-    private static final long serialVersionUID = -852347351;
+    private static final long serialVersionUID = 1L;
 
     /**
      * Setter for <code>fdk_goods2.seller_on_prepare_sku_list.id</code>. 自增ID
@@ -429,15 +429,15 @@ public class SellerOnPrepareSkuListRecord extends UpdatableRecordImpl<SellerOnPr
     public SellerOnPrepareSkuListRecord(Long id, Long merchantId, Long supplierId, Long sellerSkuId, BigDecimal prepareNum, LocalDateTime created, LocalDateTime modified, BigDecimal wishMorePrepareNum, BigDecimal priorPrepareNum, Byte takeGoodsType) {
         super(SellerOnPrepareSkuList.SELLER_ON_PREPARE_SKU_LIST);
 
-        set(0, id);
-        set(1, merchantId);
-        set(2, supplierId);
-        set(3, sellerSkuId);
-        set(4, prepareNum);
-        set(5, created);
-        set(6, modified);
-        set(7, wishMorePrepareNum);
-        set(8, priorPrepareNum);
-        set(9, takeGoodsType);
+        setId(id);
+        setMerchantId(merchantId);
+        setSupplierId(supplierId);
+        setSellerSkuId(sellerSkuId);
+        setPrepareNum(prepareNum);
+        setCreated(created);
+        setModified(modified);
+        setWishMorePrepareNum(wishMorePrepareNum);
+        setPriorPrepareNum(priorPrepareNum);
+        setTakeGoodsType(takeGoodsType);
     }
 }

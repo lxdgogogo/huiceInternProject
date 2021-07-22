@@ -4,7 +4,7 @@
 package com.hc.summer.db.tables;
 
 
-import com.hc.summer.db.FdkUser;
+import com.hc.summer.db.FdkUser2;
 import com.hc.summer.db.Indexes;
 import com.hc.summer.db.Keys;
 import com.hc.summer.db.tables.records.SysUserRecord;
@@ -17,7 +17,6 @@ import javax.annotation.Generated;
 
 import org.jooq.Field;
 import org.jooq.ForeignKey;
-import org.jooq.Identity;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Record;
@@ -43,10 +42,10 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SysUser extends TableImpl<SysUserRecord> {
 
-    private static final long serialVersionUID = -1438119638;
+    private static final long serialVersionUID = -148137544;
 
     /**
-     * The reference instance of <code>fdk_user.sys_user</code>
+     * The reference instance of <code>fdk_user2.sys_user</code>
      */
     public static final SysUser SYS_USER = new SysUser();
 
@@ -59,72 +58,66 @@ public class SysUser extends TableImpl<SysUserRecord> {
     }
 
     /**
-     * The column <code>fdk_user.sys_user.id</code>.
+     * The column <code>fdk_user2.sys_user.id</code>.
      */
-    public final TableField<SysUserRecord, Long> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).identity(true), this, "");
+    public final TableField<SysUserRecord, Long> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "");
 
     /**
-     * The column <code>fdk_user.sys_user.user_name</code>. 用户姓名|文弟友|2021-01-18
+     * The column <code>fdk_user2.sys_user.user_name</code>. 用户姓名|文弟友|2021-01-18
      */
-    public final TableField<SysUserRecord, String> USER_NAME = createField(DSL.name("user_name"), org.jooq.impl.SQLDataType.VARCHAR(50).nullable(false).defaultValue(
-            DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "用户姓名|文弟友|2021-01-18");
+    public final TableField<SysUserRecord, String> USER_NAME = createField(DSL.name("user_name"), org.jooq.impl.SQLDataType.VARCHAR(50).nullable(false).defaultValue(DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "用户姓名|文弟友|2021-01-18");
 
     /**
-     * The column <code>fdk_user.sys_user.user_phone</code>. 用户手机号|文弟友|2021-01-18
+     * The column <code>fdk_user2.sys_user.user_phone</code>. 用户手机号|文弟友|2021-01-18
      */
-    public final TableField<SysUserRecord, String> USER_PHONE = createField(DSL.name("user_phone"), org.jooq.impl.SQLDataType.VARCHAR(13).nullable(false).defaultValue(
-            DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "用户手机号|文弟友|2021-01-18");
+    public final TableField<SysUserRecord, String> USER_PHONE = createField(DSL.name("user_phone"), org.jooq.impl.SQLDataType.VARCHAR(13).nullable(false).defaultValue(DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "用户手机号|文弟友|2021-01-18");
 
     /**
-     * The column <code>fdk_user.sys_user.password</code>. 登录密码|文弟友|2021-01-18
+     * The column <code>fdk_user2.sys_user.password</code>. 登录密码|文弟友|2021-01-18
      */
     public final TableField<SysUserRecord, String> PASSWORD = createField(DSL.name("password"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false), this, "登录密码|文弟友|2021-01-18");
 
     /**
-     * The column <code>fdk_user.sys_user.salt</code>. 密码加盐hash值|文弟友|2021-01-18
+     * The column <code>fdk_user2.sys_user.salt</code>. 密码加盐hash值|文弟友|2021-01-18
      */
     public final TableField<SysUserRecord, String> SALT = createField(DSL.name("salt"), org.jooq.impl.SQLDataType.VARCHAR(255).nullable(false), this, "密码加盐hash值|文弟友|2021-01-18");
 
     /**
-     * The column <code>fdk_user.sys_user.user_pid</code>. 员工上级ID|文弟友|2021-01-18
+     * The column <code>fdk_user2.sys_user.user_pid</code>. 员工上级ID|文弟友|2021-01-18
      */
-    public final TableField<SysUserRecord, Long> USER_PID = createField(DSL.name("user_pid"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(
-            DSL.inline("0", org.jooq.impl.SQLDataType.BIGINT)), this, "员工上级ID|文弟友|2021-01-18");
+    public final TableField<SysUserRecord, Long> USER_PID = createField(DSL.name("user_pid"), org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "员工上级ID|文弟友|2021-01-18");
 
     /**
-     * The column <code>fdk_user.sys_user.delete_flag</code>. 删除符号|@0：未删除；@1：有删除|文弟友|2021-01-18
+     * The column <code>fdk_user2.sys_user.delete_flag</code>. 删除符号|@0：未删除；@1：有删除|文弟友|2021-01-18
      */
-    public final TableField<SysUserRecord, Byte> DELETE_FLAG = createField(DSL.name("delete_flag"), org.jooq.impl.SQLDataType.TINYINT.defaultValue(
-            DSL.inline("0", org.jooq.impl.SQLDataType.TINYINT)), this, "删除符号|@0：未删除；@1：有删除|文弟友|2021-01-18");
+    public final TableField<SysUserRecord, Byte> DELETE_FLAG = createField(DSL.name("delete_flag"), org.jooq.impl.SQLDataType.TINYINT, this, "删除符号|@0：未删除；@1：有删除|文弟友|2021-01-18");
 
     /**
-     * The column <code>fdk_user.sys_user.created</code>.
+     * The column <code>fdk_user2.sys_user.created</code>.
      */
-    public final TableField<SysUserRecord, LocalDateTime> CREATED = createField(DSL.name("created"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(
-            DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "");
+    public final TableField<SysUserRecord, LocalDateTime> CREATED = createField(DSL.name("created"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "");
 
     /**
-     * The column <code>fdk_user.sys_user.modified</code>.
+     * The column <code>fdk_user2.sys_user.modified</code>.
      */
-    public final TableField<SysUserRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(
-            DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "");
+    public final TableField<SysUserRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "");
 
     /**
-     * Create a <code>fdk_user.sys_user</code> table reference
+     * Create a <code>fdk_user2.sys_user</code> table reference
      */
     public SysUser() {
         this(DSL.name("sys_user"), null);
     }
 
     /**
-     * Create an aliased <code>fdk_user.sys_user</code> table reference
+     * Create an aliased <code>fdk_user2.sys_user</code> table reference
      */
     public SysUser(String alias) {
         this(DSL.name(alias), SYS_USER);
     }
 
     /**
-     * Create an aliased <code>fdk_user.sys_user</code> table reference
+     * Create an aliased <code>fdk_user2.sys_user</code> table reference
      */
     public SysUser(Name alias) {
         this(alias, SYS_USER);
@@ -144,17 +137,12 @@ public class SysUser extends TableImpl<SysUserRecord> {
 
     @Override
     public Schema getSchema() {
-        return FdkUser.FDK_USER;
+        return FdkUser2.FDK_USER2;
     }
 
     @Override
     public List<Index> getIndexes() {
         return Arrays.<Index>asList(Indexes.SYS_USER_PRIMARY, Indexes.SYS_USER_USER_PHONE);
-    }
-
-    @Override
-    public Identity<SysUserRecord, Long> getIdentity() {
-        return Keys.IDENTITY_SYS_USER;
     }
 
     @Override

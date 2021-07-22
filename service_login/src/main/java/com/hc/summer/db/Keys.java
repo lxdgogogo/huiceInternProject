@@ -28,7 +28,7 @@ import org.jooq.impl.Internal;
 
 /**
  * A class modelling foreign key relationships and constraints of tables of 
- * the <code>fdk_user</code> schema.
+ * the <code>fdk_user2</code> schema.
  */
 @Generated(
     value = {
@@ -44,13 +44,7 @@ public class Keys {
     // IDENTITY definitions
     // -------------------------------------------------------------------------
 
-    public static final Identity<PlatformSkuRecord, Long> IDENTITY_PLATFORM_SKU = Identities0.IDENTITY_PLATFORM_SKU;
-    public static final Identity<SysFunctionRecord, Long> IDENTITY_SYS_FUNCTION = Identities0.IDENTITY_SYS_FUNCTION;
-    public static final Identity<SysRoleRecord, Long> IDENTITY_SYS_ROLE = Identities0.IDENTITY_SYS_ROLE;
-    public static final Identity<SysRoleFunctionRecord, Long> IDENTITY_SYS_ROLE_FUNCTION = Identities0.IDENTITY_SYS_ROLE_FUNCTION;
     public static final Identity<SysShopRecord, Long> IDENTITY_SYS_SHOP = Identities0.IDENTITY_SYS_SHOP;
-    public static final Identity<SysUserRecord, Long> IDENTITY_SYS_USER = Identities0.IDENTITY_SYS_USER;
-    public static final Identity<SysUserRoleRecord, Long> IDENTITY_SYS_USER_ROLE = Identities0.IDENTITY_SYS_USER_ROLE;
 
     // -------------------------------------------------------------------------
     // UNIQUE and PRIMARY KEY definitions
@@ -78,13 +72,7 @@ public class Keys {
     // -------------------------------------------------------------------------
 
     private static class Identities0 {
-        public static Identity<PlatformSkuRecord, Long> IDENTITY_PLATFORM_SKU = Internal.createIdentity(PlatformSku.PLATFORM_SKU, PlatformSku.PLATFORM_SKU.ID);
-        public static Identity<SysFunctionRecord, Long> IDENTITY_SYS_FUNCTION = Internal.createIdentity(SysFunction.SYS_FUNCTION, SysFunction.SYS_FUNCTION.ID);
-        public static Identity<SysRoleRecord, Long> IDENTITY_SYS_ROLE = Internal.createIdentity(SysRole.SYS_ROLE, SysRole.SYS_ROLE.ID);
-        public static Identity<SysRoleFunctionRecord, Long> IDENTITY_SYS_ROLE_FUNCTION = Internal.createIdentity(SysRoleFunction.SYS_ROLE_FUNCTION, SysRoleFunction.SYS_ROLE_FUNCTION.ID);
         public static Identity<SysShopRecord, Long> IDENTITY_SYS_SHOP = Internal.createIdentity(SysShop.SYS_SHOP, SysShop.SYS_SHOP.ID);
-        public static Identity<SysUserRecord, Long> IDENTITY_SYS_USER = Internal.createIdentity(SysUser.SYS_USER, SysUser.SYS_USER.ID);
-        public static Identity<SysUserRoleRecord, Long> IDENTITY_SYS_USER_ROLE = Internal.createIdentity(SysUserRole.SYS_USER_ROLE, SysUserRole.SYS_USER_ROLE.ID);
     }
 
     private static class UniqueKeys0 {

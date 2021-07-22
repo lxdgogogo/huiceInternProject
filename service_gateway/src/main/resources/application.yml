@@ -9,7 +9,6 @@ spring:
           lower-case-service-id: true
       # 路由（routes：路由，它由唯一标识（ID）、目标服务地址（uri）、一组断言（predicates）和一组过滤器组成（filters）。filters 不是必需参数。）
       routes:
-
         - id: summer-user
           uri: lb://summer-user
           predicates:
@@ -24,12 +23,20 @@ spring:
           filters:
             - StripPrefix= 2
 
-        - id: summer-user
-          uri: lb://summer-user
+
+        - id: fdk-service
+          uri: lb://fdk-service
           predicates:
-            - Path=/fdk/api/user/**
+            - Path=/goods/**
           filters:
-            - StripPrefix= 3
+            - StripPrefix= 1
+        - id: fdk-service
+          uri: lb://fdk-service
+          predicates:
+            - Path=/api/goods/**
+          filters:
+            - StripPrefix= 2
+
 
 
 # 白名单

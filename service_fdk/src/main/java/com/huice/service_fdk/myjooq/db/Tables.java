@@ -10,6 +10,7 @@ import com.huice.service_fdk.myjooq.db.tables.MapSellerSpuShop;
 import com.huice.service_fdk.myjooq.db.tables.PlatformSku;
 import com.huice.service_fdk.myjooq.db.tables.PrepareSkuTag;
 import com.huice.service_fdk.myjooq.db.tables.SellerOnPrepareSkuList;
+import com.huice.service_fdk.myjooq.db.tables.SellerOnPrepareSkuListCopy1;
 import com.huice.service_fdk.myjooq.db.tables.SellerSku;
 import com.huice.service_fdk.myjooq.db.tables.SellerSpu;
 import com.huice.service_fdk.myjooq.db.tables.SellerSpuImg;
@@ -18,7 +19,7 @@ import com.huice.service_fdk.myjooq.db.tables.SysShop;
 
 
 /**
- * Convenience access to all tables in fdk_goods2
+ * Convenience access to all tables in fdk_goods2.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
@@ -52,6 +53,11 @@ public class Tables {
      * 销售商备货中列表|孟炜彬|2020-11-20
      */
     public static final SellerOnPrepareSkuList SELLER_ON_PREPARE_SKU_LIST = SellerOnPrepareSkuList.SELLER_ON_PREPARE_SKU_LIST;
+
+    /**
+     * 销售商备货中列表|孟炜彬|2020-11-20
+     */
+    public static final SellerOnPrepareSkuListCopy1 SELLER_ON_PREPARE_SKU_LIST_COPY1 = SellerOnPrepareSkuListCopy1.SELLER_ON_PREPARE_SKU_LIST_COPY1;
 
     /**
      * 销售商货品SKU表

@@ -4,7 +4,7 @@
 package com.hc.summer.db.tables;
 
 
-import com.hc.summer.db.FdkUser;
+import com.hc.summer.db.FdkUser2;
 import com.hc.summer.db.Indexes;
 import com.hc.summer.db.Keys;
 import com.hc.summer.db.tables.records.SysUserRoleRecord;
@@ -17,7 +17,6 @@ import javax.annotation.Generated;
 
 import org.jooq.Field;
 import org.jooq.ForeignKey;
-import org.jooq.Identity;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Record;
@@ -43,10 +42,10 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SysUserRole extends TableImpl<SysUserRoleRecord> {
 
-    private static final long serialVersionUID = -242807130;
+    private static final long serialVersionUID = -132168273;
 
     /**
-     * The reference instance of <code>fdk_user.sys_user_role</code>
+     * The reference instance of <code>fdk_user2.sys_user_role</code>
      */
     public static final SysUserRole SYS_USER_ROLE = new SysUserRole();
 
@@ -59,42 +58,41 @@ public class SysUserRole extends TableImpl<SysUserRoleRecord> {
     }
 
     /**
-     * The column <code>fdk_user.sys_user_role.id</code>.
+     * The column <code>fdk_user2.sys_user_role.id</code>.
      */
-    public final TableField<SysUserRoleRecord, Long> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false).identity(true), this, "");
+    public final TableField<SysUserRoleRecord, Long> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "");
 
     /**
-     * The column <code>fdk_user.sys_user_role.user_id</code>. 用户ID|文弟友|2021-01-18
+     * The column <code>fdk_user2.sys_user_role.user_id</code>. 用户ID|文弟友|2021-01-18
      */
     public final TableField<SysUserRoleRecord, Long> USER_ID = createField(DSL.name("user_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "用户ID|文弟友|2021-01-18");
 
     /**
-     * The column <code>fdk_user.sys_user_role.role_id</code>. 角色ID|文弟友|2021-01-18
+     * The column <code>fdk_user2.sys_user_role.role_id</code>. 角色ID|文弟友|2021-01-18
      */
     public final TableField<SysUserRoleRecord, Long> ROLE_ID = createField(DSL.name("role_id"), org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "角色ID|文弟友|2021-01-18");
 
     /**
-     * The column <code>fdk_user.sys_user_role.modified</code>.
+     * The column <code>fdk_user2.sys_user_role.modified</code>.
      */
-    public final TableField<SysUserRoleRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(
-            DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "");
+    public final TableField<SysUserRoleRecord, LocalDateTime> MODIFIED = createField(DSL.name("modified"), org.jooq.impl.SQLDataType.LOCALDATETIME.nullable(false).defaultValue(DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.LOCALDATETIME)), this, "");
 
     /**
-     * Create a <code>fdk_user.sys_user_role</code> table reference
+     * Create a <code>fdk_user2.sys_user_role</code> table reference
      */
     public SysUserRole() {
         this(DSL.name("sys_user_role"), null);
     }
 
     /**
-     * Create an aliased <code>fdk_user.sys_user_role</code> table reference
+     * Create an aliased <code>fdk_user2.sys_user_role</code> table reference
      */
     public SysUserRole(String alias) {
         this(DSL.name(alias), SYS_USER_ROLE);
     }
 
     /**
-     * Create an aliased <code>fdk_user.sys_user_role</code> table reference
+     * Create an aliased <code>fdk_user2.sys_user_role</code> table reference
      */
     public SysUserRole(Name alias) {
         this(alias, SYS_USER_ROLE);
@@ -114,17 +112,12 @@ public class SysUserRole extends TableImpl<SysUserRoleRecord> {
 
     @Override
     public Schema getSchema() {
-        return FdkUser.FDK_USER;
+        return FdkUser2.FDK_USER2;
     }
 
     @Override
     public List<Index> getIndexes() {
         return Arrays.<Index>asList(Indexes.SYS_USER_ROLE_PRIMARY, Indexes.SYS_USER_ROLE_USER_ID);
-    }
-
-    @Override
-    public Identity<SysUserRoleRecord, Long> getIdentity() {
-        return Keys.IDENTITY_SYS_USER_ROLE;
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.huice.service_fdk.Controller;
 
+import com.huice.service_fdk.common.AuthContext;
 import com.huice.service_fdk.common.Result;
 import com.huice.service_fdk.common.page.PageContentContainer;
 import com.huice.service_fdk.common.page.PageParam;
@@ -38,14 +39,19 @@ public class QueryController {
     //5.获取级联档口地址初始化接口
 
     @GetMapping("/wait/push/page/init")
-    public Result<ForwarderPageInitVO> getForwarderPageInitVODao(HttpServletRequest request) {
-        long id = Long.parseLong(request.getParameter("merchantId"));
+    public Result<ForwarderPageInitVO> getForwarderPageInitVODao() {
+        String idString = AuthContext.getRequestParameter("merchantId");
+        if(idString == null){
+            return Result.error(500,"request的ID是空的");
+        }
+        long id = Long.parseLong(idString);
+        //long id = Long.parseLong(request.getParameter("merchantId"));
         return Result.ok(queryService.getForwarderPageInitVODao(id));
     }
 
     //12.已推送供货商列表
     @GetMapping("" +
-            "/pushed/biz/summary/list/{id}")
+            "/pushed/biz/summary/list/")
     public Result<List<ForwarderSupplierGroupVO>> getForwarderSupplierOnPrepareGroupDao(HttpServletRequest request) {
         long id = Long.parseLong(request.getParameter("merchantId"));
         return Result.ok(queryService.getForwarderSupplierOnPrepareGroupDao(id));
