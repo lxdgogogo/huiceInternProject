@@ -21,7 +21,7 @@ import static com.huice.service_fdk.myjooq.db.tables.SellerSku.SELLER_SKU;
 import static com.huice.service_fdk.myjooq.db.tables.SellerSpu.SELLER_SPU;
 
 @Repository
-public class Platform_skuDao extends BaseDao{
+public class Platform_skuDao extends BaseDao {
     public String getnewDownload(ManuallydownloadProductParam param, long merchant_id) {
         String endTime = param.getEndTime();
         String startTime = param.getStartTime();
@@ -44,8 +44,7 @@ public class Platform_skuDao extends BaseDao{
                         fetchInto(PlatformSkuRecord.class));
 
             }
-        }
-        else{
+        } else {
             for (Integer shopid : shopids.keySet()) {
                 ans.addAll(db.select().
                         from(PLATFORM_SKU).
@@ -54,13 +53,14 @@ public class Platform_skuDao extends BaseDao{
                                 and(PLATFORM_SKU.MODIFIED.between(startTimel.atStartOfDay(), endTimel.atStartOfDay()))
                         ).
                         fetchInto(PlatformSkuRecord.class));
-            }}
+            }
+        }
 
-        String s=ans.toString();
+        String s = ans.toString();
         int count = ans.size();
-        s += "已成功下载货品信息"+count+"条";
-        HashMap<String,Long> map = new HashMap<>();
-        HashMap<SpuGoodsVO,List<PlatformSkuRecord>> mapX = new HashMap<>();
+        s += "已成功下载货品信息" + count + "条";
+        HashMap<String, Long> map = new HashMap<>();
+        HashMap<SpuGoodsVO, List<PlatformSkuRecord>> mapX = new HashMap<>();
         //spu维度更新表
         for (PlatformSkuRecord vo : ans) {
             SpuGoodsVO spuGoodsVO = new SpuGoodsVO();
@@ -70,11 +70,11 @@ public class Platform_skuDao extends BaseDao{
             spuGoodsVO.setOUTER_ID(vo.getOuterId());
             spuGoodsVO.setMAIN_IMG_URL(vo.getMainImgUrl());
             spuGoodsVO.setSHOP_ID(vo.getShopId());
-            List<PlatformSkuRecord> list = mapX.getOrDefault(spuGoodsVO,new ArrayList<>());
+            List<PlatformSkuRecord> list = mapX.getOrDefault(spuGoodsVO, new ArrayList<>());
             list.add(vo);
-            mapX.put(spuGoodsVO,list);
+            mapX.put(spuGoodsVO, list);
         }
-        for(SpuGoodsVO spuGoodsVO: mapX.keySet()){
+        for (SpuGoodsVO spuGoodsVO : mapX.keySet()) {
             Long tmp = db.insertInto(SELLER_SPU)
                     .set(SELLER_SPU.MERCHANT_ID, merchant_id)
                     .set(SELLER_SPU.SPU_NAME, spuGoodsVO.getGOODS_NAME())
@@ -89,36 +89,36 @@ public class Platform_skuDao extends BaseDao{
                     .returning(SELLER_SPU.ID).fetchOne().getId();
             assert tmp != null;
             db.insertInto(MAP_SELLER_SPU_SHOP)
-                    .set(MAP_SELLER_SPU_SHOP.MERCHANT_ID,merchant_id)
-                    .set(MAP_SELLER_SPU_SHOP.SELLER_SPU_ID,tmp)
-                    .set(MAP_SELLER_SPU_SHOP.CREATED,LocalDateTime.now(Clock.system(ZoneId.of("Asia/Shanghai"))))
-                    .set(MAP_SELLER_SPU_SHOP.MODIFIED,LocalDateTime.now(Clock.system(ZoneId.of("Asia/Shanghai"))))
-                    .set(MAP_SELLER_SPU_SHOP.SHOP_ID,spuGoodsVO.getSHOP_ID())
+                    .set(MAP_SELLER_SPU_SHOP.MERCHANT_ID, merchant_id)
+                    .set(MAP_SELLER_SPU_SHOP.SELLER_SPU_ID, tmp)
+                    .set(MAP_SELLER_SPU_SHOP.CREATED, LocalDateTime.now(Clock.system(ZoneId.of("Asia/Shanghai"))))
+                    .set(MAP_SELLER_SPU_SHOP.MODIFIED, LocalDateTime.now(Clock.system(ZoneId.of("Asia/Shanghai"))))
+                    .set(MAP_SELLER_SPU_SHOP.SHOP_ID, spuGoodsVO.getSHOP_ID())
                     .returning(MAP_SELLER_SPU_SHOP.ID).fetchOne();
-            map.put(spuGoodsVO.getGOODS_ID(),tmp);
+            map.put(spuGoodsVO.getGOODS_ID(), tmp);
         }
         //sku维度更新表
-        for(PlatformSkuRecord platformSkuRecord:ans){
+        for (PlatformSkuRecord platformSkuRecord : ans) {
             String[] strs = platformSkuRecord.getBarcode().split(",", -1);
             db.insertInto(SELLER_SKU)
                     .set(SELLER_SKU.MERCHANT_ID, merchant_id)
-                    .set(SELLER_SKU.PLATFORM_SKU_REC_ID,Long.parseLong(platformSkuRecord.getSkuId()))
-                    .set(SELLER_SKU.SOURCE_TYPE, (byte)(2 & 0xFF))
-                    .set(SELLER_SKU.SALE_STATUS,goodsStatus)
-                    .set(SELLER_SKU.SPU_ID,map.get(platformSkuRecord.getGoodsId()))
-                    .set(SELLER_SKU.SKU_NAME,platformSkuRecord.getSkuName())
-                    .set(SELLER_SKU.SKU_NO,platformSkuRecord.getSkuOuterId())
-                    .set(SELLER_SKU.SKU_CODE,platformSkuRecord.getSkuCode())
-                    .set(SELLER_SKU.BARCODE_NUM,(short)(strs.length-1))
-                    .set(SELLER_SKU.REAL_NUM,platformSkuRecord.getStockNum())
-                    .set(SELLER_SKU.OCCUPIED_NUM,platformSkuRecord.getHoldStock())
-                    .set(SELLER_SKU.RETAIL_PRICE,platformSkuRecord.getPrice())
-                    .set(SELLER_SKU.IMG_URL,platformSkuRecord.getImgUrl())
-                    .set(SELLER_SKU.CREATED,platformSkuRecord.getCreated())
-                    .set(SELLER_SKU.MODIFIED,platformSkuRecord.getModified())
-            .returning(SELLER_SKU.ID).fetchOne();
+                    .set(SELLER_SKU.PLATFORM_SKU_REC_ID, Long.parseLong(platformSkuRecord.getSkuId()))
+                    .set(SELLER_SKU.SOURCE_TYPE, (byte) (2 & 0xFF))
+                    .set(SELLER_SKU.SALE_STATUS, goodsStatus)
+                    .set(SELLER_SKU.SPU_ID, map.get(platformSkuRecord.getGoodsId()))
+                    .set(SELLER_SKU.SKU_NAME, platformSkuRecord.getSkuName())
+                    .set(SELLER_SKU.SKU_NO, platformSkuRecord.getSkuOuterId())
+                    .set(SELLER_SKU.SKU_CODE, platformSkuRecord.getSkuCode())
+                    .set(SELLER_SKU.BARCODE_NUM, (short) (strs.length - 1))
+                    .set(SELLER_SKU.REAL_NUM, platformSkuRecord.getStockNum())
+                    .set(SELLER_SKU.OCCUPIED_NUM, platformSkuRecord.getHoldStock())
+                    .set(SELLER_SKU.RETAIL_PRICE, platformSkuRecord.getPrice())
+                    .set(SELLER_SKU.IMG_URL, platformSkuRecord.getImgUrl())
+                    .set(SELLER_SKU.CREATED, platformSkuRecord.getCreated())
+                    .set(SELLER_SKU.MODIFIED, platformSkuRecord.getModified())
+                    .returning(SELLER_SKU.ID).fetchOne();
         }
         return s;
-        }
-
     }
+
+}

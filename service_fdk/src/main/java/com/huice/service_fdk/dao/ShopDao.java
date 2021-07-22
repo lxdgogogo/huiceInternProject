@@ -1,6 +1,5 @@
 package com.huice.service_fdk.dao;
 
-import com.huice.service_fdk.myjooq.db.tables.SysShop;
 import com.huice.service_fdk.service.vo.ShopIdVO;
 import com.huice.service_fdk.service.vo.data_MerchantIdList_15;
 import org.springframework.stereotype.Repository;
@@ -8,54 +7,58 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.huice.service_fdk.myjooq.db.tables.SysShop.SYS_SHOP;
+
 @Repository
 public class ShopDao extends BaseDao {
 
-    public List<data_MerchantIdList_15> getShopWebNameListVO(boolean isAuthOnly) {
-        List<data_MerchantIdList_15> lst = new ArrayList<>();
-        List<Integer> ShopIdList = db.select(SysShop.SYS_SHOP.ID).from(SysShop.SYS_SHOP).fetchInto(Integer.class);
+    public data_MerchantIdList_15 getShopWebNameListVO(boolean isAuthOnly, Long id) {
+        data_MerchantIdList_15 lst = new data_MerchantIdList_15();
         if (isAuthOnly) {
-            for (Integer id : ShopIdList) {
-                data_MerchantIdList_15 view = new data_MerchantIdList_15();
-                //assert view != null;
-                view.setMerchantId(
-                        db.select(SysShop.SYS_SHOP.MERCHANT_ID.as("merchantId"))
-                                .from(SysShop.SYS_SHOP)
-                                .where(SysShop.SYS_SHOP.AUTH_STATUS.eq((byte) 1))
-                                .fetchAnyInto(Integer.class)
-                );
-                view.setShopList(
+            lst.setMerchantId(
+                    db.select(SYS_SHOP.MERCHANT_ID.as("merchantId"))
+                            .from(SYS_SHOP)
+                            .where(SYS_SHOP.AUTH_STATUS.eq((byte) 1))
+                            .and(SYS_SHOP.MERCHANT_ID.eq(id))
+                            .fetchAnyInto(Integer.class)
+            );
+            List<Integer> sid = db.select(SYS_SHOP.ID).from(SYS_SHOP).fetchInto(Integer.class);
+            List<ShopIdVO> shopIdVOS = new ArrayList<>();
+            for (Integer ssid : sid) {
+                ShopIdVO view =
                         db.select(
-                                SysShop.SYS_SHOP.ID.as("shopId"),
-                                SysShop.SYS_SHOP.SHOP_NAME.as("shopName")
+                                SYS_SHOP.ID.as("shopId"),
+                                SYS_SHOP.SHOP_NAME.as("shopName")
                         )
-                                .from(SysShop.SYS_SHOP)
-                                .where(SysShop.SYS_SHOP.AUTH_STATUS.eq((byte) 1))
-                                .fetchAnyInto(ShopIdVO.class)
-                );
-                if (view != null) lst.add(view);
+                                .from(SYS_SHOP)
+                                .where(SYS_SHOP.AUTH_STATUS.eq((byte) 1))
+                                .and(SYS_SHOP.MERCHANT_ID.eq(id))
+                                .fetchAnyInto(ShopIdVO.class);
+                if (lst != null) shopIdVOS.add(view);
             }
+            lst.setShopList(shopIdVOS);
             return lst;
         } else {
-            for (Integer id : ShopIdList) {
-                data_MerchantIdList_15 view = new data_MerchantIdList_15();
-                view.setMerchantId(
-                        db.select(SysShop.SYS_SHOP.MERCHANT_ID.as("merchantId"))
-                                .from(SysShop.SYS_SHOP)
-                                .where(SysShop.SYS_SHOP.ID.eq(Long.valueOf(id)))
-                                .fetchAnyInto(Integer.class)
-                );
-                view.setShopList(
+            lst.setMerchantId(
+                    db.select(SYS_SHOP.MERCHANT_ID.as("merchantId"))
+                            .from(SYS_SHOP)
+                            .where(SYS_SHOP.MERCHANT_ID.eq(Long.valueOf(id)))
+                            .fetchAnyInto(Integer.class)
+            );
+            List<Integer> sid = db.select(SYS_SHOP.ID).from(SYS_SHOP).fetchInto(Integer.class);
+            List<ShopIdVO> shopIdVOS = new ArrayList<>();
+            for (Integer ssid : sid) {
+                ShopIdVO view =
                         db.select(
-                                SysShop.SYS_SHOP.ID.as("shopId"),
-                                SysShop.SYS_SHOP.SHOP_NAME.as("shopName")
+                                SYS_SHOP.ID.as("shopId"),
+                                SYS_SHOP.SHOP_NAME.as("shopName")
                         )
-                                .from(SysShop.SYS_SHOP)
-                                .where(SysShop.SYS_SHOP.ID.eq(Long.valueOf(id)))
-                                .fetchAnyInto(ShopIdVO.class)
-                );
-                if (view != null) lst.add(view);
+                                .from(SYS_SHOP)
+                                .where(SYS_SHOP.MERCHANT_ID.eq(Long.valueOf(id)))
+                                .fetchAnyInto(ShopIdVO.class);
+                if (view != null) shopIdVOS.add(view);
             }
+            lst.setShopList(shopIdVOS);
             return lst;
         }
     }

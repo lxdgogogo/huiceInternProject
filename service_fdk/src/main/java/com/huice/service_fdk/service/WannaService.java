@@ -1,6 +1,7 @@
 package com.huice.service_fdk.service;
 
 import com.huice.service_fdk.dao.WannaDao;
+import com.huice.service_fdk.entity.FetchOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ public class WannaService {
     @Resource
     private WannaDao wannaDao;
 
-    public Integer setSubmitForwarderVO(boolean selectedAll, List<Integer> spuIds) {
+    public List<FetchOrder> setSubmitForwarderVO(boolean selectedAll, List<Integer> spuIds) {
         return wannaDao.setSubmitForwarderVO(selectedAll, spuIds);
     }
 }
