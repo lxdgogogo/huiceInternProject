@@ -21,7 +21,6 @@ public class ForwarderService {
 
     public ForwarderSummaryVO getForwarderSummaryVO(long merchant_id){
         return forwarderDao.getForwarderSummaryVO(merchant_id);
-
     }
 
     public SummarySumVO getSummarySumVO(long merchant_id) {
@@ -35,5 +34,9 @@ public class ForwarderService {
         return forwarderSupplierGroupDao.getForwarderSupplierGroupVO(merchant_id);
     }
 
+    public ForwarderSummaryVO getForwarderPushedSummaryVO(long merchant_id){
+        return forwarderDao.getForwarderPushedSummaryVO(merchant_id);
+
+    }
 
 }

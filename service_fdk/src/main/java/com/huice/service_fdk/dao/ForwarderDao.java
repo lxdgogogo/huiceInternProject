@@ -95,4 +95,14 @@ public class ForwarderDao extends BaseDao {
                 .from(ForwarderSupplier.FORWARDER_SUPPLIER)
                 .fetchInto(ForwarderSupplierVO.class);
     }
+
+    public ForwarderSummaryVO getForwarderPushedSummaryVO(Long merchant_id) {
+        return db.select(
+                DSL.ifnull(DSL.sum(SELLER_TO_PREPARE_SKU_LIST.SKU_NUM), 0).as("skuSum"),
+                DSL.count(SELLER_TO_PREPARE_SKU_LIST.SELLER_SKU_ID).as("skuCount")
+        )
+                .from(SELLER_TO_PREPARE_SKU_LIST)
+                .where(SELLER_TO_PREPARE_SKU_LIST.MERCHANT_ID.eq(merchant_id))
+                .fetchAnyInto(ForwarderSummaryVO.class);
+    }
 }

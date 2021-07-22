@@ -1,4 +1,4 @@
-package com.huice.service_fdk.Controller;
+package com.huice.service_fdk.controller;
 
 import com.huice.service_fdk.common.Result;
 import com.huice.service_fdk.service.*;
@@ -76,9 +76,11 @@ public class ForwarderController {
     }
 
     //11.已推送备货汇总数据
-//    @GetMapping("/pushed/summary")
-//    public Result<ForwarderSummaryVO> getPushedSummary(){
-//
-//    }
+    @GetMapping("/pushed/summary")
+    public Result<ForwarderSummaryVO> getPushedSummary(){
+        Long merchant_id= Long.valueOf(Objects.requireNonNull(getRequestParameter("merchant_id")));
+        ForwarderSummaryVO forwarderSummaryVO = forwarderService.getForwarderSummaryVO(merchant_id);
+        return Result.ok(forwarderSummaryVO);
+    }
 }
 

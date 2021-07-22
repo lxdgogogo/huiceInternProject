@@ -10,8 +10,10 @@ import com.huice.service_fdk.service.ForwarderService;
 import com.huice.service_fdk.service.ISellerForwarderService;
 import com.huice.service_fdk.service.impl.SellerForwardServiceImpl;
 import com.huice.service_fdk.service.model.CityModel;
+import com.huice.service_fdk.service.vo.ForwarderSummaryVO;
 import com.huice.service_fdk.service.vo.ForwarderSupplierVO;
 import com.huice.service_fdk.service.QueryService;
+import com.huice.service_fdk.service.vo.SupplierGoodsList;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -47,7 +49,7 @@ class ServiceFdkApplicationTests {
     @Test
     void getPageForwarderSupplierDao() {
         PageParam pageParam = new PageParam();
-        PageContentContainer<ForwarderSupplierVO> pageContentContainer =  queryService.getPage(pageParam);
+        PageContentContainer<SupplierGoodsList> pageContentContainer =  queryService.getPage(pageParam);
         System.out.println(pageContentContainer);
     }
 
@@ -56,6 +58,13 @@ class ServiceFdkApplicationTests {
 //        List<ForwarderSupplierVO> cityModels =  forwarderDao.getCityModelTree();
         List<CityModel> cityModels = sellerForwardService.selectCityInfo();
         System.out.println(cityModels);
+    }
+
+    @Test
+    void getForwarderPushed() {
+//        List<ForwarderSupplierVO> cityModels =  forwarderDao.getCityModelTree();
+        ForwarderSummaryVO forwarderSummaryVO = forwarderService.getForwarderPushedSummaryVO(0);
+        System.out.println(forwarderSummaryVO);
     }
 
 }

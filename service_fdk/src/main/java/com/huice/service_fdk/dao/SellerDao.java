@@ -6,7 +6,6 @@ import com.huice.service_fdk.common.page.PageContentContainer;
 import com.huice.service_fdk.entity.QueryPageSellerSpuParam;
 import org.springframework.stereotype.Repository;
 
-import javax.xml.ws.RespectBinding;
 
 @Repository
 public class SellerDao {
