@@ -1,12 +1,14 @@
-package com.huice.service_fdk.controller;
+package com.huice.service_fdk.Controller;
 
 import com.huice.service_fdk.common.Result;
 import lombok.Data;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @Data
+@RestController
 public class Platform_skuController {
     //16.下载货品，手动下载平台货品
     @PostMapping("/download")

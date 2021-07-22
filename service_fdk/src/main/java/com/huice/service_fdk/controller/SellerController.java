@@ -1,4 +1,4 @@
-package com.huice.service_fdk.controller;
+package com.huice.service_fdk.Controller;
 
 import com.huice.service_fdk.service.vo.SellerSpuVO;
 import com.huice.service_fdk.common.Result;
